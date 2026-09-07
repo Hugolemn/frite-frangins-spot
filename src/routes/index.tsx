@@ -31,6 +31,13 @@ const schedule = [
   { day: "Dimanche", hours: "17:30 – 21:30", closed: false },
 ];
 
+const reviews: { name: string; text: string; rating: number }[] = [
+  { name: "Julien V.", text: "Des frites parfaitement croustillantes et un accueil toujours souriant. Le burger Frangins vaut vraiment le détour !", rating: 5 },
+  { name: "Sarah L.", text: "Les burgers maison sont énormes et savoureux, le pain est excellent. Ma friterie préférée sur Tournai.", rating: 5 },
+  { name: "Nicolas B.", text: "Service rapide, portions généreuses et un vrai choix de sauces. On y retourne chaque vendredi en famille.", rating: 4 },
+  { name: "Élodie M.", text: "Très bon rapport qualité-prix, tout est frais et bien préparé. Mention spéciale pour la mitraillette !", rating: 5 },
+];
+
 
 const MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=Frites+%26+Frangins+Chauss%C3%A9e+de+Douai+850+Tournai";
