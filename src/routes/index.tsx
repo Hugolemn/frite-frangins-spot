@@ -189,57 +189,29 @@ function Index() {
         </div>
       </section>
 
-      {/* ===== Accès rapide ===== */}
+      {/* ===== Appel à l'action ===== */}
       <section className="bg-ink px-4 py-16 sm:px-6 lg:py-20">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-center font-display text-3xl text-mustard sm:text-4xl">
-            Vous cherchez <span className="italic text-ink-foreground">quoi</span> ?
-          </h2>
-          <div className="mt-12 grid items-stretch gap-6 md:grid-cols-3">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 text-center md:flex-row md:justify-between md:text-left">
+          <div>
+            <h2 className="font-display text-3xl text-mustard sm:text-4xl">
+              Une petite <span className="italic text-ink-foreground">faim</span> ?
+            </h2>
+            <p className="mt-3 max-w-md text-sm text-ink-foreground/70 sm:text-base">
+              Toute la carte est en ligne — et un coup de fil suffit pour que ce soit prêt à votre arrivée.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
             <Link
               to="/menu"
-              className="group flex h-full flex-col rounded-3xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:bg-ink-foreground/10"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-mustard px-8 py-3.5 font-display text-lg text-ink shadow-lg transition-transform hover:-translate-y-0.5"
             >
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard">
-                <Utensils className="h-6 w-6" />
-              </span>
-              <h3 className="mt-4 font-display text-xl text-mustard">Notre menu</h3>
-              <p className="mt-2 text-sm text-ink-foreground/70">
-                Frites fraîches, burgers, snacks et sauces maison — toute la carte, avec les prix.
-              </p>
-              <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-bold text-mustard group-hover:underline">
-                Voir le menu <ArrowRight className="h-4 w-4" />
-              </span>
+              <Utensils className="h-5 w-5" /> Voir la carte
             </Link>
             <a
               href="tel:069212655"
-              className="group flex h-full flex-col rounded-3xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:bg-ink-foreground/10"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-mustard px-8 py-3.5 font-display text-lg text-mustard transition-colors hover:bg-mustard hover:text-ink"
             >
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard">
-                <Phone className="h-6 w-6" />
-              </span>
-              <h3 className="mt-4 font-display text-xl text-mustard">Commander</h3>
-              <p className="mt-2 text-sm text-ink-foreground/70">
-                Sur place, à emporter ou en livraison. Un coup de fil et c'est prêt en quelques minutes.
-              </p>
-              <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-bold text-mustard group-hover:underline">
-                069 21 26 55 <ArrowRight className="h-4 w-4" />
-              </span>
-            </a>
-            <a
-              href="#infos"
-              className="group flex h-full flex-col rounded-3xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:bg-ink-foreground/10"
-            >
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard">
-                <MapPin className="h-6 w-6" />
-              </span>
-              <h3 className="mt-4 font-display text-xl text-mustard">Nous trouver</h3>
-              <p className="mt-2 text-sm text-ink-foreground/70">
-                Chaussée de Douai 850, 7504 Tournai. Horaires, accès et itinéraire.
-              </p>
-              <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-bold text-mustard group-hover:underline">
-                Voir les infos <ArrowRight className="h-4 w-4" />
-              </span>
+              <Phone className="h-5 w-5" /> 069 21 26 55
             </a>
           </div>
         </div>
