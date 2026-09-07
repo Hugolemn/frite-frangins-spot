@@ -225,7 +225,7 @@ function Menu() {
               width={80}
               height={80}
             />
-            <span className="font-display text-lg font-extrabold uppercase tracking-wide text-mustard">
+            <span className="font-display text-lg text-mustard">
               Frites & Frangins
             </span>
           </Link>
@@ -251,7 +251,7 @@ function Menu() {
       {/* ===== En-tête ===== */}
       <header className="px-4 pb-4 pt-12 text-center sm:px-6">
         <p className="text-xs font-bold uppercase tracking-widest text-mustard/80">Sur place · À emporter · Livraison</p>
-        <h1 className="mt-2 font-display text-5xl font-extrabold uppercase text-mustard sm:text-6xl">
+        <h1 className="mt-2 font-display text-5xl text-mustard sm:text-6xl">
           La <span className="italic text-ink-foreground">carte</span>
         </h1>
         {/* Navigation par type */}
@@ -260,7 +260,7 @@ function Menu() {
             <a
               key={type.id}
               href={`#${type.id}`}
-              className="rounded-full border border-mustard/40 px-4 py-2 font-display text-xs font-bold uppercase tracking-wider text-mustard transition-colors hover:bg-mustard hover:text-ink"
+              className="rounded-full border border-mustard/40 px-4 py-2 font-display text-xs text-mustard transition-colors hover:bg-mustard hover:text-ink"
             >
               {type.label}
             </a>
@@ -272,7 +272,7 @@ function Menu() {
       <main className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
         {menuTypes.map((type) => (
           <section key={type.id} id={type.id} className="scroll-mt-24 pt-12">
-            <h2 className="font-display text-3xl font-extrabold uppercase text-mustard sm:text-4xl">
+            <h2 className="font-display text-3xl text-mustard sm:text-4xl">
               {type.label}
             </h2>
             <div className="mt-2 h-1 w-20 rounded-full bg-mustard" aria-hidden="true" />
@@ -283,7 +283,7 @@ function Menu() {
                   className="flex flex-col rounded-2xl border border-mustard/15 bg-ink-foreground/[0.03] p-6"
                 >
                   <div className="border-b border-mustard/20 pb-4">
-                    <h3 className="font-display text-xl font-extrabold uppercase text-mustard">
+                    <h3 className="font-display text-xl text-mustard">
                       {group.title}
                     </h3>
                     {group.note && (
@@ -333,7 +333,7 @@ function Menu() {
           height={128}
           loading="lazy"
         />
-        <p className="mt-4 font-display text-xl font-extrabold uppercase text-mustard">Frites & Frangins</p>
+        <p className="mt-4 font-display text-xl text-mustard">Frites & Frangins</p>
         <p className="mt-2 text-sm">Chaussée de Douai 850, 7504 Tournai</p>
         <p className="mt-1 text-sm">Tél. 069 21 26 55</p>
         <p className="mt-6 text-xs uppercase tracking-widest opacity-50">
@@ -346,7 +346,7 @@ function Menu() {
         <div className="mx-auto flex max-w-3xl gap-3">
           <a
             href="tel:069212655"
-            className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-mustard py-4 font-display text-sm font-bold uppercase tracking-wide text-ink shadow-lg transition-transform active:scale-95"
+            className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-mustard py-4 font-display text-sm text-ink shadow-lg transition-transform active:scale-95"
           >
             <Phone className="h-4 w-4" />
             Appeler
@@ -355,7 +355,7 @@ function Menu() {
             href={MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-ink-foreground/10 py-4 font-display text-sm font-bold uppercase tracking-wide text-mustard ring-1 ring-mustard/40 backdrop-blur transition-transform active:scale-95"
+            className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-ink-foreground/10 py-4 font-display text-sm text-mustard ring-1 ring-mustard/40 backdrop-blur transition-transform active:scale-95"
           >
             <MapPin className="h-4 w-4" />
             Itinéraire
