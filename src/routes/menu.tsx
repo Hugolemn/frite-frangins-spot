@@ -276,35 +276,32 @@ function Menu() {
               {type.label}
             </h2>
             <div className="mt-2 h-1 w-20 rounded-full bg-mustard" aria-hidden="true" />
-            <div className="mt-8 grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {type.groups.map((group) => (
                 <div
                   key={group.title}
-                  className="rounded-2xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-all duration-300 hover:-translate-y-1 hover:bg-ink-foreground/10 hover:shadow-xl hover:shadow-mustard/5 hover:ring-mustard"
+                  className="flex flex-col rounded-2xl border border-mustard/15 bg-ink-foreground/[0.03] p-6"
                 >
-                  <h3 className="font-display text-xl font-extrabold uppercase text-mustard">
-                    <span className="inline-block bg-mustard px-2 py-0.5 text-ink [clip-path:polygon(0_15%,4%_0,96%_5%,100%_20%,98%_85%,94%_100%,3%_95%,0_80%)]">
+                  <div className="border-b border-mustard/20 pb-4">
+                    <h3 className="font-display text-xl font-extrabold uppercase text-mustard">
                       {group.title}
-                    </span>
-                  </h3>
-                  {group.note && (
-                    <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-mustard/70">{group.note}</p>
-                  )}
-                  {group.desc && (
-                    <p className="mt-3 text-sm leading-relaxed text-ink-foreground/70">{group.desc}</p>
-                  )}
-                  <ul className="mt-3 space-y-0.5">
+                    </h3>
+                    {group.note && (
+                      <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-mustard/70">{group.note}</p>
+                    )}
+                    {group.desc && (
+                      <p className="mt-2 text-sm leading-relaxed text-ink-foreground/70">{group.desc}</p>
+                    )}
+                  </div>
+                  <ul className="mt-4 flex-1 space-y-2">
                     {group.items.map((item) => (
-                      <li
-                        key={item.name}
-                        className="group/item -mx-2 cursor-default rounded-lg px-2 py-1.5 transition-colors duration-200 hover:bg-mustard/15"
-                      >
+                      <li key={item.name} className="">
                         <div className="flex items-baseline gap-2">
-                          <span className="text-sm font-semibold text-ink-foreground transition-colors group-hover/item:text-mustard">
+                          <span className="text-sm font-semibold text-ink-foreground">
                             {item.name}
                           </span>
-                          <span className="flex-1 border-b border-dotted border-ink-foreground/25 transition-colors group-hover/item:border-mustard/50" aria-hidden="true" />
-                          <span className="shrink-0 rounded-full px-2 py-0.5 font-display text-sm font-extrabold text-mustard transition-colors group-hover/item:bg-mustard group-hover/item:text-ink">
+                          <span className="flex-1 border-b border-dotted border-ink-foreground/20" aria-hidden="true" />
+                          <span className="shrink-0 text-sm font-extrabold text-mustard">
                             {item.price}
                           </span>
                         </div>
