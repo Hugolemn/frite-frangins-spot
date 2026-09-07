@@ -145,32 +145,31 @@ function Index() {
       {/* ===== Menu ===== */}
       <section id="menu" className="bg-ink px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto mb-10 max-w-6xl text-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-mustard/80">Notre sélection</p>
-          <h2 className="mt-2 font-display text-4xl text-mustard sm:text-5xl">
-            La <span className="italic text-ink-foreground">carte</span>
+          <h2 className="font-display text-4xl text-mustard sm:text-5xl">
+            Notre <span className="italic text-ink-foreground">menu</span>
           </h2>
         </div>
         <MenuContent />
       </section>
 
       {/* ===== Avis clients ===== */}
-      <section id="avis" className="scroll-mt-20 bg-ink px-4 py-16 sm:px-6 lg:py-20">
+      <section id="avis" className="scroll-mt-20 bg-mustard px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-xs font-bold uppercase tracking-widest text-mustard/80">Témoignages</p>
-            <h2 className="mt-2 font-display text-4xl text-mustard sm:text-5xl">
-              Ce que disent nos <span className="italic text-ink-foreground">clients</span>
+            <p className="text-xs font-bold uppercase tracking-widest text-ink/60">Témoignages</p>
+            <h2 className="mt-2 font-display text-4xl text-ink sm:text-5xl">
+              Ce que disent nos <span className="italic text-ink/80">clients</span>
             </h2>
 
-            <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-mustard/15 bg-ink-foreground/[0.03] px-6 py-3">
+            <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-ink/15 bg-ink/5 px-6 py-3">
               <div className="flex gap-0.5">
                 {[...Array(4)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-mustard text-mustard" />
+                  <Star key={i} className="h-5 w-5 fill-ink text-ink" />
                 ))}
-                <Star className="h-5 w-5 fill-mustard/40 text-mustard" />
+                <Star className="h-5 w-5 fill-ink/40 text-ink" />
               </div>
-              <span className="font-display text-2xl text-ink-foreground">4,3</span>
-              <span className="text-sm text-ink-foreground/60">/ 5 · 130 avis Google</span>
+              <span className="font-display text-2xl text-ink">4,3</span>
+              <span className="text-sm text-ink/60">/ 5 · 130 avis Google</span>
             </div>
           </div>
 
@@ -178,19 +177,19 @@ function Index() {
             {reviews.map((r) => (
               <div
                 key={r.name}
-                className="relative rounded-3xl border border-mustard/15 bg-ink-foreground/[0.03] p-8 transition-all hover:border-mustard/40"
+                className="relative rounded-3xl border border-ink/15 bg-ink/5 p-8 transition-all hover:border-ink/40"
               >
-                <Quote className="absolute right-6 top-6 h-8 w-8 text-mustard/20" />
+                <Quote className="absolute right-6 top-6 h-8 w-8 text-ink/20" />
                 <div className="mb-4 flex gap-0.5">
                   {[...Array(5)].map((_, j) => (
                     <Star
                       key={j}
-                      className={`h-4 w-4 ${j < r.rating ? "fill-mustard text-mustard" : "text-mustard/30"}`}
+                      className={`h-4 w-4 ${j < r.rating ? "fill-ink text-ink" : "text-ink/30"}`}
                     />
                   ))}
                 </div>
-                <p className="italic leading-relaxed text-ink-foreground/85">"{r.text}"</p>
-                <span className="mt-4 block text-sm font-bold text-mustard">{r.name}</span>
+                <p className="italic leading-relaxed text-ink/85">"{r.text}"</p>
+                <span className="mt-4 block text-sm font-bold text-ink">{r.name}</span>
               </div>
             ))}
           </div>
@@ -207,7 +206,7 @@ function Index() {
             </h2>
           </div>
 
-          <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-3">
+          <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-2">
             {/* Adresse */}
             <a
               href={MAPS_URL}
@@ -248,26 +247,6 @@ function Index() {
                 Appeler <ArrowRight className="h-4 w-4" />
               </span>
             </a>
-
-            {/* Services */}
-            <div className="flex h-full flex-col gap-4 rounded-3xl bg-ink-foreground/[0.03] p-6 ring-1 ring-mustard/15">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
-                <Truck className="h-6 w-6" />
-              </div>
-              <div>
-                <h3 className="font-display text-lg text-ink-foreground">Service</h3>
-                <div className="mt-2 space-y-2 text-sm text-ink-foreground/60">
-                  <p className="flex items-center gap-2">
-                    <ShoppingBag className="h-4 w-4 text-mustard" />
-                    <span className="text-ink-foreground">À emporter</span>
-                  </p>
-                  <p className="flex items-center gap-2">
-                    <Truck className="h-4 w-4 text-mustard" />
-                    <span className="text-ink-foreground">Livraison aux alentours</span>
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Horaires + Carte */}
