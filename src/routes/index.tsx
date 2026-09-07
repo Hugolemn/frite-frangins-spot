@@ -219,7 +219,7 @@ function Index() {
               href="#menu"
               className="group rounded-3xl bg-ink p-6 text-ink-foreground transition-transform hover:-translate-y-1"
             >
-              <span className="text-3xl">🍟</span>
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard"><Utensils className="h-6 w-6" /></span>
               <h3 className="mt-4 font-display text-xl font-bold uppercase text-mustard">Notre menu</h3>
               <p className="mt-2 text-sm text-ink-foreground/70">
                 Frites fraîches, burgers, snacks et sauces maison — toute la carte, avec les prix.
@@ -232,7 +232,7 @@ function Index() {
               href="tel:069212655"
               className="group rounded-3xl bg-ink p-6 text-ink-foreground transition-transform hover:-translate-y-1"
             >
-              <span className="text-3xl">🛍️</span>
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard"><ShoppingBag className="h-6 w-6" /></span>
               <h3 className="mt-4 font-display text-xl font-bold uppercase text-mustard">Commander</h3>
               <p className="mt-2 text-sm text-ink-foreground/70">
                 Sur place, à emporter ou en livraison. Un coup de fil et c'est prêt en quelques minutes.
@@ -245,7 +245,7 @@ function Index() {
               href="#infos"
               className="group rounded-3xl bg-ink p-6 text-ink-foreground transition-transform hover:-translate-y-1"
             >
-              <span className="text-3xl">📍</span>
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard"><MapPin className="h-6 w-6" /></span>
               <h3 className="mt-4 font-display text-xl font-bold uppercase text-mustard">Nous trouver</h3>
               <p className="mt-2 text-sm text-ink-foreground/70">
                 Chaussée de Douai 850, 7504 Tournai. Horaires, accès et itinéraire.
