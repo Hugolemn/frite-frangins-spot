@@ -196,7 +196,43 @@ function Index() {
               to="/menu"
               className="group flex h-full flex-col rounded-3xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:bg-ink-foreground/10"
             >
-...
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard">
+                <Utensils className="h-6 w-6" />
+              </span>
+              <h3 className="mt-4 font-display text-xl font-bold uppercase text-mustard">Notre menu</h3>
+              <p className="mt-2 text-sm text-ink-foreground/70">
+                Frites fraîches, burgers, snacks et sauces maison — toute la carte, avec les prix.
+              </p>
+              <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-bold text-mustard group-hover:underline">
+                Voir le menu <ArrowRight className="h-4 w-4" />
+              </span>
+            </Link>
+            <a
+              href="tel:069212655"
+              className="group flex h-full flex-col rounded-3xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:bg-ink-foreground/10"
+            >
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard">
+                <Phone className="h-6 w-6" />
+              </span>
+              <h3 className="mt-4 font-display text-xl font-bold uppercase text-mustard">Commander</h3>
+              <p className="mt-2 text-sm text-ink-foreground/70">
+                Sur place, à emporter ou en livraison. Un coup de fil et c'est prêt en quelques minutes.
+              </p>
+              <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-bold text-mustard group-hover:underline">
+                069 21 26 55 <ArrowRight className="h-4 w-4" />
+              </span>
+            </a>
+            <a
+              href="#infos"
+              className="group flex h-full flex-col rounded-3xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:bg-ink-foreground/10"
+            >
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard">
+                <MapPin className="h-6 w-6" />
+              </span>
+              <h3 className="mt-4 font-display text-xl font-bold uppercase text-mustard">Nous trouver</h3>
+              <p className="mt-2 text-sm text-ink-foreground/70">
+                Chaussée de Douai 850, 7504 Tournai. Horaires, accès et itinéraire.
+              </p>
               <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-bold text-mustard group-hover:underline">
                 Voir les infos <ArrowRight className="h-4 w-4" />
               </span>
