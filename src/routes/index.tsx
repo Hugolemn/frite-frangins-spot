@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Phone, MapPin, Clock, Star, Quote, ArrowRight } from "lucide-react";
+import { Phone, MapPin, Clock, Star, Quote, ShoppingBag, Truck, ArrowRight } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import ffAsset from "@/assets/frites-frangins-ff.png.asset.json";
@@ -143,10 +143,11 @@ function Index() {
       </header>
 
       {/* ===== Menu ===== */}
-      <section id="menu" className="px-4 py-16 sm:px-6 lg:py-20">
+      <section id="menu" className="bg-ink px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto mb-10 max-w-6xl text-center">
-          <h2 className="font-display text-4xl text-ink sm:text-5xl">
-            Notre <span className="italic text-mustard">menu</span>
+          <p className="text-xs font-bold uppercase tracking-widest text-mustard/80">Notre sélection</p>
+          <h2 className="mt-2 font-display text-4xl text-mustard sm:text-5xl">
+            La <span className="italic text-ink-foreground">carte</span>
           </h2>
         </div>
         <MenuContent />
@@ -206,7 +207,7 @@ function Index() {
             </h2>
           </div>
 
-          <div className="mt-12 grid items-stretch gap-6 md:grid-cols-2">
+          <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-3">
             {/* Adresse */}
             <a
               href={MAPS_URL}
@@ -247,6 +248,26 @@ function Index() {
                 Appeler <ArrowRight className="h-4 w-4" />
               </span>
             </a>
+
+            {/* Services */}
+            <div className="flex h-full flex-col gap-4 rounded-3xl bg-ink-foreground/[0.03] p-6 ring-1 ring-mustard/15">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
+                <Truck className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="font-display text-lg text-ink-foreground">Service</h3>
+                <div className="mt-2 space-y-2 text-sm text-ink-foreground/60">
+                  <p className="flex items-center gap-2">
+                    <ShoppingBag className="h-4 w-4 text-mustard" />
+                    <span className="text-ink-foreground">À emporter</span>
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <Truck className="h-4 w-4 text-mustard" />
+                    <span className="text-ink-foreground">Livraison aux alentours</span>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Horaires + Carte */}

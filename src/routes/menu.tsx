@@ -64,10 +64,10 @@ function Menu() {
       <header className="px-4 pb-4 pt-12 text-center sm:px-6">
         <p className="text-xs font-bold uppercase tracking-widest text-mustard/80">Sur place · À emporter · Livraison</p>
         <h1 className="mt-2 font-display text-5xl text-mustard sm:text-6xl">
-          Notre <span className="italic text-ink-foreground">menu</span>
+          La <span className="italic text-ink-foreground">carte</span>
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-sm text-ink-foreground/60">
-          Cliquez sur une catégorie pour aller directement à la section choisie.
+          Choisissez une catégorie pour découvrir nos produits et leurs prix.
         </p>
       </header>
 
