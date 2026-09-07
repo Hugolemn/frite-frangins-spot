@@ -242,7 +242,7 @@ function Index() {
       </section>
 
       {/* ===== Infos pratiques ===== */}
-      <section id="infos" className="bg-background px-4 py-16 sm:px-6 lg:py-20">
+      <section id="infos" className="scroll-mt-20 bg-background px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Tout ce qu'il faut savoir</p>
