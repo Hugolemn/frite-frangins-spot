@@ -213,7 +213,9 @@ export function MenuContent() {
       : "rounded-full bg-ink-foreground/10 px-4 py-2 text-sm font-medium text-ink-foreground";
 
   const titleClasses = (i: number) =>
-    isYellow(i) ? "text-ink" : "text-ink-foreground";
+    isYellow(i)
+      ? "text-ink group-hover:text-ink/80"
+      : "text-ink-foreground group-hover:text-mustard";
 
   const priceClasses = (i: number) =>
     isYellow(i) ? "text-ink" : "text-mustard";
