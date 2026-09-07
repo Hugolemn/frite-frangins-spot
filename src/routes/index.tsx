@@ -4,9 +4,6 @@ import { Phone, MapPin, Clock, Star, ShoppingBag, Truck, ArrowRight, Utensils } 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import ffAsset from "@/assets/frites-frangins-ff.png.asset.json";
 import thaiAsset from "@/assets/suggestion-moment-thai.png.asset.json";
-import fritesImg from "@/assets/frites.png";
-import burgerImg from "@/assets/burger.png";
-import bouletteImg from "@/assets/boulette.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -34,11 +31,6 @@ const schedule = [
   { day: "Dimanche", hours: "17:30 – 21:30", closed: false },
 ];
 
-const incontournables = [
-  { name: "Le Cornet du Frangin", desc: "Frites fraîches, sauce au choix", price: "3,50 €", img: fritesImg, badge: "Best-seller" },
-  { name: "Le Frangin Burger", desc: "Smashé, cheddar fondant, sauce maison", price: "8,90 €", img: burgerImg, badge: null },
-  { name: "Boulettes de la Mama", desc: "Sauce tomate maison, comme à la maison", price: "9,50 €", img: bouletteImg, badge: "Fait maison" },
-];
 
 const MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=Frites+%26+Frangins+Chauss%C3%A9e+de+Douai+850+Tournai";
@@ -62,7 +54,6 @@ function Index() {
             </span>
           </a>
           <div className="hidden items-center gap-6 font-display text-sm text-ink-foreground/80 md:flex">
-            <a href="#incontournables" className="transition-colors hover:text-mustard">Incontournables</a>
             <Link to="/menu" className="transition-colors hover:text-mustard">Menu</Link>
             <a href="#infos" className="transition-colors hover:text-mustard">Infos</a>
           </div>
@@ -142,52 +133,6 @@ function Index() {
           </div>
         </div>
       </header>
-
-      {/* ===== Nos incontournables ===== */}
-      <section id="incontournables" className="scroll-mt-20 bg-background px-4 py-16 sm:px-6 lg:py-20">
-        <div className="mx-auto max-w-6xl">
-          <div className="text-center">
-            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Sélectionnés pour vous</p>
-            <h2 className="mt-2 font-display text-4xl text-foreground sm:text-5xl">
-              Nos <span className="italic text-mustard">incontournables</span>
-            </h2>
-          </div>
-
-          <div className="mt-12 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {incontournables.map((item) => (
-              <article
-                key={item.name}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border transition-transform hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className="relative flex h-52 items-center justify-center bg-muted p-4">
-                  {item.badge && (
-                    <span className="absolute left-3 top-3 rounded-full bg-mustard px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-ink">
-                      {item.badge}
-                    </span>
-                  )}
-                  <img
-                    src={item.img}
-                    alt={item.name}
-                    loading="lazy"
-                    width={800}
-                    height={800}
-                    className="h-full w-auto object-contain drop-shadow-lg transition-transform group-hover:scale-105"
-                  />
-                </div>
-                <div className="flex flex-1 items-center justify-between gap-3 p-5">
-                  <div>
-                    <h3 className="font-display text-lg">{item.name}</h3>
-                    <p className="mt-0.5 text-sm text-muted-foreground">{item.desc}</p>
-                  </div>
-                  <span className="shrink-0 rounded-full bg-ink px-3.5 py-1.5 font-display text-sm text-mustard">
-                    {item.price}
-                  </span>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ===== Appel à l'action ===== */}
       <section className="bg-ink px-4 py-16 sm:px-6 lg:py-20">
