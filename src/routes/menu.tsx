@@ -317,11 +317,11 @@ function Menu() {
               </div>
             </div>
           ) : (
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid place-items-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {current.items.map((item) => (
                 <div
                   key={item.name}
-                  className="group rounded-2xl border border-mustard/15 bg-ink-foreground/[0.03] p-5 transition-all hover:-translate-y-1 hover:border-mustard/50 hover:bg-ink-foreground/[0.06]"
+                  className="group w-full max-w-md rounded-2xl border border-mustard/15 bg-ink-foreground/[0.03] p-5 transition-all hover:-translate-y-1 hover:border-mustard/50 hover:bg-ink-foreground/[0.06]"
                 >
                   <div className="mb-1 flex items-start justify-between gap-3">
                     <h3 className="font-display text-base text-ink-foreground transition-colors group-hover:text-mustard">
