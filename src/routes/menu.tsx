@@ -221,7 +221,7 @@ const MAPS_URL =
 
 function Menu() {
   const [active, setActive] = useState("frites");
-  const current = categories.find((c) => c.key === active) ?? categories[0];
+  const current: Category = categories.find((c) => c.key === active) ?? categories[0]!;
 
   return (
     <div className="min-h-screen bg-ink text-ink-foreground">
