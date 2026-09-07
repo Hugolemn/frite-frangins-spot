@@ -62,7 +62,7 @@ function Index() {
           </a>
           <div className="hidden items-center gap-6 font-display text-sm font-bold uppercase tracking-wider text-ink-foreground/80 md:flex">
             <a href="#incontournables" className="transition-colors hover:text-mustard">Incontournables</a>
-            <a href="#menu" className="transition-colors hover:text-mustard">Menu</a>
+            <Link to="/menu" className="transition-colors hover:text-mustard">Menu</Link>
             <a href="#infos" className="transition-colors hover:text-mustard">Infos</a>
           </div>
           <div className="flex items-center gap-2">
@@ -115,13 +115,13 @@ function Index() {
                 Cornets croustillants, burgers smashés et sauces maison, en plein cœur de Tournai. À emporter ou en livraison.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href="#menu"
+                <Link
+                  to="/menu"
                   className="inline-flex items-center gap-2 rounded-full bg-mustard px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-ink transition-transform hover:scale-105 active:scale-95"
                 >
                   Voir le menu
                   <ArrowRight className="h-4 w-4" />
-                </a>
+                </Link>
                 <a
                   href={MAPS_URL}
                   target="_blank"
@@ -206,8 +206,8 @@ function Index() {
             Vous cherchez <span className="italic">quoi</span> ?
           </h2>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
-            <a
-              href="#menu"
+            <Link
+              to="/menu"
               className="group rounded-3xl bg-ink p-6 text-ink-foreground transition-transform hover:-translate-y-1"
             >
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard"><Utensils className="h-6 w-6" /></span>
