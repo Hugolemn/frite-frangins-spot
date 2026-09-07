@@ -323,7 +323,7 @@ function Index() {
       </section>
 
       {/* ===== Footer ===== */}
-      <footer className="bg-ink px-4 pb-28 pt-16 text-center text-ink-foreground/60 sm:px-6">
+      <footer className="bg-ink px-4 pb-16 pt-16 text-center text-ink-foreground/60 sm:px-6">
         <div className="mx-auto max-w-6xl border-t border-mustard/20 pt-12">
           <img
             src={logoAsset.url}
@@ -341,30 +341,6 @@ function Index() {
           </p>
         </div>
       </footer>
-
-      {/* ===== Barre d'action sticky (mobile) ===== */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-t from-ink via-ink/95 to-transparent p-4">
-        <div className="mx-auto flex max-w-3xl gap-3">
-          <a
-            href="tel:069212655"
-            className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-mustard py-4 font-display text-sm text-ink shadow-lg transition-transform active:scale-95"
-          >
-            <Phone className="h-4 w-4" />
-            Appeler
-          </a>
-          <a
-            href={MAPS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-ink-foreground/10 py-4 font-display text-sm text-mustard ring-1 ring-mustard/40 backdrop-blur transition-transform active:scale-95"
-          >
-            <MapPin className="h-4 w-4" />
-            Itinéraire
-          </a>
-        </div>
-      </div>
-
-      <div className="h-20 bg-ink" />
     </div>
   );
 }
