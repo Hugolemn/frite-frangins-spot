@@ -57,11 +57,11 @@ function Index() {
               width={80}
               height={80}
             />
-            <span className="font-display text-lg font-extrabold uppercase tracking-wide text-mustard">
+            <span className="font-display text-lg text-mustard">
               Frites & Frangins
             </span>
           </a>
-          <div className="hidden items-center gap-6 font-display text-sm font-bold uppercase tracking-wider text-ink-foreground/80 md:flex">
+          <div className="hidden items-center gap-6 font-display text-sm text-ink-foreground/80 md:flex">
             <a href="#incontournables" className="transition-colors hover:text-mustard">Incontournables</a>
             <Link to="/menu" className="transition-colors hover:text-mustard">Menu</Link>
             <a href="#infos" className="transition-colors hover:text-mustard">Infos</a>
@@ -115,7 +115,7 @@ function Index() {
               Suggestion du moment
             </span>
 
-              <h1 className="mt-5 font-display text-4xl font-extrabold uppercase leading-[0.95] text-ink sm:text-5xl lg:text-6xl">
+              <h1 className="mt-5 font-display text-4xl leading-[0.95] text-ink sm:text-5xl lg:text-6xl">
                 Le Thaï
               </h1>
 
@@ -128,12 +128,12 @@ function Index() {
               </ul>
 
             <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
-              <span className="rounded-full bg-ink px-6 py-2.5 font-display text-xl font-extrabold text-mustard">
+              <span className="rounded-full bg-ink px-6 py-2.5 font-display text-xl text-mustard">
                 11,50 €
               </span>
               <a
                 href="tel:069212655"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-ink px-6 py-2.5 font-display text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-ink hover:text-mustard"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-ink px-6 py-2.5 font-display text-sm text-ink transition-colors hover:bg-ink hover:text-mustard"
               >
                 <Phone className="h-4 w-4" />
                 Commander
@@ -148,7 +148,7 @@ function Index() {
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Sélectionnés pour vous</p>
-            <h2 className="mt-2 font-display text-4xl font-extrabold uppercase text-foreground sm:text-5xl">
+            <h2 className="mt-2 font-display text-4xl text-foreground sm:text-5xl">
               Nos <span className="italic text-mustard">incontournables</span>
             </h2>
           </div>
@@ -176,10 +176,10 @@ function Index() {
                 </div>
                 <div className="flex flex-1 items-center justify-between gap-3 p-5">
                   <div>
-                    <h3 className="font-display text-lg font-bold">{item.name}</h3>
+                    <h3 className="font-display text-lg">{item.name}</h3>
                     <p className="mt-0.5 text-sm text-muted-foreground">{item.desc}</p>
                   </div>
-                  <span className="shrink-0 rounded-full bg-ink px-3.5 py-1.5 font-display text-sm font-extrabold text-mustard">
+                  <span className="shrink-0 rounded-full bg-ink px-3.5 py-1.5 font-display text-sm text-mustard">
                     {item.price}
                   </span>
                 </div>
@@ -192,7 +192,7 @@ function Index() {
       {/* ===== Accès rapide ===== */}
       <section className="bg-ink px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center font-display text-3xl font-extrabold uppercase text-mustard sm:text-4xl">
+          <h2 className="text-center font-display text-3xl text-mustard sm:text-4xl">
             Vous cherchez <span className="italic text-ink-foreground">quoi</span> ?
           </h2>
           <div className="mt-12 grid items-stretch gap-6 md:grid-cols-3">
@@ -203,7 +203,7 @@ function Index() {
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard">
                 <Utensils className="h-6 w-6" />
               </span>
-              <h3 className="mt-4 font-display text-xl font-bold uppercase text-mustard">Notre menu</h3>
+              <h3 className="mt-4 font-display text-xl text-mustard">Notre menu</h3>
               <p className="mt-2 text-sm text-ink-foreground/70">
                 Frites fraîches, burgers, snacks et sauces maison — toute la carte, avec les prix.
               </p>
@@ -218,7 +218,7 @@ function Index() {
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard">
                 <Phone className="h-6 w-6" />
               </span>
-              <h3 className="mt-4 font-display text-xl font-bold uppercase text-mustard">Commander</h3>
+              <h3 className="mt-4 font-display text-xl text-mustard">Commander</h3>
               <p className="mt-2 text-sm text-ink-foreground/70">
                 Sur place, à emporter ou en livraison. Un coup de fil et c'est prêt en quelques minutes.
               </p>
@@ -233,7 +233,7 @@ function Index() {
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard">
                 <MapPin className="h-6 w-6" />
               </span>
-              <h3 className="mt-4 font-display text-xl font-bold uppercase text-mustard">Nous trouver</h3>
+              <h3 className="mt-4 font-display text-xl text-mustard">Nous trouver</h3>
               <p className="mt-2 text-sm text-ink-foreground/70">
                 Chaussée de Douai 850, 7504 Tournai. Horaires, accès et itinéraire.
               </p>
@@ -250,7 +250,7 @@ function Index() {
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Tout ce qu'il faut savoir</p>
-            <h2 className="mt-2 font-display text-4xl font-extrabold uppercase text-foreground sm:text-5xl">
+            <h2 className="mt-2 font-display text-4xl text-foreground sm:text-5xl">
               Infos <span className="italic text-mustard">pratiques</span>
             </h2>
           </div>
@@ -267,7 +267,7 @@ function Index() {
                 <MapPin className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-display text-lg font-bold">Adresse</h3>
+                <h3 className="font-display text-lg">Adresse</h3>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Chaussée de Douai 850
                   <br />
@@ -288,7 +288,7 @@ function Index() {
                 <Phone className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-display text-lg font-bold">Téléphone</h3>
+                <h3 className="font-display text-lg">Téléphone</h3>
                 <p className="mt-1 text-2xl font-extrabold text-foreground">069 21 26 55</p>
                 <p className="mt-1 text-sm text-muted-foreground">Appeler pour commander ou réserver</p>
               </div>
@@ -303,7 +303,7 @@ function Index() {
                 <Truck className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-display text-lg font-bold">Service</h3>
+                <h3 className="font-display text-lg">Service</h3>
                 <div className="mt-2 space-y-2 text-sm text-muted-foreground">
                   <p className="flex items-center gap-2">
                     <ShoppingBag className="h-4 w-4 text-mustard" />
@@ -323,7 +323,7 @@ function Index() {
             <div className="overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border">
               <div className="flex items-center gap-3 bg-mustard px-6 py-4">
                 <Clock className="h-5 w-5 text-ink" />
-                <h3 className="font-display font-bold text-ink">Horaires d'ouverture</h3>
+                <h3 className="font-display text-ink">Horaires d'ouverture</h3>
               </div>
               <div className="divide-y divide-border px-6 py-2">
                 {schedule.map((item) => (
@@ -353,7 +353,7 @@ function Index() {
 
           {/* Avis */}
           <div className="mt-6 rounded-3xl bg-mustard px-6 py-10 text-center text-ink">
-            <p className="font-display text-3xl font-extrabold uppercase">4,3 sur 5</p>
+            <p className="font-display text-3xl">4,3 sur 5</p>
             <div className="mt-2 flex items-center justify-center gap-1">
               {[...Array(4)].map((_, i) => (
                 <Star key={i} className="h-5 w-5 fill-ink text-ink" />
@@ -379,7 +379,7 @@ function Index() {
             height={128}
             loading="lazy"
           />
-          <p className="mt-4 font-display text-xl font-extrabold uppercase text-mustard">Frites & Frangins</p>
+          <p className="mt-4 font-display text-xl text-mustard">Frites & Frangins</p>
           <p className="mt-2 text-sm">Chaussée de Douai 850, 7504 Tournai</p>
           <p className="mt-1 text-sm">Tél. 069 21 26 55</p>
           <p className="mt-6 text-xs uppercase tracking-widest opacity-50">
@@ -393,7 +393,7 @@ function Index() {
         <div className="mx-auto flex max-w-3xl gap-3">
           <a
             href="tel:069212655"
-            className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-mustard py-4 font-display text-sm font-bold uppercase tracking-wide text-ink shadow-lg transition-transform active:scale-95"
+            className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-mustard py-4 font-display text-sm text-ink shadow-lg transition-transform active:scale-95"
           >
             <Phone className="h-4 w-4" />
             Appeler
@@ -402,7 +402,7 @@ function Index() {
             href={MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-ink-foreground/10 py-4 font-display text-sm font-bold uppercase tracking-wide text-mustard ring-1 ring-mustard/40 backdrop-blur transition-transform active:scale-95"
+            className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-ink-foreground/10 py-4 font-display text-sm text-mustard ring-1 ring-mustard/40 backdrop-blur transition-transform active:scale-95"
           >
             <MapPin className="h-4 w-4" />
             Itinéraire
