@@ -88,7 +88,7 @@ function Index() {
 
       {/* ===== Hero ===== */}
       <header className="overflow-hidden bg-mustard">
-        <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:py-16">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-20">
           <div className="order-2 lg:order-1">
             <span className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-mustard">
               <Star className="h-3.5 w-3.5 fill-current" />
@@ -140,7 +140,7 @@ function Index() {
       </header>
 
       {/* ===== Nos incontournables ===== */}
-      <section id="incontournables" className="bg-background px-4 py-16 sm:px-6 lg:py-20">
+      <section id="incontournables" className="scroll-mt-20 bg-background px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Sélectionnés pour vous</p>
@@ -149,11 +149,11 @@ function Index() {
             </h2>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {incontournables.map((item) => (
               <article
                 key={item.name}
-                className="group overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border transition-transform hover:-translate-y-1 hover:shadow-xl"
+                className="group flex h-full flex-col overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border transition-transform hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="relative flex h-52 items-center justify-center bg-muted p-4">
                   {item.badge && (
@@ -170,7 +170,7 @@ function Index() {
                     className="h-full w-auto object-contain drop-shadow-lg transition-transform group-hover:scale-105"
                   />
                 </div>
-                <div className="flex items-center justify-between gap-3 p-5">
+                <div className="flex flex-1 items-center justify-between gap-3 p-5">
                   <div>
                     <h3 className="font-display text-lg font-bold">{item.name}</h3>
                     <p className="mt-0.5 text-sm text-muted-foreground">{item.desc}</p>
@@ -186,15 +186,15 @@ function Index() {
       </section>
 
       {/* ===== Accès rapide ===== */}
-      <section className="bg-ink px-4 py-16 sm:px-6">
+      <section className="bg-ink px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-center font-display text-3xl font-extrabold uppercase text-mustard sm:text-4xl">
             Vous cherchez <span className="italic text-ink-foreground">quoi</span> ?
           </h2>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <div className="mt-12 grid items-stretch gap-6 md:grid-cols-3">
             <Link
               to="/menu"
-              className="group rounded-3xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:bg-ink-foreground/10"
+              className="group flex h-full flex-col rounded-3xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:bg-ink-foreground/10"
             >
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard">
                 <Utensils className="h-6 w-6" />
@@ -203,13 +203,13 @@ function Index() {
               <p className="mt-2 text-sm text-ink-foreground/70">
                 Frites fraîches, burgers, snacks et sauces maison — toute la carte, avec les prix.
               </p>
-              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-mustard group-hover:underline">
+              <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-bold text-mustard group-hover:underline">
                 Voir le menu <ArrowRight className="h-4 w-4" />
               </span>
             </Link>
             <a
               href="tel:069212655"
-              className="group rounded-3xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:bg-ink-foreground/10"
+              className="group flex h-full flex-col rounded-3xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:bg-ink-foreground/10"
             >
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard">
                 <Phone className="h-6 w-6" />
@@ -218,13 +218,13 @@ function Index() {
               <p className="mt-2 text-sm text-ink-foreground/70">
                 Sur place, à emporter ou en livraison. Un coup de fil et c'est prêt en quelques minutes.
               </p>
-              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-mustard group-hover:underline">
+              <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-bold text-mustard group-hover:underline">
                 069 21 26 55 <ArrowRight className="h-4 w-4" />
               </span>
             </a>
             <a
               href="#infos"
-              className="group rounded-3xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:bg-ink-foreground/10"
+              className="group flex h-full flex-col rounded-3xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:bg-ink-foreground/10"
             >
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard">
                 <MapPin className="h-6 w-6" />
@@ -233,7 +233,7 @@ function Index() {
               <p className="mt-2 text-sm text-ink-foreground/70">
                 Chaussée de Douai 850, 7504 Tournai. Horaires, accès et itinéraire.
               </p>
-              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-mustard group-hover:underline">
+              <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-bold text-mustard group-hover:underline">
                 Voir les infos <ArrowRight className="h-4 w-4" />
               </span>
             </a>
@@ -242,7 +242,7 @@ function Index() {
       </section>
 
       {/* ===== Infos pratiques ===== */}
-      <section id="infos" className="bg-background px-4 py-16 sm:px-6 lg:py-20">
+      <section id="infos" className="scroll-mt-20 bg-background px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Tout ce qu'il faut savoir</p>
@@ -251,13 +251,13 @@ function Index() {
             </h2>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-3">
             {/* Adresse */}
             <a
               href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border transition-colors hover:ring-mustard"
+              className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border transition-colors hover:ring-mustard"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
                 <MapPin className="h-6 w-6" />
@@ -278,7 +278,7 @@ function Index() {
             {/* Téléphone */}
             <a
               href="tel:069212655"
-              className="group flex flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border transition-colors hover:ring-mustard"
+              className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border transition-colors hover:ring-mustard"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
                 <Phone className="h-6 w-6" />
@@ -294,7 +294,7 @@ function Index() {
             </a>
 
             {/* Services */}
-            <div className="flex flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border">
+            <div className="flex h-full flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
                 <Truck className="h-6 w-6" />
               </div>
@@ -365,8 +365,8 @@ function Index() {
       </section>
 
       {/* ===== Footer ===== */}
-      <footer className="bg-ink px-6 pb-28 pt-12 text-center text-ink-foreground/60">
-        <div className="border-t border-mustard/20 pt-12">
+      <footer className="bg-ink px-4 pb-28 pt-16 text-center text-ink-foreground/60 sm:px-6">
+        <div className="mx-auto max-w-6xl border-t border-mustard/20 pt-12">
           <img
             src={logoAsset.url}
             alt="Logo Frites & Frangins"
@@ -406,7 +406,7 @@ function Index() {
         </div>
       </div>
 
-      <div className="h-24 bg-ink" />
+      <div className="h-20 bg-ink" />
     </div>
   );
 }
