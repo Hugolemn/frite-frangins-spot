@@ -45,8 +45,8 @@ const MAPS_URL =
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* ===== Navbar (style Fritapapa) ===== */}
-      <nav className="sticky top-0 z-50 bg-ink/95 backdrop-blur border-b border-mustard/20">
+      {/* ===== Navbar ===== */}
+      <nav className="sticky top-0 z-50 border-b border-mustard/20 bg-ink/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <a href="#" className="flex items-center gap-3">
             <img
@@ -86,90 +86,76 @@ function Index() {
         </div>
       </nav>
 
-      {/* ===== Hero : bandeau titre géant + visuel produit ===== */}
-      <header className="bg-mustard">
-        <h1 className="px-4 pt-10 text-center font-display text-[18vw] font-extrabold uppercase leading-[0.85] tracking-tight text-ink sm:pt-14 sm:text-[13vw] lg:text-[10rem]">
-          Friterie
-        </h1>
-        {/* bord déchiré */}
-        <svg viewBox="0 0 1440 40" preserveAspectRatio="none" className="block h-8 w-full text-ink" aria-hidden="true">
-          <path
-            d="M0,40 L0,24 L60,28 L140,18 L220,26 L320,14 L420,24 L540,16 L660,26 L780,12 L900,22 L1020,16 L1140,26 L1260,14 L1360,22 L1440,18 L1440,40 Z"
-            fill="currentColor"
-          />
-        </svg>
-
-        <div className="bg-ink">
-          <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 pb-16 pt-10 sm:px-6 lg:grid-cols-2">
-            <div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-mustard px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-ink">
-                <Star className="h-3.5 w-3.5 fill-current" />
-                4,3/5 — 130 avis Google
-              </span>
-              <p className="mt-6 font-display text-4xl font-extrabold uppercase leading-[0.95] text-mustard sm:text-5xl">
-                La vraie frite belge,
-                <br />
-                <span className="text-ink-foreground">entre frangins.</span>
-              </p>
-              <p className="mt-4 max-w-md text-base font-medium text-ink-foreground/70">
-                Cornets croustillants, burgers smashés et sauces maison, en plein cœur de Tournai. À emporter ou en livraison.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  to="/menu"
-                  className="inline-flex items-center gap-2 rounded-full bg-mustard px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-ink transition-transform hover:scale-105 active:scale-95"
-                >
-                  Voir le menu
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <a
-                  href={MAPS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border-2 border-mustard px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-mustard transition-colors hover:bg-mustard hover:text-ink"
-                >
-                  <MapPin className="h-4 w-4" />
-                  Trouver la friterie
-                </a>
-              </div>
+      {/* ===== Hero ===== */}
+      <header className="overflow-hidden bg-mustard">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:py-16">
+          <div className="order-2 lg:order-1">
+            <span className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-mustard">
+              <Star className="h-3.5 w-3.5 fill-current" />
+              4,3/5 — 130 avis Google
+            </span>
+            <h1 className="mt-5 font-display text-5xl font-extrabold uppercase leading-[0.9] tracking-tight text-ink sm:text-6xl lg:text-7xl">
+              Frites & Frangins
+            </h1>
+            <p className="mt-4 max-w-md text-lg font-semibold text-ink/80">
+              La vraie frite belge, entre frangins. Cornets croustillants, burgers smashés et sauces maison, en plein cœur de Tournai.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                to="/menu"
+                className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-mustard transition-transform hover:scale-105 active:scale-95"
+              >
+                Voir le menu
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <a
+                href={MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-ink px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-ink hover:text-mustard"
+              >
+                <MapPin className="h-4 w-4" />
+                Trouver la friterie
+              </a>
             </div>
+          </div>
 
-            <div className="relative">
-              <img
-                src={heroFood}
-                alt="Cornet de frites belges à la mayonnaise et burger au cheddar fondant"
-                className="mx-auto w-full max-w-lg drop-shadow-2xl"
-                width={1400}
-                height={1000}
-                fetchPriority="high"
-              />
-              {/* Badge prix style Fritapapa */}
-              <div className="absolute bottom-2 right-2 flex h-24 w-24 rotate-[-8deg] items-center justify-center rounded-full bg-mustard text-center shadow-xl sm:h-28 sm:w-28">
-                <p className="font-display text-ink">
-                  <span className="block text-[10px] font-bold uppercase leading-tight">Cornets</span>
-                  <span className="block text-xl font-extrabold leading-tight sm:text-2xl">dès 3,50€</span>
-                </p>
-              </div>
+          <div className="relative order-1 flex justify-center lg:order-2">
+            <img
+              src={heroFood}
+              alt="Cornet de frites belges à la mayonnaise et burger au cheddar fondant"
+              className="w-full max-w-md drop-shadow-2xl lg:max-w-lg"
+              width={1400}
+              height={1000}
+              fetchPriority="high"
+            />
+            <div className="absolute bottom-2 right-2 flex h-24 w-24 -rotate-6 items-center justify-center rounded-full bg-ink text-center shadow-xl sm:bottom-6 sm:right-6 sm:h-28 sm:w-28">
+              <p className="font-display text-mustard">
+                <span className="block text-[10px] font-bold uppercase leading-tight">Cornets</span>
+                <span className="block text-xl font-extrabold leading-tight sm:text-2xl">dès 3,50€</span>
+              </p>
             </div>
           </div>
         </div>
       </header>
 
       {/* ===== Nos incontournables ===== */}
-      <section id="incontournables" className="bg-ink px-4 pb-20 sm:px-6">
+      <section id="incontournables" className="bg-background px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto max-w-6xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-mustard/80">Sélectionnés pour vous</p>
-          <h2 className="mt-1 font-display text-4xl font-extrabold uppercase text-mustard sm:text-5xl">
-            Nos <span className="italic text-ink-foreground">incontournables</span>
-          </h2>
+          <div className="text-center">
+            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Sélectionnés pour vous</p>
+            <h2 className="mt-2 font-display text-4xl font-extrabold uppercase text-foreground sm:text-5xl">
+              Nos <span className="italic text-mustard">incontournables</span>
+            </h2>
+          </div>
 
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {incontournables.map((item) => (
               <article
                 key={item.name}
-                className="group overflow-hidden rounded-3xl bg-background shadow-xl ring-1 ring-mustard/20 transition-transform hover:-translate-y-1"
+                className="group overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border transition-transform hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="relative flex h-48 items-center justify-center bg-mustard/10 p-4">
+                <div className="relative flex h-52 items-center justify-center bg-muted p-4">
                   {item.badge && (
                     <span className="absolute left-3 top-3 rounded-full bg-mustard px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-ink">
                       {item.badge}
@@ -199,18 +185,20 @@ function Index() {
         </div>
       </section>
 
-      {/* ===== Vous cherchez quoi ? ===== */}
-      <section className="bg-mustard px-4 py-16 sm:px-6">
+      {/* ===== Accès rapide ===== */}
+      <section className="bg-ink px-4 py-16 sm:px-6">
         <div className="mx-auto max-w-6xl">
-          <h2 className="font-display text-4xl font-extrabold uppercase text-ink sm:text-5xl">
-            Vous cherchez <span className="italic">quoi</span> ?
+          <h2 className="text-center font-display text-3xl font-extrabold uppercase text-mustard sm:text-4xl">
+            Vous cherchez <span className="italic text-ink-foreground">quoi</span> ?
           </h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
             <Link
               to="/menu"
-              className="group rounded-3xl bg-ink p-6 text-ink-foreground transition-transform hover:-translate-y-1"
+              className="group rounded-3xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:bg-ink-foreground/10"
             >
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard"><Utensils className="h-6 w-6" /></span>
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard">
+                <Utensils className="h-6 w-6" />
+              </span>
               <h3 className="mt-4 font-display text-xl font-bold uppercase text-mustard">Notre menu</h3>
               <p className="mt-2 text-sm text-ink-foreground/70">
                 Frites fraîches, burgers, snacks et sauces maison — toute la carte, avec les prix.
@@ -221,9 +209,11 @@ function Index() {
             </Link>
             <a
               href="tel:069212655"
-              className="group rounded-3xl bg-ink p-6 text-ink-foreground transition-transform hover:-translate-y-1"
+              className="group rounded-3xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:bg-ink-foreground/10"
             >
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard"><ShoppingBag className="h-6 w-6" /></span>
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard">
+                <Phone className="h-6 w-6" />
+              </span>
               <h3 className="mt-4 font-display text-xl font-bold uppercase text-mustard">Commander</h3>
               <p className="mt-2 text-sm text-ink-foreground/70">
                 Sur place, à emporter ou en livraison. Un coup de fil et c'est prêt en quelques minutes.
@@ -234,9 +224,11 @@ function Index() {
             </a>
             <a
               href="#infos"
-              className="group rounded-3xl bg-ink p-6 text-ink-foreground transition-transform hover:-translate-y-1"
+              className="group rounded-3xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:bg-ink-foreground/10"
             >
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard"><MapPin className="h-6 w-6" /></span>
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard">
+                <MapPin className="h-6 w-6" />
+              </span>
               <h3 className="mt-4 font-display text-xl font-bold uppercase text-mustard">Nous trouver</h3>
               <p className="mt-2 text-sm text-ink-foreground/70">
                 Chaussée de Douai 850, 7504 Tournai. Horaires, accès et itinéraire.
@@ -249,129 +241,114 @@ function Index() {
         </div>
       </section>
 
-      {/* ===== Lien vers la carte ===== */}
-      <section className="bg-ink px-4 py-16 text-center sm:px-6">
-        <p className="text-xs font-bold uppercase tracking-widest text-mustard/80">Frites fraîches, burgers & snacks</p>
-        <h2 className="mt-1 font-display text-4xl font-extrabold uppercase text-mustard sm:text-5xl">
-          Au <span className="italic text-ink-foreground">menu</span>
-        </h2>
-        <p className="mx-auto mt-4 max-w-md text-sm text-ink-foreground/70">
-          Frites, burgers maison, snacks, mitraillettes, plats, brochettes, boissons et sauces : toute la carte est en ligne.
-        </p>
-        <Link
-          to="/menu"
-          className="mt-8 inline-flex items-center gap-2 rounded-full bg-mustard px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-ink transition-transform hover:scale-105 active:scale-95"
-        >
-          Découvrir la carte
-          <ArrowRight className="h-4 w-4" />
-        </Link>
-      </section>
-
-      {/* ===== À emporter / Livraison ===== */}
-      <section className="bg-background px-4 pb-16 sm:px-6">
-        <div className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-2">
-          <div className="flex items-center gap-4 rounded-2xl bg-card p-6 shadow-sm ring-1 ring-border">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-mustard text-ink">
-              <ShoppingBag className="h-6 w-6" />
-            </div>
-            <div>
-              <h3 className="font-display text-lg font-bold">À emporter</h3>
-              <p className="text-sm text-muted-foreground">Votre cornet prêt en quelques minutes</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 rounded-2xl bg-card p-6 shadow-sm ring-1 ring-border">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-mustard text-ink">
-              <Truck className="h-6 w-6" />
-            </div>
-            <div>
-              <h3 className="font-display text-lg font-bold">Livraison</h3>
-              <p className="text-sm text-muted-foreground">Livraison disponible aux alentours de Tournai</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ===== Infos pratiques ===== */}
-      <section id="infos" className="bg-ink px-4 py-16 sm:px-6">
+      <section id="infos" className="bg-background px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto max-w-6xl">
-          <h2 className="font-display text-4xl font-extrabold uppercase text-mustard sm:text-5xl">
-            Infos <span className="italic text-ink-foreground">pratiques</span>
-          </h2>
+          <div className="text-center">
+            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Tout ce qu'il faut savoir</p>
+            <h2 className="mt-2 font-display text-4xl font-extrabold uppercase text-foreground sm:text-5xl">
+              Infos <span className="italic text-mustard">pratiques</span>
+            </h2>
+          </div>
 
-          <div className="mt-8 grid gap-4 lg:grid-cols-2">
-            <div className="space-y-4">
-              <a
-                href={MAPS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-start gap-4 rounded-2xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:ring-mustard"
-              >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-mustard text-ink">
-                  <MapPin className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="font-display font-bold text-ink-foreground">Adresse</h3>
-                  <p className="mt-1 text-sm text-ink-foreground/70">
-                    Chaussée de Douai 850
-                    <br />
-                    7504 Tournai
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {/* Adresse */}
+            <a
+              href={MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border transition-colors hover:ring-mustard"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
+                <MapPin className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="font-display text-lg font-bold">Adresse</h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Chaussée de Douai 850
+                  <br />
+                  7504 Tournai
+                </p>
+              </div>
+              <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-mustard group-hover:underline">
+                Itinéraire <ArrowRight className="h-4 w-4" />
+              </span>
+            </a>
+
+            {/* Téléphone */}
+            <a
+              href="tel:069212655"
+              className="group flex flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border transition-colors hover:ring-mustard"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
+                <Phone className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="font-display text-lg font-bold">Téléphone</h3>
+                <p className="mt-1 text-2xl font-extrabold text-foreground">069 21 26 55</p>
+                <p className="mt-1 text-sm text-muted-foreground">Appeler pour commander ou réserver</p>
+              </div>
+              <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-mustard group-hover:underline">
+                Appeler <ArrowRight className="h-4 w-4" />
+              </span>
+            </a>
+
+            {/* Services */}
+            <div className="flex flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
+                <Truck className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="font-display text-lg font-bold">Service</h3>
+                <div className="mt-2 space-y-2 text-sm text-muted-foreground">
+                  <p className="flex items-center gap-2">
+                    <ShoppingBag className="h-4 w-4 text-mustard" />
+                    À emporter
                   </p>
-                  <span className="mt-3 inline-flex items-center text-sm font-semibold text-mustard group-hover:underline">
-                    Itinéraire
-                  </span>
+                  <p className="flex items-center gap-2">
+                    <Truck className="h-4 w-4 text-mustard" />
+                    Livraison aux alentours
+                  </p>
                 </div>
-              </a>
-
-              <a
-                href="tel:069212655"
-                className="group flex items-start gap-4 rounded-2xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:ring-mustard"
-              >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-mustard text-ink">
-                  <Phone className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="font-display font-bold text-ink-foreground">Téléphone</h3>
-                  <p className="mt-1 text-lg font-bold text-ink-foreground">069 21 26 55</p>
-                  <p className="mt-1 text-sm text-ink-foreground/60">Appeler pour commander ou réserver</p>
-                </div>
-              </a>
+              </div>
             </div>
+          </div>
 
-            {/* Horaires */}
-            <div className="overflow-hidden rounded-2xl bg-ink-foreground/5 ring-1 ring-mustard/20">
+          {/* Horaires + Carte */}
+          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+            <div className="overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border">
               <div className="flex items-center gap-3 bg-mustard px-6 py-4">
                 <Clock className="h-5 w-5 text-ink" />
                 <h3 className="font-display font-bold text-ink">Horaires d'ouverture</h3>
               </div>
-              <div className="divide-y divide-mustard/10 px-6 py-2">
+              <div className="divide-y divide-border px-6 py-2">
                 {schedule.map((item) => (
                   <div key={item.day} className="flex items-center justify-between py-3">
-                    <span className={item.closed ? "text-ink-foreground/40 line-through" : "text-ink-foreground"}>
+                    <span className={item.closed ? "text-muted-foreground line-through" : "font-medium text-foreground"}>
                       {item.day}
                     </span>
-                    <span className={item.closed ? "italic text-ink-foreground/40" : "text-right text-ink-foreground/70"}>
+                    <span className={item.closed ? "italic text-muted-foreground" : "text-right text-muted-foreground"}>
                       {item.hours}
                     </span>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
 
-          {/* Carte Google Maps */}
-          <div className="mt-6 overflow-hidden rounded-2xl ring-1 ring-mustard/20">
-            <iframe
-              title="Frites & Frangins sur Google Maps — Chaussée de Douai 850, 7504 Tournai"
-              src="https://www.google.com/maps?q=Frites%20%26%20Frangins%2C%20Chauss%C3%A9e%20de%20Douai%20850%2C%207504%20Tournai&output=embed"
-              className="h-80 w-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
+            <div className="overflow-hidden rounded-3xl ring-1 ring-border">
+              <iframe
+                title="Frites & Frangins sur Google Maps — Chaussée de Douai 850, 7504 Tournai"
+                src="https://www.google.com/maps?q=Frites%20%26%20Frangins%2C%20Chauss%C3%A9e%20de%20Douai%20850%2C%207504%20Tournai&output=embed"
+                className="h-80 w-full border-0 lg:h-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
           </div>
 
           {/* Avis */}
-          <div className="mt-8 rounded-2xl bg-mustard px-6 py-10 text-center text-ink">
+          <div className="mt-6 rounded-3xl bg-mustard px-6 py-10 text-center text-ink">
             <p className="font-display text-3xl font-extrabold uppercase">4,3 sur 5</p>
             <div className="mt-2 flex items-center justify-center gap-1">
               {[...Array(4)].map((_, i) => (
