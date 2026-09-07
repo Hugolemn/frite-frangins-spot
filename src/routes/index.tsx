@@ -206,7 +206,7 @@ function Index() {
             </h2>
           </div>
 
-          <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-3">
+          <div className="mt-12 grid items-stretch gap-6 md:grid-cols-2">
             {/* Adresse */}
             <a
               href={MAPS_URL}
@@ -247,26 +247,6 @@ function Index() {
                 Appeler <ArrowRight className="h-4 w-4" />
               </span>
             </a>
-
-            {/* Services */}
-            <div className="flex h-full flex-col gap-4 rounded-3xl bg-ink-foreground/[0.03] p-6 ring-1 ring-mustard/15">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
-                <Truck className="h-6 w-6" />
-              </div>
-              <div>
-                <h3 className="font-display text-lg text-ink-foreground">Service</h3>
-                <div className="mt-2 space-y-2 text-sm text-ink-foreground/60">
-                  <p className="flex items-center gap-2">
-                    <ShoppingBag className="h-4 w-4 text-mustard" />
-                    <span className="text-ink-foreground">À emporter</span>
-                  </p>
-                  <p className="flex items-center gap-2">
-                    <Truck className="h-4 w-4 text-mustard" />
-                    <span className="text-ink-foreground">Livraison aux alentours</span>
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Horaires + Carte */}
