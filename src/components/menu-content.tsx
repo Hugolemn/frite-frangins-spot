@@ -224,19 +224,14 @@ export function MenuContent() {
 
       {/* ===== Contenu catégorie ===== */}
       <section className="mt-12">
-        <div className="text-center">
-          <h2 className="font-display text-3xl text-mustard sm:text-4xl">
-            {current.label}
-          </h2>
-          {current.note && (
-            <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-ink-foreground/60">
-              {current.note}
-            </p>
-          )}
-        </div>
+        {current.note && (
+          <p className="mb-6 text-center text-xs font-semibold uppercase tracking-wide text-ink-foreground/60">
+            {current.note}
+          </p>
+        )}
 
         {current.key === "sauces" ? (
-          <div className="mx-auto mt-8 max-w-3xl rounded-3xl border border-mustard/15 bg-ink-foreground/[0.03] p-8">
+          <div className="mx-auto max-w-3xl rounded-3xl border border-mustard/15 bg-ink-foreground/[0.03] p-8">
             <div className="flex flex-wrap justify-center gap-3">
               {current.items.map((item) => (
                 <span
@@ -249,7 +244,7 @@ export function MenuContent() {
             </div>
           </div>
         ) : (
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             {current.items.map((item) => (
               <div
                 key={item.name}
