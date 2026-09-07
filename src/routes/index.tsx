@@ -87,79 +87,49 @@ function Index() {
       </nav>
 
       {/* ===== Hero ===== */}
-      <header className="overflow-hidden bg-mustard">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-20">
-          <div className="text-center lg:text-left">
-            <img
-              src={logoAsset.url}
-              alt="Logo de la friterie Frites & Frangins à Tournai"
-              className="mx-auto w-48 rounded-3xl shadow-2xl shadow-ink/20 ring-4 ring-ink/10 sm:w-56 lg:mx-0 lg:w-64"
-              width={512}
-              height={512}
-              fetchPriority="high"
-            />
-            <span className="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-mustard">
-              <Star className="h-3.5 w-3.5 fill-current" />
-              4,3/5 — 130 avis Google
-            </span>
-            <h1 className="mt-5 font-display text-5xl font-extrabold uppercase leading-[0.9] tracking-tight text-ink sm:text-6xl lg:text-7xl">
-              Frites & Frangins
-            </h1>
-            <p className="mx-auto mt-4 max-w-md text-lg font-semibold text-ink/80 lg:mx-0">
-              La vraie frite belge, entre frangins. Cornets croustillants, burgers smashés et sauces maison, en plein cœur de Tournai.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
-              <Link
-                to="/menu"
-                className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-mustard transition-transform hover:scale-105 active:scale-95"
-              >
-                Voir le menu
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <a
-                href={MAPS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-ink px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-ink hover:text-mustard"
-              >
-                <MapPin className="h-4 w-4" />
-                Trouver la friterie
-              </a>
-            </div>
-          </div>
+      <header className="relative isolate overflow-hidden bg-mustard">
+        {/* Logo en fond, pleine largeur, opacité légère */}
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-[0.12]"
+          style={{ backgroundImage: `url(${logoAsset.url})` }}
+          aria-hidden="true"
+        />
 
-          {/* Suggestion du moment */}
-          <div className="relative mx-auto w-full max-w-md">
-            <div className="absolute -top-5 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-full bg-ink px-5 py-2 font-display text-xs font-bold uppercase tracking-widest text-mustard shadow-lg">
-              Suggestion du moment
+        <div className="mx-auto flex max-w-6xl flex-col items-center px-4 py-16 text-center sm:px-6 sm:py-20 lg:py-24">
+          <span className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-mustard">
+            Suggestion du moment
+          </span>
+
+          <div className="mt-6 w-full max-w-md overflow-hidden rounded-3xl bg-ink shadow-2xl shadow-ink/30 ring-1 ring-ink/20">
+            <div className="flex h-60 items-center justify-center px-8 sm:h-72">
+              <img
+                src={heroFood}
+                alt="Le Duo des Frangins : cornet de frites et burger smashé"
+                className="h-full w-auto object-contain drop-shadow-2xl"
+                width={1400}
+                height={1000}
+                fetchPriority="high"
+              />
             </div>
-            <div className="overflow-hidden rounded-3xl bg-ink pt-14 shadow-2xl shadow-ink/30 ring-1 ring-ink/20">
-              <div className="flex h-64 items-center justify-center px-8 sm:h-72">
-                <img
-                  src={heroFood}
-                  alt="Cornet de frites belges à la mayonnaise et burger au cheddar fondant"
-                  className="h-full w-auto object-contain drop-shadow-2xl"
-                  width={1400}
-                  height={1000}
-                  loading="lazy"
-                />
-              </div>
-              <div className="flex items-center justify-between gap-4 px-6 pb-6 pt-2">
-                <div>
-                  <h2 className="font-display text-xl font-extrabold uppercase text-mustard">Le Duo des Frangins</h2>
-                  <p className="mt-1 text-sm text-ink-foreground/70">Cornet de frites + burger smashé, sauce maison</p>
-                </div>
-                <span className="shrink-0 rounded-full bg-mustard px-4 py-2 font-display text-lg font-extrabold text-ink">
+            <div className="px-6 pb-6 pt-4">
+              <h1 className="font-display text-2xl font-extrabold uppercase text-mustard sm:text-3xl">
+                Le Duo des Frangins
+              </h1>
+              <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-ink-foreground/80">
+                Un cornet de frites bien croustillant accompagné d'un burger smashé, le tout avec notre sauce maison.
+              </p>
+              <div className="mt-5 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+                <span className="rounded-full bg-mustard px-5 py-2 font-display text-lg font-extrabold text-ink">
                   11,50 €
                 </span>
+                <a
+                  href="tel:069212655"
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-mustard px-5 py-2 font-display text-sm font-bold uppercase tracking-wide text-mustard transition-colors hover:bg-mustard hover:text-ink"
+                >
+                  <Phone className="h-4 w-4" />
+                  Commander
+                </a>
               </div>
-              <a
-                href="tel:069212655"
-                className="flex items-center justify-center gap-2 bg-mustard py-4 font-display text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-mustard/90"
-              >
-                <Phone className="h-4 w-4" />
-                Commander la suggestion
-              </a>
             </div>
           </div>
         </div>
