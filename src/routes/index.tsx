@@ -154,23 +154,23 @@ function Index() {
       </section>
 
       {/* ===== Avis clients ===== */}
-      <section id="avis" className="scroll-mt-20 bg-background px-4 py-16 sm:px-6 lg:py-20">
+      <section id="avis" className="scroll-mt-20 bg-ink px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-mustard/80">Témoignages</p>
-            <h2 className="mt-2 font-display text-4xl text-foreground sm:text-5xl">
-              Ce que disent nos <span className="italic text-mustard">clients</span>
+            <h2 className="mt-2 font-display text-4xl text-mustard sm:text-5xl">
+              Ce que disent nos <span className="italic text-ink-foreground">clients</span>
             </h2>
 
-            <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-mustard/25 bg-card px-6 py-3 shadow-sm">
+            <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-mustard/15 bg-ink-foreground/[0.03] px-6 py-3">
               <div className="flex gap-0.5">
                 {[...Array(4)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 fill-mustard text-mustard" />
                 ))}
                 <Star className="h-5 w-5 fill-mustard/40 text-mustard" />
               </div>
-              <span className="font-display text-2xl text-foreground">4,3</span>
-              <span className="text-sm text-muted-foreground">/ 5 · 130 avis Google</span>
+              <span className="font-display text-2xl text-ink-foreground">4,3</span>
+              <span className="text-sm text-ink-foreground/60">/ 5 · 130 avis Google</span>
             </div>
           </div>
 
@@ -178,7 +178,7 @@ function Index() {
             {reviews.map((r) => (
               <div
                 key={r.name}
-                className="relative rounded-3xl border border-mustard/15 bg-card p-8 shadow-sm transition-all hover:border-mustard/40"
+                className="relative rounded-3xl border border-mustard/15 bg-ink-foreground/[0.03] p-8 transition-all hover:border-mustard/40"
               >
                 <Quote className="absolute right-6 top-6 h-8 w-8 text-mustard/20" />
                 <div className="mb-4 flex gap-0.5">
@@ -189,7 +189,7 @@ function Index() {
                     />
                   ))}
                 </div>
-                <p className="italic leading-relaxed text-foreground/85">"{r.text}"</p>
+                <p className="italic leading-relaxed text-ink-foreground/85">"{r.text}"</p>
                 <span className="mt-4 block text-sm font-bold text-mustard">{r.name}</span>
               </div>
             ))}
@@ -198,12 +198,12 @@ function Index() {
       </section>
 
       {/* ===== Infos pratiques ===== */}
-      <section id="infos" className="scroll-mt-20 bg-background px-4 py-16 sm:px-6 lg:py-20">
+      <section id="infos" className="scroll-mt-20 bg-ink px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
-            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Tout ce qu'il faut savoir</p>
-            <h2 className="mt-2 font-display text-4xl text-foreground sm:text-5xl">
-              Infos <span className="italic text-mustard">pratiques</span>
+            <p className="text-xs font-bold uppercase tracking-widest text-ink-foreground/60">Tout ce qu'il faut savoir</p>
+            <h2 className="mt-2 font-display text-4xl text-mustard sm:text-5xl">
+              Infos <span className="italic text-ink-foreground">pratiques</span>
             </h2>
           </div>
 
@@ -213,14 +213,14 @@ function Index() {
               href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border transition-colors hover:ring-mustard"
+              className="group flex h-full flex-col gap-4 rounded-3xl bg-ink-foreground/[0.03] p-6 ring-1 ring-mustard/15 transition-colors hover:ring-mustard"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
                 <MapPin className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-display text-lg">Adresse</h3>
-                <p className="mt-1 text-sm text-muted-foreground">
+                <h3 className="font-display text-lg text-ink-foreground">Adresse</h3>
+                <p className="mt-1 text-sm text-ink-foreground/60">
                   Chaussée de Douai 850
                   <br />
                   7504 Tournai
@@ -234,15 +234,15 @@ function Index() {
             {/* Téléphone */}
             <a
               href="tel:069212655"
-              className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border transition-colors hover:ring-mustard"
+              className="group flex h-full flex-col gap-4 rounded-3xl bg-ink-foreground/[0.03] p-6 ring-1 ring-mustard/15 transition-colors hover:ring-mustard"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
                 <Phone className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-display text-lg">Téléphone</h3>
-                <p className="mt-1 text-2xl font-extrabold text-foreground">069 21 26 55</p>
-                <p className="mt-1 text-sm text-muted-foreground">Appeler pour commander ou réserver</p>
+                <h3 className="font-display text-lg text-ink-foreground">Téléphone</h3>
+                <p className="mt-1 text-2xl font-extrabold text-ink-foreground">069 21 26 55</p>
+                <p className="mt-1 text-sm text-ink-foreground/60">Appeler pour commander ou réserver</p>
               </div>
               <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-mustard group-hover:underline">
                 Appeler <ArrowRight className="h-4 w-4" />
@@ -250,20 +250,20 @@ function Index() {
             </a>
 
             {/* Services */}
-            <div className="flex h-full flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border">
+            <div className="flex h-full flex-col gap-4 rounded-3xl bg-ink-foreground/[0.03] p-6 ring-1 ring-mustard/15">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
                 <Truck className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-display text-lg">Service</h3>
-                <div className="mt-2 space-y-2 text-sm text-muted-foreground">
+                <h3 className="font-display text-lg text-ink-foreground">Service</h3>
+                <div className="mt-2 space-y-2 text-sm text-ink-foreground/60">
                   <p className="flex items-center gap-2">
                     <ShoppingBag className="h-4 w-4 text-mustard" />
-                    À emporter
+                    <span className="text-ink-foreground">À emporter</span>
                   </p>
                   <p className="flex items-center gap-2">
                     <Truck className="h-4 w-4 text-mustard" />
-                    Livraison aux alentours
+                    <span className="text-ink-foreground">Livraison aux alentours</span>
                   </p>
                 </div>
               </div>
@@ -272,18 +272,18 @@ function Index() {
 
           {/* Horaires + Carte */}
           <div className="mt-6 grid gap-6 lg:grid-cols-2">
-            <div className="overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border">
+            <div className="overflow-hidden rounded-3xl bg-ink-foreground/[0.03] ring-1 ring-mustard/15">
               <div className="flex items-center gap-3 bg-mustard px-6 py-4">
                 <Clock className="h-5 w-5 text-ink" />
                 <h3 className="font-display text-ink">Horaires d'ouverture</h3>
               </div>
-              <div className="divide-y divide-border px-6 py-2">
+              <div className="divide-y divide-mustard/15 px-6 py-2">
                 {schedule.map((item) => (
                   <div key={item.day} className="flex items-center justify-between py-3">
-                    <span className={item.closed ? "text-muted-foreground line-through" : "font-medium text-foreground"}>
+                    <span className={item.closed ? "text-ink-foreground/60 line-through" : "font-medium text-ink-foreground"}>
                       {item.day}
                     </span>
-                    <span className={item.closed ? "italic text-muted-foreground" : "text-right text-muted-foreground"}>
+                    <span className={item.closed ? "italic text-ink-foreground/60" : "text-right text-ink-foreground/60"}>
                       {item.hours}
                     </span>
                   </div>
@@ -291,7 +291,7 @@ function Index() {
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-3xl ring-1 ring-border">
+            <div className="overflow-hidden rounded-3xl ring-1 ring-mustard/15">
               <iframe
                 title="Frites & Frangins sur Google Maps — Chaussée de Douai 850, 7504 Tournai"
                 src="https://www.google.com/maps?q=Frites%20%26%20Frangins%2C%20Chauss%C3%A9e%20de%20Douai%20850%2C%207504%20Tournai&output=embed"
