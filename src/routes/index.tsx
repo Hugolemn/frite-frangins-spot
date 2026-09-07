@@ -259,7 +259,7 @@ function Index() {
               <div className="divide-y divide-mustard/15 px-6 py-2">
                 {schedule.map((item) => (
                   <div key={item.day} className="flex items-center justify-between py-3">
-                    <span className={item.closed ? "text-ink-foreground/60 line-through" : "font-medium text-ink-foreground"}>
+                    <span className={item.closed ? "italic text-ink-foreground/60" : "font-medium text-ink-foreground"}>
                       {item.day}
                     </span>
                     <span className={item.closed ? "italic text-ink-foreground/60" : "text-right text-ink-foreground/60"}>
