@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, MapPin, Clock, Star, Euro, ShoppingBag, Truck, ArrowRight } from "lucide-react";
+import { Phone, MapPin, Clock, Star, Euro, ShoppingBag, Truck, ArrowRight, CookingPot, Beef, Flame, UtensilsCrossed, Soup, Beer, Utensils, Store } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import heroFood from "@/assets/hero-food.png";
@@ -40,12 +40,12 @@ const incontournables = [
 ];
 
 const menuCategories = [
-  { emoji: "🍟", name: "Frites & Cornets", desc: "Petite, moyenne, grande — toujours fraîches" },
-  { emoji: "🍔", name: "Burgers", desc: "Viande smashée à la minute" },
-  { emoji: "🌭", name: "Snacks", desc: "Fricadelles, boulets, croquettes…" },
-  { emoji: "🥘", name: "Plats", desc: "Boulettes, vol-au-vent, carbonnade" },
-  { emoji: "🥫", name: "Sauces maison", desc: "Andalouse, samouraï, la sauce des Frangins" },
-  { emoji: "🍺", name: "Boissons", desc: "Softs, bières belges et eau pétillante" },
+  { icon: CookingPot, name: "Frites & Cornets", desc: "Petite, moyenne, grande — toujours fraîches" },
+  { icon: Beef, name: "Burgers", desc: "Viande smashée à la minute" },
+  { icon: Flame, name: "Snacks", desc: "Fricadelles, boulets, croquettes…" },
+  { icon: UtensilsCrossed, name: "Plats", desc: "Boulettes, vol-au-vent, carbonnade" },
+  { icon: Soup, name: "Sauces maison", desc: "Andalouse, samouraï, la sauce des Frangins" },
+  { icon: Beer, name: "Boissons", desc: "Softs, bières belges et eau pétillante" },
 ];
 
 const MAPS_URL =
