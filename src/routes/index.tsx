@@ -218,7 +218,7 @@ function Index() {
               <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-mustard group-hover:underline">
                 Voir le menu <ArrowRight className="h-4 w-4" />
               </span>
-            </a>
+            </Link>
             <a
               href="tel:069212655"
               className="group rounded-3xl bg-ink p-6 text-ink-foreground transition-transform hover:-translate-y-1"
