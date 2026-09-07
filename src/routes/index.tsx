@@ -190,7 +190,7 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-ink px-6 py-12 text-center text-ink-foreground/60">
+      <footer className="bg-ink px-6 pb-28 pt-12 text-center text-ink-foreground/60">
         <p className="font-display text-xl font-bold text-mustard">Frites & Frangins</p>
         <p className="mt-2 text-sm">Chaussée de Douai 850, 7504 Tournai</p>
         <p className="mt-1 text-sm">Tél. 069 21 26 55</p>
