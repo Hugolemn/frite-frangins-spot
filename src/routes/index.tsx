@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, MapPin, Clock, Star, ShoppingBag, Truck, ArrowRight, Utensils } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
+import ffAsset from "@/assets/frites-frangins-ff.png.asset.json";
 import heroFood from "@/assets/hero-food.png";
 import fritesImg from "@/assets/frites.png";
 import burgerImg from "@/assets/burger.png";
