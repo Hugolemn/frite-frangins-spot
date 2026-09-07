@@ -413,30 +413,59 @@ function Index() {
         </div>
       </section>
 
-      {/* ===== Au menu ===== */}
-      <section id="menu" className="bg-background px-4 py-16 sm:px-6">
+      {/* ===== Au menu (la vraie carte) ===== */}
+      <section id="menu" className="bg-ink px-4 py-16 sm:px-6">
         <div className="mx-auto max-w-6xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Frites fraîches, burgers & snacks</p>
-          <h2 className="mt-1 font-display text-4xl font-extrabold uppercase sm:text-5xl">
-            Au <span className="italic text-mustard-foreground">menu</span>
+          <p className="text-xs font-bold uppercase tracking-widest text-mustard/80">Sur place · À emporter · Livraison</p>
+          <h2 className="mt-1 font-display text-4xl font-extrabold uppercase text-mustard sm:text-5xl">
+            Au <span className="italic text-ink-foreground">menu</span>
           </h2>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {menuCategories.map((cat) => (
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {menuGroups.map((group) => (
               <div
-                key={cat.name}
-                className="rounded-2xl bg-card p-6 shadow-sm ring-1 ring-border transition-colors hover:ring-mustard"
+                key={group.title}
+                className="rounded-2xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-all duration-300 hover:-translate-y-1 hover:bg-ink-foreground/10 hover:shadow-xl hover:shadow-mustard/5 hover:ring-mustard"
               >
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-mustard text-ink">
-                  <cat.icon className="h-5 w-5" />
-                </span>
-                <h3 className="mt-3 font-display text-lg font-bold uppercase">{cat.name}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{cat.desc}</p>
+                <h3 className="font-display text-xl font-extrabold uppercase text-mustard">
+                  <span className="inline-block bg-mustard px-2 py-0.5 text-ink [clip-path:polygon(0_15%,4%_0,96%_5%,100%_20%,98%_85%,94%_100%,3%_95%,0_80%)]">
+                    {group.title}
+                  </span>
+                </h3>
+                {group.note && (
+                  <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-mustard/70">{group.note}</p>
+                )}
+                {group.desc && (
+                  <p className="mt-3 text-sm leading-relaxed text-ink-foreground/70">{group.desc}</p>
+                )}
+                <ul className="mt-3 space-y-0.5">
+                  {group.items.map((item) => (
+                    <li
+                      key={item.name}
+                      className="group/item -mx-2 cursor-default rounded-lg px-2 py-1.5 transition-colors duration-200 hover:bg-mustard/15"
+                    >
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-sm font-semibold text-ink-foreground transition-colors group-hover/item:text-mustard">
+                          {item.name}
+                        </span>
+                        <span className="flex-1 border-b border-dotted border-ink-foreground/25 transition-colors group-hover/item:border-mustard/50" aria-hidden="true" />
+                        <span className="shrink-0 rounded-full px-2 py-0.5 font-display text-sm font-extrabold text-mustard transition-colors group-hover/item:bg-mustard group-hover/item:text-ink">
+                          {item.price}
+                        </span>
+                      </div>
+                      {item.desc && (
+                        <p className="mt-0.5 text-xs leading-snug text-ink-foreground/50">{item.desc}</p>
+                      )}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
-          <p className="mt-6 flex items-center gap-2 text-sm font-medium text-muted-foreground">
-            <Euro className="h-4 w-4" />
-            Comptez entre 10 et 20 € par personne.
+
+          <p className="mt-8 flex items-center gap-2 text-sm font-medium text-ink-foreground/60">
+            <Euro className="h-4 w-4 text-mustard" />
+            Comptez entre 10 et 20 € par personne. Pour les allergènes, adressez-vous au personnel.
           </p>
         </div>
       </section>
