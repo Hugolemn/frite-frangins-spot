@@ -358,6 +358,18 @@ function Index() {
             </div>
           </div>
 
+          {/* Carte Google Maps */}
+          <div className="mt-6 overflow-hidden rounded-2xl ring-1 ring-mustard/20">
+            <iframe
+              title="Frites & Frangins sur Google Maps — Chaussée de Douai 850, 7504 Tournai"
+              src="https://www.google.com/maps?q=Frites%20%26%20Frangins%2C%20Chauss%C3%A9e%20de%20Douai%20850%2C%207504%20Tournai&output=embed"
+              className="h-80 w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+
           {/* Avis */}
           <div className="mt-8 rounded-2xl bg-mustard px-6 py-10 text-center text-ink">
             <p className="font-display text-3xl font-extrabold uppercase">4,3 sur 5</p>
