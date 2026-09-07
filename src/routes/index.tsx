@@ -115,13 +115,17 @@ function Index() {
               Suggestion du moment
             </span>
 
-            <h1 className="mt-5 font-display text-4xl font-extrabold uppercase leading-[0.95] text-ink sm:text-5xl lg:text-6xl">
-              Le Duo des<br className="hidden sm:block" /> Frangins
-            </h1>
+              <h1 className="mt-5 font-display text-4xl font-extrabold uppercase leading-[0.95] text-ink sm:text-5xl lg:text-6xl">
+                Le Thaï
+              </h1>
 
-            <p className="mx-auto mt-4 max-w-sm text-base leading-relaxed text-ink/80 lg:mx-0">
-              Un cornet de frites bien croustillant accompagné d'un burger smashé, le tout avec notre sauce maison.
-            </p>
+              <ul className="mx-auto mt-4 max-w-sm space-y-2 text-base leading-relaxed text-ink/80 lg:mx-0">
+                <li>Un bun artisanal brioché</li>
+                <li>150 g de poulet croustillant</li>
+                <li>Mayonnaise sriracha très légèrement épicée</li>
+                <li>Nouilles sauce teriyaki et soja sucré, petits légumes</li>
+                <li>Chips chinois à la crevette pour le côté croustillant</li>
+              </ul>
 
             <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <span className="rounded-full bg-ink px-6 py-2.5 font-display text-xl font-extrabold text-mustard">
