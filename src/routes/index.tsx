@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Phone, MapPin, Clock, Star, Euro, ShoppingBag, Truck, ArrowRight, Utensils } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Phone, MapPin, Clock, Star, ShoppingBag, Truck, ArrowRight, Utensils } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import heroFood from "@/assets/hero-food.png";
@@ -26,10 +26,10 @@ export const Route = createFileRoute("/")({
 const schedule = [
   { day: "Lundi", hours: "17:30 – 21:30", closed: false },
   { day: "Mardi", hours: "Fermé", closed: true },
-  { day: "Mercredi", hours: "11:30 – 13:30, 17:30 – 21:30", closed: false },
-  { day: "Jeudi", hours: "11:30 – 13:30, 17:30 – 21:30", closed: false },
-  { day: "Vendredi", hours: "11:30 – 13:30, 17:30 – 22:00", closed: false, highlight: true },
-  { day: "Samedi", hours: "11:30 – 13:30, 17:30 – 22:00", closed: false, highlight: true },
+  { day: "Mercredi", hours: "11:30 – 13:30 / 17:30 – 21:30", closed: false },
+  { day: "Jeudi", hours: "11:30 – 13:30 / 17:30 – 21:30", closed: false },
+  { day: "Vendredi", hours: "11:30 – 13:30 / 17:30 – 22:00", closed: false, highlight: true },
+  { day: "Samedi", hours: "11:30 – 13:30 / 17:30 – 22:00", closed: false, highlight: true },
   { day: "Dimanche", hours: "17:30 – 21:30", closed: false },
 ];
 
