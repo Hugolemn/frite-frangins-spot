@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Phone, MapPin, Clock, Star, Euro, ShoppingBag, Truck, ArrowRight, Utensils } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Phone, MapPin, Clock, Star, ShoppingBag, Truck, ArrowRight, Utensils } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import heroFood from "@/assets/hero-food.png";
@@ -26,10 +26,10 @@ export const Route = createFileRoute("/")({
 const schedule = [
   { day: "Lundi", hours: "17:30 – 21:30", closed: false },
   { day: "Mardi", hours: "Fermé", closed: true },
-  { day: "Mercredi", hours: "11:30 – 13:30, 17:30 – 21:30", closed: false },
-  { day: "Jeudi", hours: "11:30 – 13:30, 17:30 – 21:30", closed: false },
-  { day: "Vendredi", hours: "11:30 – 13:30, 17:30 – 22:00", closed: false, highlight: true },
-  { day: "Samedi", hours: "11:30 – 13:30, 17:30 – 22:00", closed: false, highlight: true },
+  { day: "Mercredi", hours: "11:30 – 13:30 / 17:30 – 21:30", closed: false },
+  { day: "Jeudi", hours: "11:30 – 13:30 / 17:30 – 21:30", closed: false },
+  { day: "Vendredi", hours: "11:30 – 13:30 / 17:30 – 22:00", closed: false, highlight: true },
+  { day: "Samedi", hours: "11:30 – 13:30 / 17:30 – 22:00", closed: false, highlight: true },
   { day: "Dimanche", hours: "17:30 – 21:30", closed: false },
 ];
 
@@ -37,170 +37,6 @@ const incontournables = [
   { name: "Le Cornet du Frangin", desc: "Frites fraîches, sauce au choix", price: "3,50 €", img: fritesImg, badge: "Best-seller" },
   { name: "Le Frangin Burger", desc: "Smashé, cheddar fondant, sauce maison", price: "8,90 €", img: burgerImg, badge: null },
   { name: "Boulettes de la Mama", desc: "Sauce tomate maison, comme à la maison", price: "9,50 €", img: bouletteImg, badge: "Fait maison" },
-];
-
-type MenuItem = { name: string; price: string; desc?: string };
-type MenuGroup = { title: string; note?: string; desc?: string; items: MenuItem[] };
-
-const menuGroups: MenuGroup[] = [
-  {
-    title: "Les Frites",
-    items: [
-      { name: "Petite", price: "2,70 €" },
-      { name: "Moyenne", price: "3,70 €" },
-      { name: "Grande", price: "4,70 €" },
-    ],
-  },
-  {
-    title: "Les Mitraillettes",
-    items: [{ name: "La Base", price: "5,50 €", desc: "+ viande au choix" }],
-  },
-  {
-    title: "Les Sandwichs",
-    items: [
-      { name: "Filet Américain", price: "3,80 €" },
-      { name: "Thon Mayonnaise", price: "3,80 €" },
-      { name: "Dagobert", price: "3,80 €" },
-    ],
-  },
-  {
-    title: "Les Enfants",
-    items: [{ name: "Box Enfant", price: "6,50 €" }],
-  },
-  {
-    title: "La Gamme Végé",
-    items: [
-      { name: "Hamburger Végé", price: "5,00 €" },
-      { name: "Fricadelle Végé", price: "3,20 €" },
-      { name: "Poulycroc Végé", price: "3,20 €" },
-    ],
-  },
-  {
-    title: "Les Burgers Maison",
-    note: "Servis seuls / sur assiette — Steak 100% bœuf sélection du boucher",
-    items: [
-      { name: "Le Classique", price: "8,20 € / 12,50 €", desc: "Bun artisanal, viande 140gr, salade, tomate, oignons frits, cheddar, sauce Giant" },
-      { name: "USA", price: "9,20 € / 14,00 €", desc: "Bun artisanal, viande 140gr, salade, tomate, oignons rouges, bacon, cheddar, cornichon, sauce barbecue" },
-      { name: "Savoyard", price: "9,20 € / 14,00 €", desc: "Bun artisanal, viande 140gr, salade, oignons caramélisés, fromage raclette, galette rösti PDT, sauce poivre" },
-      { name: "Italien", price: "9,20 € / 14,00 €", desc: "Bun artisanal, viande 140gr, roquette, chorizo, mozzarella, tomates séchées, sauce toscane" },
-      { name: "Picard", price: "9,20 € / 14,00 €", desc: "Bun artisanal, viande 140gr, salade, oignons caramélisés, bacon, maroilles, sauce au choix" },
-      { name: "Berger", price: "9,20 € / 14,00 €", desc: "Bun artisanal, viande 140gr, fromage de chèvre, noix, pomme, roquette, miel, sauce au choix" },
-      { name: "Frangins", price: "9,20 € / 14,00 €", desc: "Bun artisanal, viande 140gr, chorizo, oignons rouges, tomate, jalapeños, sauce Frangins" },
-      { name: "Gourmet", price: "9,90 € / 14,50 €", desc: "Bun artisanal, viande 140gr, speck, mozzarella, roquette, aubergine grillée, champignons poêlés, sauce truffe" },
-      { name: "Burger du Moment", price: "9,50 € / 14,00 €" },
-    ],
-  },
-  {
-    title: "Les Burgers",
-    items: [
-      { name: "Hamburger Ketchup", price: "3,00 €" },
-      { name: "Bicky Burger", price: "3,60 €" },
-      { name: "Bicky Cheese", price: "4,00 €" },
-      { name: "Bicky Crispy", price: "4,20 €" },
-      { name: "Bicky Rib", price: "5,20 €" },
-      { name: "Fish Burger", price: "4,60 €" },
-      { name: "Chicken Burger", price: "4,30 €" },
-    ],
-  },
-  {
-    title: "Les Plats",
-    note: "Tous à 14,00 €",
-    items: [
-      { name: "Assiette Américain", price: "14,00 €" },
-      { name: "Boulettes Sauce Tomate", price: "14,00 €" },
-      { name: "Boulets Liégeois", price: "14,00 €" },
-      { name: "Vol-au-vent", price: "14,00 €" },
-      { name: "Trio Croquettes Fromage", price: "14,00 €" },
-      { name: "Pêche au Thon", price: "14,00 €" },
-      { name: "Assiette Frangins", price: "14,00 €" },
-    ],
-  },
-  {
-    title: "Les Wraps",
-    items: [
-      { name: "Wrap Bicky", price: "3,80 €" },
-      { name: "Wrap Mexicanos", price: "4,60 €" },
-      { name: "Wrap Tenders", price: "4,00 €" },
-      { name: "Wrap Pur Bœuf", price: "7,00 €" },
-    ],
-  },
-  {
-    title: "Les Snacks",
-    items: [
-      { name: "Viande Hamburger", price: "2,20 €" },
-      { name: "Fricadelle", price: "2,20 €" },
-      { name: "Fricadelle Spéciale", price: "2,70 €" },
-      { name: "Fricadelle XL", price: "2,70 €" },
-      { name: "Viandelle", price: "2,60 €" },
-      { name: "Viandelle Spéciale", price: "3,10 €" },
-      { name: "Boulette", price: "2,50 €" },
-      { name: "Mexicanos", price: "3,00 €" },
-      { name: "Cervelas (Brun ou Rouge)", price: "3,50 €" },
-      { name: "Cervelas Spéciale", price: "4,00 €" },
-      { name: "Poulycroc", price: "3,20 €" },
-      { name: "Ragouzi", price: "3,20 €" },
-      { name: "Belcrunch", price: "3,50 €" },
-      { name: "Mini Lucifer", price: "4,20 €" },
-      { name: "Mini Loempia", price: "4,20 €" },
-      { name: "Nuggets", price: "3,60 €" },
-      { name: "Chix Fingers", price: "4,30 €" },
-      { name: "Cheese Crack", price: "3,20 €" },
-      { name: "Soufflé Fromage", price: "3,20 €" },
-      { name: "Croquette Fromage", price: "2,50 €" },
-      { name: "Croquette Viande", price: "2,50 €" },
-      { name: "B'bals", price: "3,20 €" },
-      { name: "Top Mix", price: "7,50 €" },
-    ],
-  },
-  {
-    title: "Les Brochettes",
-    items: [
-      { name: "Brochette de Bœuf", price: "6,00 €" },
-      { name: "Brochette Ardennaise", price: "4,50 €" },
-      { name: "Brochette de Dinde", price: "4,50 €" },
-      { name: "Brochette Tzigane", price: "3,80 €" },
-      { name: "Brochette de Poisson", price: "4,50 €" },
-      { name: "Brochette Pilon Poulet", price: "5,50 €" },
-      { name: "Brochette Grizzly", price: "5,00 €" },
-      { name: "Brochette Merguez", price: "4,80 €" },
-    ],
-  },
-  {
-    title: "Les Sauces",
-    note: "Toutes les sauces : 1,10 €",
-    desc: "Aïl · Algérienne · Andalouse · Américaine · Barbecue · Bicky Orange · Brasil · Cheddar · Chicken · Cocktail · Dressing · Giant · Hot · Joppie · Joppie Hot · Ketchup · Ketchup Curry · Loempia · Martino · Mayonnaise · Moutarde · Pickels · Poivre · Samouraï · Snaky · Tartare · Toscane · Truffe · Frangins",
-    items: [],
-  },
-  {
-    title: "Boissons Softs",
-    items: [
-      { name: "Coca-Cola", price: "2,00 €" },
-      { name: "Coca-Cola Zéro", price: "2,00 €" },
-      { name: "Fanta Orange", price: "2,00 €" },
-      { name: "Sprite", price: "2,00 €" },
-      { name: "Tropico", price: "2,20 €" },
-      { name: "Ice Tea", price: "2,20 €" },
-      { name: "Ice Tea Pêche", price: "2,20 €" },
-      { name: "Caprisun", price: "2,00 €" },
-      { name: "Eau Plate 50 cl", price: "2,00 €" },
-      { name: "Eau Pétillante 50 cl", price: "2,00 €" },
-    ],
-  },
-  {
-    title: "Boissons Moins Soft",
-    items: [
-      { name: "Jupiler", price: "2,20 €" },
-      { name: "Blanche Rosé", price: "3,00 €" },
-      { name: "Trolls", price: "3,00 €" },
-      { name: "Leffe", price: "3,50 €" },
-      { name: "Desperados", price: "4,00 €" },
-      { name: "Triple Karmeliet", price: "4,00 €" },
-      { name: "Eristoff Rouge", price: "4,50 €" },
-      { name: "J&B", price: "4,50 €" },
-      { name: "Captain Morgan", price: "4,50 €" },
-      { name: "Bombay Sapphire", price: "4,50 €" },
-    ],
-  },
 ];
 
 const MAPS_URL =
@@ -226,7 +62,7 @@ function Index() {
           </a>
           <div className="hidden items-center gap-6 font-display text-sm font-bold uppercase tracking-wider text-ink-foreground/80 md:flex">
             <a href="#incontournables" className="transition-colors hover:text-mustard">Incontournables</a>
-            <a href="#menu" className="transition-colors hover:text-mustard">Menu</a>
+            <Link to="/menu" className="transition-colors hover:text-mustard">Menu</Link>
             <a href="#infos" className="transition-colors hover:text-mustard">Infos</a>
           </div>
           <div className="flex items-center gap-2">
@@ -279,13 +115,13 @@ function Index() {
                 Cornets croustillants, burgers smashés et sauces maison, en plein cœur de Tournai. À emporter ou en livraison.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href="#menu"
+                <Link
+                  to="/menu"
                   className="inline-flex items-center gap-2 rounded-full bg-mustard px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-ink transition-transform hover:scale-105 active:scale-95"
                 >
                   Voir le menu
                   <ArrowRight className="h-4 w-4" />
-                </a>
+                </Link>
                 <a
                   href={MAPS_URL}
                   target="_blank"
@@ -370,8 +206,8 @@ function Index() {
             Vous cherchez <span className="italic">quoi</span> ?
           </h2>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
-            <a
-              href="#menu"
+            <Link
+              to="/menu"
               className="group rounded-3xl bg-ink p-6 text-ink-foreground transition-transform hover:-translate-y-1"
             >
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-mustard/15 text-mustard"><Utensils className="h-6 w-6" /></span>
@@ -382,7 +218,7 @@ function Index() {
               <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-mustard group-hover:underline">
                 Voir le menu <ArrowRight className="h-4 w-4" />
               </span>
-            </a>
+            </Link>
             <a
               href="tel:069212655"
               className="group rounded-3xl bg-ink p-6 text-ink-foreground transition-transform hover:-translate-y-1"
@@ -413,61 +249,22 @@ function Index() {
         </div>
       </section>
 
-      {/* ===== Au menu (la vraie carte) ===== */}
-      <section id="menu" className="bg-ink px-4 py-16 sm:px-6">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-mustard/80">Sur place · À emporter · Livraison</p>
-          <h2 className="mt-1 font-display text-4xl font-extrabold uppercase text-mustard sm:text-5xl">
-            Au <span className="italic text-ink-foreground">menu</span>
-          </h2>
-
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {menuGroups.map((group) => (
-              <div
-                key={group.title}
-                className="rounded-2xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-all duration-300 hover:-translate-y-1 hover:bg-ink-foreground/10 hover:shadow-xl hover:shadow-mustard/5 hover:ring-mustard"
-              >
-                <h3 className="font-display text-xl font-extrabold uppercase text-mustard">
-                  <span className="inline-block bg-mustard px-2 py-0.5 text-ink [clip-path:polygon(0_15%,4%_0,96%_5%,100%_20%,98%_85%,94%_100%,3%_95%,0_80%)]">
-                    {group.title}
-                  </span>
-                </h3>
-                {group.note && (
-                  <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-mustard/70">{group.note}</p>
-                )}
-                {group.desc && (
-                  <p className="mt-3 text-sm leading-relaxed text-ink-foreground/70">{group.desc}</p>
-                )}
-                <ul className="mt-3 space-y-0.5">
-                  {group.items.map((item) => (
-                    <li
-                      key={item.name}
-                      className="group/item -mx-2 cursor-default rounded-lg px-2 py-1.5 transition-colors duration-200 hover:bg-mustard/15"
-                    >
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-sm font-semibold text-ink-foreground transition-colors group-hover/item:text-mustard">
-                          {item.name}
-                        </span>
-                        <span className="flex-1 border-b border-dotted border-ink-foreground/25 transition-colors group-hover/item:border-mustard/50" aria-hidden="true" />
-                        <span className="shrink-0 rounded-full px-2 py-0.5 font-display text-sm font-extrabold text-mustard transition-colors group-hover/item:bg-mustard group-hover/item:text-ink">
-                          {item.price}
-                        </span>
-                      </div>
-                      {item.desc && (
-                        <p className="mt-0.5 text-xs leading-snug text-ink-foreground/50">{item.desc}</p>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-8 flex items-center gap-2 text-sm font-medium text-ink-foreground/60">
-            <Euro className="h-4 w-4 text-mustard" />
-            Comptez entre 10 et 20 € par personne. Pour les allergènes, adressez-vous au personnel.
-          </p>
-        </div>
+      {/* ===== Lien vers la carte ===== */}
+      <section className="bg-ink px-4 py-16 text-center sm:px-6">
+        <p className="text-xs font-bold uppercase tracking-widest text-mustard/80">Frites fraîches, burgers & snacks</p>
+        <h2 className="mt-1 font-display text-4xl font-extrabold uppercase text-mustard sm:text-5xl">
+          Au <span className="italic text-ink-foreground">menu</span>
+        </h2>
+        <p className="mx-auto mt-4 max-w-md text-sm text-ink-foreground/70">
+          Frites, burgers maison, snacks, mitraillettes, plats, brochettes, boissons et sauces : toute la carte est en ligne.
+        </p>
+        <Link
+          to="/menu"
+          className="mt-8 inline-flex items-center gap-2 rounded-full bg-mustard px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-ink transition-transform hover:scale-105 active:scale-95"
+        >
+          Découvrir la carte
+          <ArrowRight className="h-4 w-4" />
+        </Link>
       </section>
 
       {/* ===== À emporter / Livraison ===== */}
@@ -559,6 +356,18 @@ function Index() {
                 ))}
               </div>
             </div>
+          </div>
+
+          {/* Carte Google Maps */}
+          <div className="mt-6 overflow-hidden rounded-2xl ring-1 ring-mustard/20">
+            <iframe
+              title="Frites & Frangins sur Google Maps — Chaussée de Douai 850, 7504 Tournai"
+              src="https://www.google.com/maps?q=Frites%20%26%20Frangins%2C%20Chauss%C3%A9e%20de%20Douai%20850%2C%207504%20Tournai&output=embed"
+              className="h-80 w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
           </div>
 
           {/* Avis */}
