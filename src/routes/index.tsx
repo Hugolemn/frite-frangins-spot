@@ -271,7 +271,9 @@ function Index() {
                 key={cat.name}
                 className="rounded-2xl bg-card p-6 shadow-sm ring-1 ring-border transition-colors hover:ring-mustard"
               >
-                <span className="text-3xl">{cat.emoji}</span>
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-mustard text-ink">
+                  <cat.icon className="h-5 w-5" />
+                </span>
                 <h3 className="mt-3 font-display text-lg font-bold uppercase">{cat.name}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{cat.desc}</p>
               </div>
