@@ -144,27 +144,33 @@ function Index() {
 
       {/* ===== Menu ===== */}
       <section id="menu" className="bg-ink px-4 py-16 sm:px-6 lg:py-20">
+        <div className="mx-auto mb-10 max-w-6xl text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-mustard/80">La carte</p>
+          <h2 className="mt-2 font-display text-4xl text-mustard sm:text-5xl">
+            Notre <span className="italic text-ink-foreground">menu</span>
+          </h2>
+        </div>
         <MenuContent />
       </section>
 
       {/* ===== Avis clients ===== */}
-      <section id="avis" className="scroll-mt-20 bg-ink px-4 py-16 sm:px-6 lg:py-20">
+      <section id="avis" className="scroll-mt-20 bg-background px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-mustard/80">Témoignages</p>
-            <h2 className="mt-2 font-display text-4xl text-mustard sm:text-5xl">
-              Ce que disent nos <span className="italic text-ink-foreground">clients</span>
+            <h2 className="mt-2 font-display text-4xl text-foreground sm:text-5xl">
+              Ce que disent nos <span className="italic text-mustard">clients</span>
             </h2>
 
-            <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-mustard/25 bg-ink-foreground/[0.04] px-6 py-3">
+            <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-mustard/25 bg-card px-6 py-3 shadow-sm">
               <div className="flex gap-0.5">
                 {[...Array(4)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 fill-mustard text-mustard" />
                 ))}
                 <Star className="h-5 w-5 fill-mustard/40 text-mustard" />
               </div>
-              <span className="font-display text-2xl text-ink-foreground">4,3</span>
-              <span className="text-sm text-ink-foreground/60">/ 5 · 130 avis Google</span>
+              <span className="font-display text-2xl text-foreground">4,3</span>
+              <span className="text-sm text-muted-foreground">/ 5 · 130 avis Google</span>
             </div>
           </div>
 
@@ -172,7 +178,7 @@ function Index() {
             {reviews.map((r) => (
               <div
                 key={r.name}
-                className="relative rounded-3xl border border-mustard/15 bg-ink-foreground/[0.03] p-8 transition-all hover:border-mustard/40"
+                className="relative rounded-3xl border border-mustard/15 bg-card p-8 shadow-sm transition-all hover:border-mustard/40"
               >
                 <Quote className="absolute right-6 top-6 h-8 w-8 text-mustard/20" />
                 <div className="mb-4 flex gap-0.5">
@@ -183,7 +189,7 @@ function Index() {
                     />
                   ))}
                 </div>
-                <p className="italic leading-relaxed text-ink-foreground/85">"{r.text}"</p>
+                <p className="italic leading-relaxed text-foreground/85">"{r.text}"</p>
                 <span className="mt-4 block text-sm font-bold text-mustard">{r.name}</span>
               </div>
             ))}
