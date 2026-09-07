@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, MapPin, Clock, Star, ShoppingBag, Truck, ArrowRight, Utensils } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
+import ffAsset from "@/assets/frites-frangins-ff.png.asset.json";
 import heroFood from "@/assets/hero-food.png";
 import fritesImg from "@/assets/frites.png";
 import burgerImg from "@/assets/burger.png";
@@ -88,10 +89,10 @@ function Index() {
 
       {/* ===== Hero ===== */}
       <header className="relative isolate overflow-hidden bg-mustard">
-        {/* Logo en filigrane sur tout le fond */}
+        {/* F&F en filigrane sur tout le fond */}
         <div
-          className="pointer-events-none absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-[0.10]"
-          style={{ backgroundImage: `url(${logoAsset.url})` }}
+          className="pointer-events-none absolute inset-0 -z-10 bg-contain bg-center bg-no-repeat opacity-[0.06]"
+          style={{ backgroundImage: `url(${ffAsset.url})` }}
           aria-hidden="true"
         />
 
