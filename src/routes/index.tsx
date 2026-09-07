@@ -33,10 +33,10 @@ const schedule = [
 ];
 
 const reviews: { name: string; text: string; rating: number }[] = [
-  { name: "Julien V.", text: "Des frites parfaitement croustillantes et un accueil toujours souriant. Le burger Frangins vaut vraiment le détour !", rating: 5 },
-  { name: "Sarah L.", text: "Les burgers maison sont énormes et savoureux, le pain est excellent. Ma friterie préférée sur Tournai.", rating: 5 },
-  { name: "Nicolas B.", text: "Service rapide, portions généreuses et un vrai choix de sauces. On y retourne chaque vendredi en famille.", rating: 4 },
-  { name: "Élodie M.", text: "Très bon rapport qualité-prix, tout est frais et bien préparé. Mention spéciale pour la mitraillette !", rating: 5 },
+  { name: "Lenny V.", text: "Une friterie d'exception ! Le burger au bœuf pur est un vrai régal ; on sent la qualité dès le premier coup d'œil. Un service client excellent et un frigo à boissons qui donne envie d'y passer tout le week-end !", rating: 5 },
+  { name: "Murielle B.", text: "Nous y sommes allés deux fois : une fois pour emporter et une fois pour une livraison, et nous sommes ravis : la cuisine est excellente ! Nous le recommandons vivement.", rating: 5 },
+  { name: "Jacky B.", text: "Un endroit génial, une superbe découverte !! La cuisine était excellente et le service rapide et sympathique.", rating: 5 },
+  { name: "Nicolas V.", text: "D'excellents burgers au bœuf faits maison. Je vous les recommande vivement !", rating: 5 },
 ];
 
 
@@ -259,7 +259,7 @@ function Index() {
               <div className="divide-y divide-mustard/15 px-6 py-2">
                 {schedule.map((item) => (
                   <div key={item.day} className="flex items-center justify-between py-3">
-                    <span className={item.closed ? "text-ink-foreground/60 line-through" : "font-medium text-ink-foreground"}>
+                    <span className={item.closed ? "italic text-ink-foreground/60" : "font-medium text-ink-foreground"}>
                       {item.day}
                     </span>
                     <span className={item.closed ? "italic text-ink-foreground/60" : "text-right text-ink-foreground/60"}>
