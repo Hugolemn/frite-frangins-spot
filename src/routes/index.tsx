@@ -88,7 +88,7 @@ function Index() {
 
       {/* ===== Hero ===== */}
       <header className="overflow-hidden bg-mustard">
-        <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:py-16">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-20">
           <div className="order-2 lg:order-1">
             <span className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-mustard">
               <Star className="h-3.5 w-3.5 fill-current" />
@@ -140,7 +140,7 @@ function Index() {
       </header>
 
       {/* ===== Nos incontournables ===== */}
-      <section id="incontournables" className="bg-background px-4 py-16 sm:px-6 lg:py-20">
+      <section id="incontournables" className="scroll-mt-20 bg-background px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Sélectionnés pour vous</p>
@@ -149,11 +149,11 @@ function Index() {
             </h2>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {incontournables.map((item) => (
               <article
                 key={item.name}
-                className="group overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border transition-transform hover:-translate-y-1 hover:shadow-xl"
+                className="group flex h-full flex-col overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border transition-transform hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="relative flex h-52 items-center justify-center bg-muted p-4">
                   {item.badge && (
@@ -170,7 +170,7 @@ function Index() {
                     className="h-full w-auto object-contain drop-shadow-lg transition-transform group-hover:scale-105"
                   />
                 </div>
-                <div className="flex items-center justify-between gap-3 p-5">
+                <div className="flex flex-1 items-center justify-between gap-3 p-5">
                   <div>
                     <h3 className="font-display text-lg font-bold">{item.name}</h3>
                     <p className="mt-0.5 text-sm text-muted-foreground">{item.desc}</p>
@@ -186,12 +186,12 @@ function Index() {
       </section>
 
       {/* ===== Accès rapide ===== */}
-      <section className="bg-ink px-4 py-16 sm:px-6">
+      <section className="bg-ink px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-center font-display text-3xl font-extrabold uppercase text-mustard sm:text-4xl">
             Vous cherchez <span className="italic text-ink-foreground">quoi</span> ?
           </h2>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <div className="mt-12 grid items-stretch gap-6 md:grid-cols-3">
             <Link
               to="/menu"
               className="group rounded-3xl bg-ink-foreground/5 p-6 ring-1 ring-mustard/20 transition-colors hover:bg-ink-foreground/10"
