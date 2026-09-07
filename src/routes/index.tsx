@@ -251,13 +251,13 @@ function Index() {
             </h2>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-3">
             {/* Adresse */}
             <a
               href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border transition-colors hover:ring-mustard"
+              className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border transition-colors hover:ring-mustard"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
                 <MapPin className="h-6 w-6" />
@@ -278,7 +278,7 @@ function Index() {
             {/* Téléphone */}
             <a
               href="tel:069212655"
-              className="group flex flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border transition-colors hover:ring-mustard"
+              className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border transition-colors hover:ring-mustard"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
                 <Phone className="h-6 w-6" />
@@ -294,7 +294,7 @@ function Index() {
             </a>
 
             {/* Services */}
-            <div className="flex flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border">
+            <div className="flex h-full flex-col gap-4 rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
                 <Truck className="h-6 w-6" />
               </div>
@@ -365,8 +365,8 @@ function Index() {
       </section>
 
       {/* ===== Footer ===== */}
-      <footer className="bg-ink px-6 pb-28 pt-12 text-center text-ink-foreground/60">
-        <div className="border-t border-mustard/20 pt-12">
+      <footer className="bg-ink px-4 pb-28 pt-16 text-center text-ink-foreground/60 sm:px-6">
+        <div className="mx-auto max-w-6xl border-t border-mustard/20 pt-12">
           <img
             src={logoAsset.url}
             alt="Logo Frites & Frangins"
@@ -406,7 +406,7 @@ function Index() {
         </div>
       </div>
 
-      <div className="h-24 bg-ink" />
+      <div className="h-20 bg-ink" />
     </div>
   );
 }
