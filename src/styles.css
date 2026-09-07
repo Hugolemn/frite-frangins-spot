@@ -67,7 +67,7 @@
   --color-ink-foreground: var(--ink-foreground);
   --color-paper: var(--paper);
   --color-paper-foreground: var(--paper-foreground);
-  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-display: "Lobster", cursive;
   --font-body: "Inter", sans-serif;
 }
 
