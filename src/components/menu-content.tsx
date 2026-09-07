@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { Euro } from "lucide-react";
-
 export type MenuItem = { name: string; price: string; desc?: string };
 export type Category = {
   key: string;
@@ -198,81 +195,112 @@ export const categories: Category[] = [
 ];
 
 export function MenuContent() {
-  const [active, setActive] = useState("frites");
-  const current: Category = categories.find((c) => c.key === active) ?? categories[0]!;
+  const isYellow = (i: number) => i % 2 === 0;
+
+  const sectionClasses = (i: number) =>
+    isYellow(i)
+      ? "bg-mustard text-ink"
+      : "bg-ink text-ink-foreground";
+
+  const cardClasses = (i: number) =>
+    isYellow(i)
+      ? "rounded-2xl border border-ink/10 bg-ink/5 p-5 transition-all hover:-translate-y-1 hover:border-ink/30 hover:bg-ink/10"
+      : "rounded-2xl border border-mustard/15 bg-ink-foreground/[0.03] p-5 transition-all hover:-translate-y-1 hover:border-mustard/50 hover:bg-ink-foreground/[0.06]";
+
+  const chipClasses = (i: number) =>
+    isYellow(i)
+      ? "rounded-full bg-ink/10 px-4 py-2 text-sm font-medium text-ink"
+      : "rounded-full bg-ink-foreground/10 px-4 py-2 text-sm font-medium text-ink-foreground";
+
+  const titleClasses = (i: number) =>
+    isYellow(i)
+      ? "text-ink group-hover:text-ink/80"
+      : "text-ink-foreground group-hover:text-mustard";
+
+  const priceClasses = (i: number) =>
+    isYellow(i) ? "text-ink" : "text-mustard";
+
+  const descClasses = (i: number) =>
+    isYellow(i) ? "text-ink/70" : "text-ink-foreground/55";
+
+  const noteClasses = (i: number) =>
+    isYellow(i)
+      ? "text-xs font-semibold uppercase tracking-wide text-ink/60"
+      : "text-xs font-semibold uppercase tracking-wide text-ink-foreground/60";
+
+  const navChipClasses =
+    "rounded-full border border-mustard/40 bg-ink px-4 py-2 text-sm font-semibold text-mustard transition-colors hover:bg-mustard hover:text-ink";
 
   return (
-    <div className="mx-auto max-w-6xl">
-      {/* ===== Onglets catégories ===== */}
-      <div className="flex flex-wrap justify-center gap-2">
+    <div>
+      {/* ===== Navigation rapide ===== */}
+      <nav className="flex flex-wrap justify-center gap-2 px-4">
         {categories.map((c) => (
-          <button
-            key={c.key}
-            type="button"
-            onClick={() => setActive(c.key)}
-            aria-pressed={active === c.key}
-            className={`rounded-full px-4 py-2.5 text-sm font-semibold transition-all ${
-              active === c.key
-                ? "bg-mustard text-ink shadow-md"
-                : "border border-mustard/30 bg-ink-foreground/[0.04] text-ink-foreground/80 hover:border-mustard/60 hover:text-mustard"
-            }`}
-          >
+          <a key={c.key} href={`#category-${c.key}`} className={navChipClasses}>
             <span className="mr-1">{c.emoji}</span> {c.label}
-          </button>
+          </a>
         ))}
-      </div>
+      </nav>
 
-      {/* ===== Contenu catégorie ===== */}
-      <section className="mt-12">
-        {current.note && (
-          <p className="mb-6 text-center text-xs font-semibold uppercase tracking-wide text-ink-foreground/60">
-            {current.note}
-          </p>
-        )}
-
-        {current.key === "sauces" ? (
-          <div className="mx-auto max-w-3xl rounded-3xl border border-mustard/15 bg-ink-foreground/[0.03] p-8">
-            <div className="flex flex-wrap justify-center gap-3">
-              {current.items.map((item) => (
-                <span
-                  key={item.name}
-                  className="rounded-full bg-ink-foreground/10 px-4 py-2 text-sm font-medium text-ink-foreground"
-                >
-                  {item.name}
-                </span>
-              ))}
+      {/* ===== Catégories ===== */}
+      {categories.map((category, i) => (
+        <section
+          key={category.key}
+          id={`category-${category.key}`}
+          className={`scroll-mt-24 py-16 sm:py-20 ${sectionClasses(i)}`}
+        >
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <div className="text-center">
+              <h2 className="font-display text-4xl sm:text-5xl">
+                <span className="mr-2">{category.emoji}</span>
+                {category.label}
+              </h2>
+              {category.note && (
+                <p className={`mt-2 ${noteClasses(i)}`}>{category.note}</p>
+              )}
             </div>
-          </div>
-        ) : (
-          <div className="flex flex-wrap justify-center gap-4">
-            {current.items.map((item) => (
-              <div
-                key={item.name}
-                className="group w-full max-w-xs rounded-2xl border border-mustard/15 bg-ink-foreground/[0.03] p-5 transition-all hover:-translate-y-1 hover:border-mustard/50 hover:bg-ink-foreground/[0.06] sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]"
-              >
-                <div className="mb-1 flex items-start justify-between gap-3">
-                  <h3 className="font-display text-base text-ink-foreground transition-colors group-hover:text-mustard">
-                    {item.name}
-                  </h3>
-                  {item.price && (
-                    <span className="whitespace-nowrap text-base font-extrabold text-mustard">
-                      {item.price}
-                    </span>
-                  )}
-                </div>
-                {item.desc && (
-                  <p className="text-sm leading-snug text-ink-foreground/55">{item.desc}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
-      </section>
 
-      <p className="mt-12 flex items-center justify-center gap-2 text-center text-sm font-medium text-ink-foreground/60">
-        <Euro className="h-4 w-4 shrink-0 text-mustard" />
-        Comptez entre 10 et 20 € par personne. Pour les allergènes, adressez-vous au personnel.
-      </p>
+            {category.key === "sauces" ? (
+              <div
+                className={`mx-auto mt-8 max-w-3xl rounded-3xl border p-8 ${
+                  isYellow(i) ? "border-ink/10 bg-ink/5" : "border-mustard/15 bg-ink-foreground/[0.03]"
+                }`}
+              >
+                <div className="flex flex-wrap justify-center gap-3">
+                  {category.items.map((item) => (
+                    <span key={item.name} className={chipClasses(i)}>
+                      {item.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="mt-8 flex flex-wrap justify-center gap-4">
+                {category.items.map((item) => (
+                  <div
+                    key={item.name}
+                    className={`group w-full max-w-xs sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)] ${cardClasses(i)}`}
+                  >
+                    <div className="mb-1 flex items-start justify-between gap-3">
+                      <h3 className={`font-display text-base transition-colors group-hover:text-mustard ${titleClasses(i)}`}>
+                        {item.name}
+                      </h3>
+                      {item.price && (
+                        <span className={`whitespace-nowrap text-base font-extrabold ${priceClasses(i)}`}>
+                          {item.price}
+                        </span>
+                      )}
+                    </div>
+                    {item.desc && (
+                      <p className={`text-sm leading-snug ${descClasses(i)}`}>{item.desc}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+      ))}
     </div>
   );
 }
