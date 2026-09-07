@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Phone, MapPin, Clock, Star, Quote, ShoppingBag, Truck, ArrowRight, Utensils } from "lucide-react";
+import { Phone, MapPin, Clock, Star, Quote, ShoppingBag, Truck, ArrowRight } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import ffAsset from "@/assets/frites-frangins-ff.png.asset.json";
 import thaiAsset from "@/assets/suggestion-moment-thai.png.asset.json";
+import { MenuContent } from "@/components/menu-content";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -143,30 +144,7 @@ function Index() {
 
       {/* ===== Menu ===== */}
       <section id="menu" className="bg-ink px-4 py-16 sm:px-6 lg:py-20">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 text-center md:flex-row md:justify-between md:text-left">
-          <div>
-            <h2 className="font-display text-3xl text-mustard sm:text-4xl">
-              Notre <span className="italic text-ink-foreground">carte</span>
-            </h2>
-            <p className="mt-3 max-w-md text-sm text-ink-foreground/70 sm:text-base">
-              Frites, burgers maison, snacks, mitraillettes, plats et sauces : tout est en ligne.
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
-            <Link
-              to="/menu"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-mustard px-8 py-3.5 font-display text-lg text-ink shadow-lg transition-transform hover:-translate-y-0.5"
-            >
-              <Utensils className="h-5 w-5" /> Voir la carte
-            </Link>
-            <a
-              href="tel:069212655"
-              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-mustard px-8 py-3.5 font-display text-lg text-mustard transition-colors hover:bg-mustard hover:text-ink"
-            >
-              <Phone className="h-5 w-5" /> 069 21 26 55
-            </a>
-          </div>
-        </div>
+        <MenuContent />
       </section>
 
       {/* ===== Avis clients ===== */}
