@@ -143,11 +143,10 @@ function Index() {
       </header>
 
       {/* ===== Menu ===== */}
-      <section id="menu" className="bg-ink px-4 py-16 sm:px-6 lg:py-20">
+      <section id="menu" className="px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto mb-10 max-w-6xl text-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-mustard/80">Notre sélection</p>
-          <h2 className="mt-2 font-display text-4xl text-mustard sm:text-5xl">
-            La <span className="italic text-ink-foreground">carte</span>
+          <h2 className="font-display text-4xl text-ink sm:text-5xl">
+            Notre <span className="italic text-mustard">menu</span>
           </h2>
         </div>
         <MenuContent />
