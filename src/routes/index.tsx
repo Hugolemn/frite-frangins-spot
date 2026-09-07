@@ -88,48 +88,51 @@ function Index() {
 
       {/* ===== Hero ===== */}
       <header className="relative isolate overflow-hidden bg-mustard">
-        {/* Logo en fond, pleine largeur, opacité légère */}
+        {/* Logo en filigrane sur tout le fond */}
         <div
-          className="pointer-events-none absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-[0.12]"
+          className="pointer-events-none absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-[0.10]"
           style={{ backgroundImage: `url(${logoAsset.url})` }}
           aria-hidden="true"
         />
 
-        <div className="mx-auto flex max-w-6xl flex-col items-center px-4 py-16 text-center sm:px-6 sm:py-20 lg:py-24">
-          <span className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-mustard">
-            Suggestion du moment
-          </span>
+        <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-14 sm:px-6 sm:py-18 lg:grid-cols-2 lg:gap-12 lg:py-22">
+          {/* Visuel suggestion */}
+          <div className="relative flex aspect-square max-h-[420px] items-center justify-center justify-self-center rounded-[2rem] bg-ink/5 p-8 ring-1 ring-ink/10 lg:max-h-[520px] lg:justify-self-end">
+            <img
+              src={heroFood}
+              alt="Le Duo des Frangins : cornet de frites et burger smashé"
+              className="h-full w-auto object-contain drop-shadow-2xl"
+              width={1400}
+              height={1000}
+              fetchPriority="high"
+            />
+          </div>
 
-          <div className="mt-6 w-full max-w-md overflow-hidden rounded-3xl bg-ink shadow-2xl shadow-ink/30 ring-1 ring-ink/20">
-            <div className="flex h-60 items-center justify-center px-8 sm:h-72">
-              <img
-                src={heroFood}
-                alt="Le Duo des Frangins : cornet de frites et burger smashé"
-                className="h-full w-auto object-contain drop-shadow-2xl"
-                width={1400}
-                height={1000}
-                fetchPriority="high"
-              />
-            </div>
-            <div className="px-6 pb-6 pt-4">
-              <h1 className="font-display text-2xl font-extrabold uppercase text-mustard sm:text-3xl">
-                Le Duo des Frangins
-              </h1>
-              <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-ink-foreground/80">
-                Un cornet de frites bien croustillant accompagné d'un burger smashé, le tout avec notre sauce maison.
-              </p>
-              <div className="mt-5 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-                <span className="rounded-full bg-mustard px-5 py-2 font-display text-lg font-extrabold text-ink">
-                  11,50 €
-                </span>
-                <a
-                  href="tel:069212655"
-                  className="inline-flex items-center gap-2 rounded-full border-2 border-mustard px-5 py-2 font-display text-sm font-bold uppercase tracking-wide text-mustard transition-colors hover:bg-mustard hover:text-ink"
-                >
-                  <Phone className="h-4 w-4" />
-                  Commander
-                </a>
-              </div>
+          {/* Texte suggestion */}
+          <div className="text-center lg:text-left">
+            <span className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-mustard">
+              Suggestion du moment
+            </span>
+
+            <h1 className="mt-5 font-display text-4xl font-extrabold uppercase leading-[0.95] text-ink sm:text-5xl lg:text-6xl">
+              Le Duo des<br className="hidden sm:block" /> Frangins
+            </h1>
+
+            <p className="mx-auto mt-4 max-w-sm text-base leading-relaxed text-ink/80 lg:mx-0">
+              Un cornet de frites bien croustillant accompagné d'un burger smashé, le tout avec notre sauce maison.
+            </p>
+
+            <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+              <span className="rounded-full bg-ink px-6 py-2.5 font-display text-xl font-extrabold text-mustard">
+                11,50 €
+              </span>
+              <a
+                href="tel:069212655"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-ink px-6 py-2.5 font-display text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-ink hover:text-mustard"
+              >
+                <Phone className="h-4 w-4" />
+                Commander
+              </a>
             </div>
           </div>
         </div>
