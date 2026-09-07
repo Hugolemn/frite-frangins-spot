@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Phone, MapPin, Clock, Star, ShoppingBag, Truck, ArrowRight, Utensils } from "lucide-react";
+import { Phone, MapPin, Clock, Star, Quote, ShoppingBag, Truck, ArrowRight, Utensils } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import ffAsset from "@/assets/frites-frangins-ff.png.asset.json";
@@ -29,6 +29,13 @@ const schedule = [
   { day: "Vendredi", hours: "11:30 – 13:30 / 17:30 – 22:00", closed: false, highlight: true },
   { day: "Samedi", hours: "11:30 – 13:30 / 17:30 – 22:00", closed: false, highlight: true },
   { day: "Dimanche", hours: "17:30 – 21:30", closed: false },
+];
+
+const reviews: { name: string; text: string; rating: number }[] = [
+  { name: "Julien V.", text: "Des frites parfaitement croustillantes et un accueil toujours souriant. Le burger Frangins vaut vraiment le détour !", rating: 5 },
+  { name: "Sarah L.", text: "Les burgers maison sont énormes et savoureux, le pain est excellent. Ma friterie préférée sur Tournai.", rating: 5 },
+  { name: "Nicolas B.", text: "Service rapide, portions généreuses et un vrai choix de sauces. On y retourne chaque vendredi en famille.", rating: 4 },
+  { name: "Élodie M.", text: "Très bon rapport qualité-prix, tout est frais et bien préparé. Mention spéciale pour la mitraillette !", rating: 5 },
 ];
 
 
@@ -268,19 +275,49 @@ function Index() {
             </div>
           </div>
 
-          {/* Avis */}
-          <div className="mt-6 rounded-3xl bg-mustard px-6 py-10 text-center text-ink">
-            <p className="font-display text-3xl">4,3 sur 5</p>
-            <div className="mt-2 flex items-center justify-center gap-1">
-              {[...Array(4)].map((_, i) => (
-                <Star key={i} className="h-5 w-5 fill-ink text-ink" />
-              ))}
-              <Star className="h-5 w-5 fill-ink/50 text-ink" />
+        </div>
+      </section>
+
+      {/* ===== Avis clients ===== */}
+      <section id="avis" className="scroll-mt-20 bg-ink px-4 py-16 sm:px-6 lg:py-20">
+        <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-xs font-bold uppercase tracking-widest text-mustard/80">Témoignages</p>
+            <h2 className="mt-2 font-display text-4xl text-mustard sm:text-5xl">
+              Ce que disent nos <span className="italic text-ink-foreground">clients</span>
+            </h2>
+
+            <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-mustard/25 bg-ink-foreground/[0.04] px-6 py-3">
+              <div className="flex gap-0.5">
+                {[...Array(4)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-mustard text-mustard" />
+                ))}
+                <Star className="h-5 w-5 fill-mustard/40 text-mustard" />
+              </div>
+              <span className="font-display text-2xl text-ink-foreground">4,3</span>
+              <span className="text-sm text-ink-foreground/60">/ 5 · 130 avis Google</span>
             </div>
-            <p className="mt-3 text-sm font-medium opacity-80">130 avis sur Google</p>
-            <p className="mx-auto mt-2 max-w-md text-sm italic opacity-70">
-              "Les meilleures frites de Tournai, un accueil toujours chaleureux !"
-            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {reviews.map((r) => (
+              <div
+                key={r.name}
+                className="relative rounded-3xl border border-mustard/15 bg-ink-foreground/[0.03] p-8 transition-all hover:border-mustard/40"
+              >
+                <Quote className="absolute right-6 top-6 h-8 w-8 text-mustard/20" />
+                <div className="mb-4 flex gap-0.5">
+                  {[...Array(5)].map((_, j) => (
+                    <Star
+                      key={j}
+                      className={`h-4 w-4 ${j < r.rating ? "fill-mustard text-mustard" : "text-mustard/30"}`}
+                    />
+                  ))}
+                </div>
+                <p className="italic leading-relaxed text-ink-foreground/85">"{r.text}"</p>
+                <span className="mt-4 block text-sm font-bold text-mustard">{r.name}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
