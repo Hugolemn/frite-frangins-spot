@@ -3,7 +3,7 @@ import { Phone, MapPin, Clock, Star, ShoppingBag, Truck, ArrowRight, Utensils } 
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import ffAsset from "@/assets/frites-frangins-ff.png.asset.json";
-import heroFood from "@/assets/hero-food.png";
+import thaiAsset from "@/assets/suggestion-moment-thai.png.asset.json";
 import fritesImg from "@/assets/frites.png";
 import burgerImg from "@/assets/burger.png";
 import bouletteImg from "@/assets/boulette.png";
