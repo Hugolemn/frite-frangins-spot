@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Phone, MapPin, Clock, Star, Quote, ArrowRight, Menu, X } from "lucide-react";
+import { Phone, MapPin, Clock, Star, Quote, ArrowRight, Menu, X, ShoppingBag, ExternalLink } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import ffAsset from "@/assets/frites-frangins-ff.png.asset.json";
