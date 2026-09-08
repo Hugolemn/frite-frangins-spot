@@ -175,7 +175,7 @@ function Index() {
 
             <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <span className="rounded-full bg-ink px-6 py-2.5 font-display text-xl text-mustard">
-                11,50 €
+                9,50 €
               </span>
               <a
                 href="tel:069212655"
