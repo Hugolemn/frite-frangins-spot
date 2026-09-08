@@ -200,7 +200,14 @@ function Index() {
       </section>
 
       {/* ===== Avis clients ===== */}
-      <section id="avis" className="scroll-mt-20 bg-mustard px-4 py-16 sm:px-6 lg:py-20">
+      <section id="avis" className="relative isolate scroll-mt-20 bg-mustard px-4 py-16 sm:px-6 lg:py-20">
+        {/* F&F en filigrane sur tout le fond */}
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 bg-contain bg-center bg-no-repeat opacity-[0.06]"
+          style={{ backgroundImage: `url(${ffAsset.url})` }}
+          aria-hidden="true"
+        />
+
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-ink/60">Témoignages</p>
