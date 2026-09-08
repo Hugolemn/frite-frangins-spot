@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Euro } from "lucide-react";
 
 export type MenuItem = { name: string; price: string; desc?: string };
 export type Category = {
