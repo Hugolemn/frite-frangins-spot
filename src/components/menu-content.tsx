@@ -202,7 +202,7 @@ export function MenuContent() {
                 : "border border-mustard/30 bg-ink-foreground/[0.04] text-ink-foreground/80 hover:border-mustard/60 hover:text-mustard"
             }`}
           >
-            <span className="mr-1">{c.emoji}</span> {c.label}
+            {c.label}
           </button>
         ))}
       </div>
