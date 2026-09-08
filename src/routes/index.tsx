@@ -45,12 +45,22 @@ const MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=Frites+%26+Frangins+Chauss%C3%A9e+de+Douai+850+Tournai";
 
 function Index() {
+  const [activeCategory, setActiveCategory] = useState("frites");
+
+  const scrollToMenu = (key: string) => {
+    setActiveCategory(key);
+    const menu = document.getElementById("menu");
+    if (menu) {
+      menu.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* ===== Navbar ===== */}
       <nav className="sticky top-0 z-50 border-b border-mustard/20 bg-ink/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-          <a href="#" className="flex items-center gap-3">
+          <a href="#" className="flex shrink-0 items-center gap-3">
             <img
               src={logoAsset.url}
               alt="Logo Frites & Frangins"
@@ -62,11 +72,27 @@ function Index() {
               Frites & Frangins
             </span>
           </a>
-          <div className="hidden items-center gap-6 font-display text-sm text-ink-foreground/80 md:flex">
-            <Link to="/menu" className="transition-colors hover:text-mustard">Menu</Link>
-            <a href="#infos" className="transition-colors hover:text-mustard">Infos</a>
+
+          {/* Catégories scrollables */}
+          <div className="scrollbar-hide -mx-4 flex flex-1 items-center gap-2 overflow-x-auto px-4 md:mx-0 md:justify-center md:overflow-visible">
+            {categories.map((c) => (
+              <button
+                key={c.key}
+                type="button"
+                onClick={() => scrollToMenu(c.key)}
+                className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold transition-all md:text-sm ${
+                  activeCategory === c.key
+                    ? "bg-mustard text-ink"
+                    : "border border-mustard/30 text-ink-foreground/80 hover:border-mustard/60 hover:text-mustard"
+                }`}
+              >
+                <span className="mr-1">{c.emoji}</span>
+                {c.label}
+              </button>
+            ))}
           </div>
-          <div className="flex items-center gap-2">
+
+          <div className="flex shrink-0 items-center gap-2">
             <a
               href={MAPS_URL}
               target="_blank"
