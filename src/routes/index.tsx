@@ -49,11 +49,13 @@ function Index() {
 
   const scrollToMenu = (key: string) => {
     setActiveCategory(key);
-    const menu = document.getElementById("menu");
-    if (menu) {
-      const top = menu.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top, behavior: "smooth" });
-    }
+    setTimeout(() => {
+      const menu = document.getElementById("menu");
+      if (menu) {
+        const top = menu.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }, 0);
   };
 
   return (
