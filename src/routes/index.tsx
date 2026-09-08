@@ -176,7 +176,7 @@ function Index() {
             Notre <span className="italic text-ink-foreground">menu</span>
           </h2>
         </div>
-        <MenuContent />
+        <MenuContent activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
       </section>
 
       {/* ===== Avis clients ===== */}
