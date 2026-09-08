@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Euro } from "lucide-react";
 
 export type MenuItem = { name: string; price: string; desc?: string };
 export type Category = {
@@ -269,10 +268,6 @@ export function MenuContent() {
         )}
       </section>
 
-      <p className="mt-12 flex items-center justify-center gap-2 text-center text-sm font-medium text-ink-foreground/60">
-        <Euro className="h-4 w-4 shrink-0 text-mustard" />
-        Comptez entre 10 et 20 € par personne. Pour les allergènes, adressez-vous au personnel.
-      </p>
     </div>
   );
 }
