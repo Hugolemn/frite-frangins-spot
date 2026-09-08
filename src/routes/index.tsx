@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Phone, MapPin, Clock, Star, Quote, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { Phone, MapPin, Clock, Star, Quote, ArrowRight, Menu, X } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import ffAsset from "@/assets/frites-frangins-ff.png.asset.json";
@@ -44,6 +45,15 @@ const MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=Frites+%26+Frangins+Chauss%C3%A9e+de+Douai+850+Tournai";
 
 function Index() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navItems = [
+    { label: "Suggestion du moment", href: "#suggestion" },
+    { label: "Menu", href: "#menu" },
+    { label: "Témoignages", href: "#avis" },
+    { label: "Infos pratiques", href: "#infos" },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* ===== Navbar ===== */}
@@ -61,10 +71,20 @@ function Index() {
               Frites & Frangins
             </span>
           </a>
+
+          {/* Desktop nav */}
           <div className="hidden items-center gap-6 font-display text-sm text-ink-foreground/80 md:flex">
-            <Link to="/menu" className="transition-colors hover:text-mustard">Menu</Link>
-            <a href="#infos" className="transition-colors hover:text-mustard">Infos</a>
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="transition-colors hover:text-mustard"
+              >
+                {item.label}
+              </a>
+            ))}
           </div>
+
           <div className="flex items-center gap-2">
             <a
               href={MAPS_URL}
@@ -82,12 +102,39 @@ function Index() {
               <Phone className="h-3.5 w-3.5" />
               Commander
             </a>
+            <button
+              type="button"
+              onClick={() => setMobileOpen((v) => !v)}
+              className="inline-flex items-center justify-center rounded-full p-2 text-mustard md:hidden"
+              aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-expanded={mobileOpen}
+            >
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
           </div>
         </div>
+
+        {/* Mobile nav */}
+        {mobileOpen && (
+          <div className="border-t border-mustard/15 px-4 pb-4 pt-2 md:hidden">
+            <div className="flex flex-col gap-2 font-display text-sm text-ink-foreground/80">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-lg px-3 py-2 transition-colors hover:bg-mustard/10 hover:text-mustard"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* ===== Hero ===== */}
-      <header className="relative isolate overflow-hidden bg-mustard">
+      <header id="suggestion" className="relative isolate overflow-hidden bg-mustard scroll-mt-20">
         {/* F&F en filigrane sur tout le fond */}
         <div
           className="pointer-events-none absolute inset-0 -z-10 bg-contain bg-center bg-no-repeat opacity-[0.06]"
