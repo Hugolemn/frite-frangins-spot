@@ -1,10 +1,11 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, MapPin, Clock, Star, Quote, ArrowRight } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import ffAsset from "@/assets/frites-frangins-ff.png.asset.json";
 import thaiAsset from "@/assets/suggestion-moment-thai.png.asset.json";
-import { MenuContent } from "@/components/menu-content";
+import { MenuContent, categories } from "@/components/menu-content";
 
 export const Route = createFileRoute("/")({
   component: Index,
