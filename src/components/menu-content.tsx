@@ -4,7 +4,6 @@ export type MenuItem = { name: string; price: string; desc?: string };
 export type Category = {
   key: string;
   label: string;
-  emoji: string;
   note?: string;
   items: MenuItem[];
 };
@@ -13,7 +12,6 @@ export const categories: Category[] = [
   {
     key: "frites",
     label: "Frites",
-    emoji: "🍟",
     items: [
       { name: "Petite", price: "2,70 €" },
       { name: "Moyenne", price: "3,70 €" },
@@ -23,7 +21,6 @@ export const categories: Category[] = [
   {
     key: "snacks",
     label: "Snacks",
-    emoji: "🌭",
     items: [
       { name: "Viande Hamburger", price: "2,20 €" },
       { name: "Fricadelle", price: "2,20 €" },
@@ -53,7 +50,6 @@ export const categories: Category[] = [
   {
     key: "brochettes",
     label: "Brochettes",
-    emoji: "🍢",
     items: [
       { name: "Brochette de Bœuf", price: "6,00 €" },
       { name: "Brochette Ardennaise", price: "4,50 €" },
@@ -68,7 +64,6 @@ export const categories: Category[] = [
   {
     key: "burgers-maison",
     label: "Burgers Maison",
-    emoji: "🍔",
     note: "Servis seuls / sur assiette — steak 100 % bœuf, sélection du boucher",
     items: [
       { name: "Le Classique", price: "8,20 € / 12,50 €", desc: "Bun artisanal, viande 140gr, salade, tomate, oignons frits, cheddar, sauce Giant" },
@@ -85,7 +80,6 @@ export const categories: Category[] = [
   {
     key: "burgers",
     label: "Burgers",
-    emoji: "🍞",
     items: [
       { name: "Hamburger Ketchup", price: "3,00 €" },
       { name: "Bicky Burger", price: "3,60 €" },
@@ -99,7 +93,6 @@ export const categories: Category[] = [
   {
     key: "sandwichs",
     label: "Sandwichs",
-    emoji: "🥖",
     items: [
       { name: "Filet Américain", price: "3,80 €" },
       { name: "Thon Mayonnaise", price: "3,80 €" },
@@ -109,13 +102,11 @@ export const categories: Category[] = [
   {
     key: "mitraillettes",
     label: "Mitraillettes",
-    emoji: "🥪",
     items: [{ name: "La Base", price: "5,50 €", desc: "+ viande au choix" }],
   },
   {
     key: "wraps",
     label: "Wraps",
-    emoji: "🌯",
     items: [
       { name: "Wrap Bicky", price: "3,80 €" },
       { name: "Wrap Mexicanos", price: "4,60 €" },
@@ -126,7 +117,6 @@ export const categories: Category[] = [
   {
     key: "plats",
     label: "Plats",
-    emoji: "🍽️",
     note: "Tous nos plats à 14,00 €",
     items: [
       { name: "Assiette Américain", price: "14,00 €" },
@@ -141,7 +131,6 @@ export const categories: Category[] = [
   {
     key: "vege",
     label: "Végé",
-    emoji: "🥬",
     items: [
       { name: "Hamburger Végé", price: "5,00 €" },
       { name: "Fricadelle Végé", price: "3,20 €" },
@@ -151,13 +140,11 @@ export const categories: Category[] = [
   {
     key: "enfants",
     label: "Enfants",
-    emoji: "🧒",
     items: [{ name: "Box Enfant", price: "6,50 €" }],
   },
   {
     key: "boissons",
     label: "Boissons",
-    emoji: "🥤",
     items: [
       { name: "Coca-Cola", price: "2,00 €" },
       { name: "Coca-Cola Zéro", price: "2,00 €" },
@@ -184,7 +171,6 @@ export const categories: Category[] = [
   {
     key: "sauces",
     label: "Sauces",
-    emoji: "🧂",
     note: "Toutes les sauces : 1,10 €",
     items: [
       "Aïl", "Algérienne", "Andalouse", "Américaine", "Barbecue", "Bicky Orange",
@@ -216,7 +202,7 @@ export function MenuContent() {
                 : "border border-mustard/30 bg-ink-foreground/[0.04] text-ink-foreground/80 hover:border-mustard/60 hover:text-mustard"
             }`}
           >
-            <span className="mr-1">{c.emoji}</span> {c.label}
+            {c.label}
           </button>
         ))}
       </div>
