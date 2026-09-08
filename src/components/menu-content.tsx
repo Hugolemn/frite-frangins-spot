@@ -4,7 +4,6 @@ export type MenuItem = { name: string; price: string; desc?: string };
 export type Category = {
   key: string;
   label: string;
-  emoji: string;
   note?: string;
   items: MenuItem[];
 };
