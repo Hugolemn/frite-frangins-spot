@@ -62,34 +62,34 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       {/* ===== Navbar ===== */}
       <nav className="sticky top-0 z-50 border-b border-mustard/20 bg-ink/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-          <a href="#" className="flex shrink-0 items-center gap-3">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2 sm:gap-4 sm:px-6 sm:py-3">
+          <a href="#" className="flex shrink-0 items-center gap-2 sm:gap-3">
             <img
               src={logoAsset.url}
               alt="Logo Frites & Frangins"
-              className="h-10 w-10 rounded-lg object-cover"
+              className="h-9 w-9 rounded-lg object-cover sm:h-10 sm:w-10"
               width={80}
               height={80}
             />
-            <span className="font-display text-lg text-mustard">
+            <span className="hidden font-display text-lg text-mustard sm:inline">
               Frites & Frangins
             </span>
           </a>
 
           {/* Catégories scrollables */}
-          <div className="scrollbar-hide -mx-4 flex flex-1 items-center gap-2 overflow-x-auto px-4 md:mx-0 md:justify-center md:overflow-visible">
+          <div className="scrollbar-hide -mx-4 flex flex-1 items-center gap-1.5 overflow-x-auto px-4 sm:gap-2 md:mx-0 md:justify-center md:overflow-visible">
             {categories.map((c) => (
               <button
                 key={c.key}
                 type="button"
                 onClick={() => scrollToMenu(c.key)}
-                className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold transition-all md:text-sm ${
+                className={`shrink-0 rounded-full px-2 py-1 text-[11px] font-semibold transition-all sm:px-3 sm:py-1.5 sm:text-xs md:text-sm ${
                   activeCategory === c.key
                     ? "bg-mustard text-ink"
                     : "border border-mustard/30 text-ink-foreground/80 hover:border-mustard/60 hover:text-mustard"
                 }`}
               >
-                <span className="mr-1">{c.emoji}</span>
+                <span className="mr-0.5 sm:mr-1">{c.emoji}</span>
                 {c.label}
               </button>
             ))}
