@@ -199,6 +199,31 @@ function Index() {
         <MenuContent />
       </section>
 
+      {/* ===== Commander en ligne ===== */}
+      <section className="bg-ink px-4 pb-16 sm:px-6 lg:pb-20">
+        <div className="mx-auto max-w-3xl">
+          <a
+            href="https://app.fritzy.be/restaurant/91c0bf4f-a5ed-4fd6-ad34-aa48f28e2e84?source=website-restaurants"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center gap-6 rounded-3xl border border-mustard/20 bg-mustard/10 p-8 text-center transition-all hover:border-mustard/50 hover:bg-mustard/15 sm:flex-row sm:text-left"
+          >
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-mustard text-ink">
+              <ShoppingBag className="h-8 w-8" />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-display text-2xl text-mustard">Commander en ligne</h3>
+              <p className="mt-1 text-ink-foreground/70">
+                Vous préférez commander depuis votre canapé ? Retrouvez-nous sur Fritzy pour une commande simple et rapide.
+              </p>
+            </div>
+            <span className="inline-flex items-center gap-2 rounded-full bg-mustard px-5 py-2.5 font-bold text-ink transition-transform group-hover:scale-105">
+              Commander <ExternalLink className="h-4 w-4" />
+            </span>
+          </a>
+        </div>
+      </section>
+
       {/* ===== Avis clients ===== */}
       <section id="avis" className="relative isolate scroll-mt-20 bg-mustard px-4 py-16 sm:px-6 lg:py-20">
         {/* F&F en filigrane sur tout le fond */}
