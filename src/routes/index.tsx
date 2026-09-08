@@ -51,7 +51,8 @@ function Index() {
     setActiveCategory(key);
     const menu = document.getElementById("menu");
     if (menu) {
-      menu.scrollIntoView({ behavior: "smooth", block: "start" });
+      const top = menu.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: "smooth" });
     }
   };
 
