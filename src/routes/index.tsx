@@ -1,10 +1,11 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, MapPin, Clock, Star, Quote, ArrowRight } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import ffAsset from "@/assets/frites-frangins-ff.png.asset.json";
 import thaiAsset from "@/assets/suggestion-moment-thai.png.asset.json";
-import { MenuContent } from "@/components/menu-content";
+import { MenuContent, categories } from "@/components/menu-content";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -44,28 +45,57 @@ const MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=Frites+%26+Frangins+Chauss%C3%A9e+de+Douai+850+Tournai";
 
 function Index() {
+  const [activeCategory, setActiveCategory] = useState("frites");
+
+  const scrollToMenu = (key: string) => {
+    setActiveCategory(key);
+    setTimeout(() => {
+      const menu = document.getElementById("menu");
+      if (menu) {
+        const top = menu.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }, 0);
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* ===== Navbar ===== */}
       <nav className="sticky top-0 z-50 border-b border-mustard/20 bg-ink/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-          <a href="#" className="flex items-center gap-3">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2 sm:gap-4 sm:px-6 sm:py-3">
+          <a href="#" className="flex shrink-0 items-center gap-2 sm:gap-3">
             <img
               src={logoAsset.url}
               alt="Logo Frites & Frangins"
-              className="h-10 w-10 rounded-lg object-cover"
+              className="h-9 w-9 rounded-lg object-cover sm:h-10 sm:w-10"
               width={80}
               height={80}
             />
-            <span className="font-display text-lg text-mustard">
+            <span className="hidden font-display text-lg text-mustard sm:inline">
               Frites & Frangins
             </span>
           </a>
-          <div className="hidden items-center gap-6 font-display text-sm text-ink-foreground/80 md:flex">
-            <Link to="/menu" className="transition-colors hover:text-mustard">Menu</Link>
-            <a href="#infos" className="transition-colors hover:text-mustard">Infos</a>
+
+          {/* Catégories scrollables */}
+          <div className="scrollbar-hide -mx-4 flex flex-1 items-center gap-1.5 overflow-x-auto px-4 sm:gap-2 md:mx-0 md:justify-center md:overflow-visible">
+            {categories.map((c) => (
+              <button
+                key={c.key}
+                type="button"
+                onClick={() => scrollToMenu(c.key)}
+                className={`shrink-0 rounded-full px-2 py-1 text-[11px] font-semibold transition-all sm:px-3 sm:py-1.5 sm:text-xs md:text-sm ${
+                  activeCategory === c.key
+                    ? "bg-mustard text-ink"
+                    : "border border-mustard/30 text-ink-foreground/80 hover:border-mustard/60 hover:text-mustard"
+                }`}
+              >
+                <span className="mr-0.5 sm:mr-1">{c.emoji}</span>
+                {c.label}
+              </button>
+            ))}
           </div>
-          <div className="flex items-center gap-2">
+
+          <div className="flex shrink-0 items-center gap-2">
             <a
               href={MAPS_URL}
               target="_blank"
@@ -149,7 +179,7 @@ function Index() {
             Notre <span className="italic text-ink-foreground">menu</span>
           </h2>
         </div>
-        <MenuContent />
+        <MenuContent activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
       </section>
 
       {/* ===== Avis clients ===== */}

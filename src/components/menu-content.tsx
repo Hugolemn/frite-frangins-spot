@@ -197,8 +197,16 @@ export const categories: Category[] = [
   },
 ];
 
-export function MenuContent() {
-  const [active, setActive] = useState("frites");
+export function MenuContent({
+  activeCategory,
+  onCategoryChange,
+}: {
+  activeCategory?: string;
+  onCategoryChange?: (key: string) => void;
+}) {
+  const [internalActive, setInternalActive] = useState("frites");
+  const active = activeCategory ?? internalActive;
+  const setActive = onCategoryChange ?? setInternalActive;
   const current: Category = categories.find((c) => c.key === active) ?? categories[0]!;
 
   return (
