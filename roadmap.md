@@ -12,3 +12,4 @@
 - [x] Témoignages : indiquer 134 avis Google.
 
 - [x] Carte « Commander en ligne » : recentrée verticalement (80/80) et ligne de séparation du dessus supprimée (même catégorie que le menu)
+- [x] Boutons « Commander » (accueil, carte, food-truck) : ouvrent Fritzy dans un nouvel onglet au lieu du téléphone.
