@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, MapPin, Clock, Star, Quote, ArrowRight, Menu, X, ShoppingBag, ExternalLink } from "lucide-react";
 
@@ -82,6 +82,10 @@ function Index() {
                 {item.label}
               </a>
             ))}
+            <span className="select-none text-foreground/30" aria-hidden="true">|</span>
+            <Link to="/food-truck" className="transition-colors hover:text-foreground">
+              Food-Truck
+            </Link>
           </div>
 
           <div className="flex items-center gap-2">
@@ -127,6 +131,13 @@ function Index() {
                   {item.label}
                 </a>
               ))}
+              <Link
+                to="/food-truck"
+                onClick={() => setMobileOpen(false)}
+                className="rounded-lg px-3 py-2 transition-colors hover:bg-muted hover:text-foreground"
+              >
+                Food-Truck
+              </Link>
             </div>
           </div>
         )}
