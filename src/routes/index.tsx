@@ -227,8 +227,8 @@ function Index() {
       <section id="avis" className="relative isolate scroll-mt-20 border-t border-border bg-muted/40 px-4 py-16 sm:px-6 lg:py-20">
         {/* F&F en filigrane sur tout le fond */}
         <div
-          className="pointer-events-none absolute inset-0 -z-10 bg-center bg-no-repeat opacity-[0.08]"
-          style={{ backgroundImage: `url(${ffMark})`, backgroundSize: "min(52%, 400px)" }}
+          className="pointer-events-none absolute inset-0 -z-10 bg-no-repeat opacity-[0.09]"
+          style={{ backgroundImage: `url(${ffMark})`, backgroundSize: "min(46%, 360px)", backgroundPosition: "50% 110px" }}
           aria-hidden="true"
         />
 
