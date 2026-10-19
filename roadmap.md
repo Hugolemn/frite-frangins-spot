@@ -7,3 +7,4 @@
 - [x] Food-Truck : préciser la location du camion sans prestation, le sucré comme le salé, et ajouter l'e-mail fritesetfrangins@gmail.com.
 - [x] Vérifier et harmoniser les réactions à la souris des boutons et liens sur toutes les pages.
 - [x] Recentrer les cases et vérifier les alignements des trois pages sur petit et grand écran.
+- [x] Carte « Commander en ligne » (Fritzy) : tout recentré (icône, titre, texte, bouton) sur ordinateur, tablette et téléphone.
