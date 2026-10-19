@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Phone, MapPin, Clock, Star, Quote, ArrowRight, Menu, X, ShoppingBag, ExternalLink } from "lucide-react";
+import { Phone, MapPin, Clock, Star, Quote, ArrowRight, Menu, X, ShoppingBag, ExternalLink, Truck } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import ffMark from "@/assets/frites-frangins-ff-mark.png";
+import foodTruckHero from "@/assets/food-truck-hero.jpg";
 import forestierAsset from "@/assets/suggestion-moment-forestier.png.asset.json";
 import { MenuContent } from "@/components/menu-content";
 import { FRITZY_URL } from "@/lib/links";
@@ -83,8 +84,11 @@ function Index() {
                 {item.label}
               </a>
             ))}
-            <span className="select-none text-foreground/30" aria-hidden="true">|</span>
-            <Link to="/food-truck" className="transition-colors hover:text-foreground">
+            <Link
+              to="/food-truck"
+              className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-xs font-bold text-background transition-transform hover:scale-105 active:scale-95"
+            >
+              <Truck className="h-3.5 w-3.5" />
               Food-Truck
             </Link>
           </div>
@@ -137,8 +141,9 @@ function Index() {
               <Link
                 to="/food-truck"
                 onClick={() => setMobileOpen(false)}
-                className="rounded-lg px-3 py-2 transition-colors hover:bg-muted hover:text-foreground"
+                className="inline-flex items-center gap-2 rounded-lg bg-foreground px-3 py-2 font-bold text-background"
               >
+                <Truck className="h-4 w-4" />
                 Food-Truck
               </Link>
             </div>
@@ -240,6 +245,38 @@ function Index() {
               Commander <ExternalLink className="h-4 w-4" />
             </span>
           </a>
+        </div>
+      </section>
+
+      {/* ===== Food-Truck ===== */}
+      <section className="bg-background px-4 py-16 sm:px-6 lg:py-20">
+        <div className="mx-auto max-w-6xl">
+          <Link
+            to="/food-truck"
+            className="group grid items-center overflow-hidden rounded-3xl bg-card ring-1 ring-border transition-shadow hover:shadow-xl hover:ring-foreground/30 lg:grid-cols-2"
+          >
+            <img
+              src={foodTruckHero}
+              alt="Le food-truck Frites & Frangins installé pour un événement"
+              className="h-56 w-full object-cover sm:h-72 lg:h-full"
+              loading="lazy"
+            />
+            <div className="flex flex-col items-center gap-4 p-8 text-center sm:p-10">
+              <span className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-background px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-foreground/70">
+                <Truck className="h-3.5 w-3.5" />
+                Food-Truck
+              </span>
+              <h2 className="font-display text-3xl text-foreground sm:text-4xl">
+                On s'invite à vos événements
+              </h2>
+              <p className="max-w-md text-muted-foreground">
+                Mariages, anniversaires, fêtes de village ou événements d'entreprise : le camion se déplace avec la vraie frite belge — avec prestation ou en location seule.
+              </p>
+              <span className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-2.5 font-display text-sm text-background transition-transform group-hover:scale-105">
+                Découvrir le food-truck <ArrowRight className="h-4 w-4" />
+              </span>
+            </div>
+          </Link>
         </div>
       </section>
 

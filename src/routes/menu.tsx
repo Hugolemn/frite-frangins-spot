@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Phone, MapPin, ArrowLeft, ShoppingBag } from "lucide-react";
+import { Phone, MapPin, ArrowLeft, ShoppingBag, Truck } from "lucide-react";
 
 import { MenuContent } from "@/components/menu-content";
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
@@ -49,6 +49,13 @@ function Menu() {
             >
               <ArrowLeft className="h-3.5 w-3.5" />
               Accueil
+            </Link>
+            <Link
+              to="/food-truck"
+              className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-xs font-bold text-background transition-transform hover:scale-105 active:scale-95"
+            >
+              <Truck className="h-3.5 w-3.5" />
+              Food-Truck
             </Link>
             <a
               href={FRITZY_URL}
