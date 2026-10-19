@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Phone, MapPin, Clock, Star, Quote, ArrowRight, Menu, X, ShoppingBag, ExternalLink } from "lucide-react";
+import { Phone, MapPin, Clock, Star, Quote, ArrowRight, Menu, X, ShoppingBag, ExternalLink, Truck } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import ffMark from "@/assets/frites-frangins-ff-mark.png";
+import foodTruckHero from "@/assets/food-truck-hero.jpg";
 import forestierAsset from "@/assets/suggestion-moment-forestier.png.asset.json";
 import { MenuContent } from "@/components/menu-content";
 import { FRITZY_URL } from "@/lib/links";
@@ -83,8 +84,11 @@ function Index() {
                 {item.label}
               </a>
             ))}
-            <span className="select-none text-foreground/30" aria-hidden="true">|</span>
-            <Link to="/food-truck" className="transition-colors hover:text-foreground">
+            <Link
+              to="/food-truck"
+              className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-xs font-bold text-background transition-transform hover:scale-105 active:scale-95"
+            >
+              <Truck className="h-3.5 w-3.5" />
               Food-Truck
             </Link>
           </div>
@@ -137,8 +141,9 @@ function Index() {
               <Link
                 to="/food-truck"
                 onClick={() => setMobileOpen(false)}
-                className="rounded-lg px-3 py-2 transition-colors hover:bg-muted hover:text-foreground"
+                className="inline-flex items-center gap-2 rounded-lg bg-foreground px-3 py-2 font-bold text-background"
               >
+                <Truck className="h-4 w-4" />
                 Food-Truck
               </Link>
             </div>
