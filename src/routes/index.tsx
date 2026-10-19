@@ -214,7 +214,7 @@ function Index() {
       </section>
 
       {/* ===== Commander en ligne ===== */}
-      <section className="border-t border-border bg-muted/40 px-4 py-16 sm:px-6 lg:py-20">
+      <section className="bg-muted/40 px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto max-w-6xl">
           <a
             href="https://app.fritzy.be/restaurant/91c0bf4f-a5ed-4fd6-ad34-aa48f28e2e84?source=website-restaurants"
