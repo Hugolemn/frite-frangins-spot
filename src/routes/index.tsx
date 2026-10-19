@@ -234,7 +234,7 @@ function Index() {
 
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-xs font-bold uppercase tracking-widest text-ink/60">Témoignages</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-ink/80">Témoignages</p>
             <h2 className="mt-2 font-display text-4xl text-ink sm:text-5xl">
               Ce que disent nos <span className="italic text-ink/80">clients</span>
             </h2>
