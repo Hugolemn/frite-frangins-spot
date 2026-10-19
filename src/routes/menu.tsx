@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Phone, MapPin, ArrowLeft } from "lucide-react";
+import { Phone, MapPin, ArrowLeft, ShoppingBag } from "lucide-react";
 
 import { MenuContent } from "@/components/menu-content";
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
@@ -50,10 +50,12 @@ function Menu() {
               Accueil
             </Link>
             <a
-              href="tel:069212655"
+              href={FRITZY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-xs font-bold text-background transition-transform active:scale-95"
             >
-              <Phone className="h-3.5 w-3.5" />
+              <ShoppingBag className="h-3.5 w-3.5" />
               Commander
             </a>
           </div>

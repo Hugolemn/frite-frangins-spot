@@ -99,10 +99,12 @@ function Index() {
               Nous trouver
             </a>
             <a
-              href="tel:069212655"
+              href={FRITZY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-xs font-bold text-background transition-transform active:scale-95"
             >
-              <Phone className="h-3.5 w-3.5" />
+              <ShoppingBag className="h-3.5 w-3.5" />
               Commander
             </a>
             <button
@@ -192,10 +194,12 @@ function Index() {
                 9,90 €
               </span>
               <a
-                href="tel:069212655"
+                href={FRITZY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border-2 border-foreground px-6 py-2.5 font-display text-sm text-foreground transition-colors hover:bg-foreground hover:text-background"
               >
-                <Phone className="h-4 w-4" />
+                <ShoppingBag className="h-4 w-4" />
                 Commander
               </a>
             </div>
@@ -217,7 +221,7 @@ function Index() {
       <section className="bg-muted/40 px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto max-w-6xl">
           <a
-            href="https://app.fritzy.be/restaurant/91c0bf4f-a5ed-4fd6-ad34-aa48f28e2e84?source=website-restaurants"
+            href={FRITZY_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex flex-col items-center gap-6 rounded-3xl border border-border bg-card p-8 text-center transition-all hover:border-foreground/30 sm:flex-row sm:text-left"
