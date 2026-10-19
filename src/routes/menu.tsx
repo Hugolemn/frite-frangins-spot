@@ -25,9 +25,9 @@ const MAPS_URL =
 
 function Menu() {
   return (
-    <div className="min-h-screen bg-ink text-ink-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       {/* ===== Navbar ===== */}
-      <nav className="sticky top-0 z-50 border-b border-mustard/20 bg-ink/95 backdrop-blur">
+      <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <Link to="/" className="flex items-center gap-3">
             <img
@@ -37,21 +37,21 @@ function Menu() {
               width={80}
               height={80}
             />
-            <span className="font-display text-lg text-mustard">
+            <span className="font-display text-lg text-foreground">
               Frites & Frangins
             </span>
           </Link>
           <div className="flex items-center gap-2">
             <Link
               to="/"
-              className="inline-flex items-center gap-1.5 rounded-full border border-mustard/60 px-4 py-2 text-xs font-bold text-mustard transition-colors hover:bg-mustard hover:text-ink"
+              className="inline-flex items-center gap-1.5 rounded-full border border-foreground/25 px-4 py-2 text-xs font-bold text-foreground transition-colors hover:border-foreground hover:bg-foreground hover:text-background"
             >
               <ArrowLeft className="h-3.5 w-3.5" />
               Accueil
             </Link>
             <a
               href="tel:069212655"
-              className="inline-flex items-center gap-1.5 rounded-full bg-mustard px-4 py-2 text-xs font-bold text-ink transition-transform active:scale-95"
+              className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-xs font-bold text-background transition-transform active:scale-95"
             >
               <Phone className="h-3.5 w-3.5" />
               Commander
@@ -61,22 +61,22 @@ function Menu() {
       </nav>
 
       {/* ===== En-tête ===== */}
-      <header className="px-4 pb-4 pt-12 text-center sm:px-6">
-        <p className="text-xs font-bold uppercase tracking-widest text-mustard/80">Sur place · À emporter · Livraison</p>
-        <h1 className="mt-2 font-display text-5xl text-mustard sm:text-6xl">
-          La <span className="italic text-ink-foreground">carte</span>
+      <header className="border-b border-border px-4 pb-6 pt-12 text-center sm:px-6">
+        <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Sur place · À emporter · Livraison</p>
+        <h1 className="mt-2 font-display text-5xl text-foreground sm:text-6xl">
+          La <span className="italic text-foreground/60">carte</span>
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-sm text-ink-foreground/60">
+        <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground">
           Choisissez une catégorie pour découvrir nos produits et leurs prix.
         </p>
       </header>
 
-      <main className="px-4 pb-16 sm:px-6">
+      <main className="px-4 py-12 sm:px-6">
         <MenuContent />
       </main>
 
       {/* ===== Footer ===== */}
-      <footer className="border-t border-mustard/20 px-6 pb-28 pt-12 text-center text-ink-foreground/60">
+      <footer className="border-t border-border px-6 pb-28 pt-12 text-center text-muted-foreground">
         <img
           src={logoAsset.url}
           alt="Logo Frites & Frangins"
@@ -85,7 +85,7 @@ function Menu() {
           height={128}
           loading="lazy"
         />
-        <p className="mt-4 font-display text-xl text-mustard">Frites & Frangins</p>
+        <p className="mt-4 font-display text-xl text-foreground">Frites & Frangins</p>
         <p className="mt-2 text-sm">Chaussée de Douai 850, 7504 Tournai</p>
         <p className="mt-1 text-sm">Tél. 069 21 26 55</p>
         <p className="mt-6 text-xs uppercase tracking-widest opacity-50">
@@ -94,11 +94,11 @@ function Menu() {
       </footer>
 
       {/* ===== Barre d'action sticky ===== */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-t from-ink via-ink/95 to-transparent p-4">
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-t from-background via-background/95 to-transparent p-4">
         <div className="mx-auto flex max-w-3xl gap-3">
           <a
             href="tel:069212655"
-            className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-mustard py-4 font-display text-sm text-ink shadow-lg transition-transform active:scale-95"
+            className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-foreground py-4 font-display text-sm text-background shadow-lg transition-transform active:scale-95"
           >
             <Phone className="h-4 w-4" />
             Appeler
@@ -107,7 +107,7 @@ function Menu() {
             href={MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-ink-foreground/10 py-4 font-display text-sm text-mustard ring-1 ring-mustard/40 backdrop-blur transition-transform active:scale-95"
+            className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-card py-4 font-display text-sm text-foreground ring-1 ring-border backdrop-blur transition-transform active:scale-95"
           >
             <MapPin className="h-4 w-4" />
             Itinéraire
@@ -115,7 +115,7 @@ function Menu() {
         </div>
       </div>
 
-      <div className="h-24 bg-ink" />
+      <div className="h-24 bg-background" />
     </div>
   );
 }
