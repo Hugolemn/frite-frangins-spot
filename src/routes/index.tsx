@@ -224,7 +224,7 @@ function Index() {
       </section>
 
       {/* ===== Avis clients ===== */}
-      <section id="avis" className="relative isolate scroll-mt-20 bg-mustard px-4 py-16 sm:px-6 lg:py-20">
+      <section id="avis" className="relative isolate scroll-mt-20 border-t border-border bg-muted/40 px-4 py-16 sm:px-6 lg:py-20">
         {/* F&F en filigrane sur tout le fond */}
         <div
           className="pointer-events-none absolute inset-0 -z-10 bg-contain bg-center bg-no-repeat opacity-[0.06]"
@@ -239,7 +239,7 @@ function Index() {
               Ce que disent nos <span className="italic text-ink/80">clients</span>
             </h2>
 
-            <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-ink/15 bg-ink/5 px-6 py-3">
+            <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-border bg-card px-6 py-3">
               <div className="flex gap-0.5">
                 {[...Array(4)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 fill-ink text-ink" />
@@ -255,7 +255,7 @@ function Index() {
             {reviews.map((r) => (
               <div
                 key={r.name}
-                className="relative rounded-3xl border border-ink/15 bg-ink/5 p-8 transition-all hover:border-ink/40"
+                className="relative rounded-3xl border border-border bg-card p-8 transition-all hover:border-foreground/25"
               >
                 <Quote className="absolute right-6 top-6 h-8 w-8 text-ink/20" />
                 <div className="mb-4 flex gap-0.5">
