@@ -136,8 +136,8 @@ function Index() {
       <header id="suggestion" className="relative isolate overflow-hidden bg-background scroll-mt-20">
         {/* F&F en filigrane sur tout le fond */}
         <div
-          className="pointer-events-none absolute inset-0 -z-10 bg-no-repeat opacity-[0.09]"
-          style={{ backgroundImage: `url(${ffMark})`, backgroundSize: "min(42%, 360px)", backgroundPosition: "24% 50%" }}
+          className="pointer-events-none absolute inset-0 -z-10 bg-no-repeat opacity-[0.10]"
+          style={{ backgroundImage: `url(${ffMark})`, backgroundSize: "min(38%, 420px)", backgroundPosition: "right 100px center" }}
           aria-hidden="true"
         />
 
@@ -227,8 +227,8 @@ function Index() {
       <section id="avis" className="relative isolate scroll-mt-20 border-t border-border bg-muted/40 px-4 py-16 sm:px-6 lg:py-20">
         {/* F&F en filigrane sur tout le fond */}
         <div
-          className="pointer-events-none absolute inset-0 -z-10 bg-no-repeat opacity-[0.09]"
-          style={{ backgroundImage: `url(${ffMark})`, backgroundSize: "min(46%, 360px)", backgroundPosition: "50% 110px" }}
+          className="pointer-events-none absolute inset-0 -z-10 bg-no-repeat opacity-[0.13]"
+          style={{ backgroundImage: `url(${ffMark})`, backgroundSize: "min(58%, 520px)", backgroundPosition: "50% 52%" }}
           aria-hidden="true"
         />
 
@@ -239,7 +239,7 @@ function Index() {
               Ce que disent nos clients
             </h2>
 
-            <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-border bg-card px-6 py-3">
+            <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-border bg-card/70 px-6 py-3">
               <div className="flex gap-0.5">
                 {[...Array(4)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 fill-ink text-ink" />
@@ -255,7 +255,7 @@ function Index() {
             {reviews.map((r) => (
               <div
                 key={r.name}
-                className="relative rounded-3xl border border-border bg-card p-8 transition-all hover:border-foreground/25"
+                className="relative rounded-3xl border border-border bg-card/70 p-8 transition-all hover:border-foreground/25"
               >
                 <Quote className="absolute right-6 top-6 h-8 w-8 text-ink/20" />
                 <div className="mb-4 flex gap-0.5">
