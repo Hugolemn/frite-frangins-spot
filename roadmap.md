@@ -10,3 +10,5 @@
 - [x] Carte « Commander en ligne » (Fritzy) : tout recentré (icône, titre, texte, bouton) sur ordinateur, tablette et téléphone.
 - [x] Carte « Commander en ligne » (Fritzy) : recentrée et alignée sur les lignes de catégories du menu, sans changer sa taille.
 - [x] Témoignages : indiquer 134 avis Google.
+
+- [x] Carte « Commander en ligne » : recentrée verticalement (80/80) et ligne de séparation du dessus supprimée (même catégorie que le menu)
