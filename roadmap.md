@@ -14,3 +14,5 @@
 - [x] Carte « Commander en ligne » : recentrée verticalement (80/80) et ligne de séparation du dessus supprimée (même catégorie que le menu)
 - [x] Boutons « Commander » (accueil, carte, food-truck) : ouvrent Fritzy dans un nouvel onglet au lieu du téléphone.
 - [x] Mettre le Food-Truck plus en avant : bouton bien visible dans le menu (accueil + carte) et bannière Food-Truck sur la page d'accueil.
+
+- [x] Bannière Food-Truck de l'accueil : photo remplacée par la vraie remorque (asset CDN food-truck-banniere.png)
