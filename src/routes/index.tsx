@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, MapPin, Clock, Star, Quote, ArrowRight, Menu, X, ShoppingBag, ExternalLink } from "lucide-react";
 
@@ -40,7 +40,6 @@ const reviews: { name: string; text: string; rating: number }[] = [
   { name: "Nicolas V.", text: "D'excellents burgers au bœuf faits maison. Je vous les recommande vivement !", rating: 5 },
 ];
 
-
 const MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=Frites+%26+Frangins+Chauss%C3%A9e+de+Douai+850+Tournai";
 
@@ -57,7 +56,7 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* ===== Navbar ===== */}
-      <nav className="sticky top-0 z-50 border-b border-mustard/20 bg-ink/95 backdrop-blur">
+      <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <a href="#" className="flex items-center gap-3">
             <img
@@ -67,18 +66,18 @@ function Index() {
               width={80}
               height={80}
             />
-            <span className="font-display text-lg text-mustard">
+            <span className="font-display text-lg text-foreground">
               Frites & Frangins
             </span>
           </a>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-6 font-display text-sm text-ink-foreground/80 md:flex">
+          <div className="hidden items-center gap-6 font-display text-sm text-foreground/70 md:flex">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="transition-colors hover:text-mustard"
+                className="transition-colors hover:text-foreground"
               >
                 {item.label}
               </a>
@@ -90,14 +89,14 @@ function Index() {
               href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden items-center gap-1.5 rounded-full border border-mustard/60 px-4 py-2 text-xs font-bold text-mustard transition-colors hover:bg-mustard hover:text-ink sm:inline-flex"
+              className="hidden items-center gap-1.5 rounded-full border border-foreground/25 px-4 py-2 text-xs font-bold text-foreground transition-colors hover:border-foreground hover:bg-foreground hover:text-background sm:inline-flex"
             >
               <MapPin className="h-3.5 w-3.5" />
               Nous trouver
             </a>
             <a
               href="tel:069212655"
-              className="inline-flex items-center gap-1.5 rounded-full bg-mustard px-4 py-2 text-xs font-bold text-ink transition-transform active:scale-95"
+              className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-xs font-bold text-background transition-transform active:scale-95"
             >
               <Phone className="h-3.5 w-3.5" />
               Commander
@@ -105,7 +104,7 @@ function Index() {
             <button
               type="button"
               onClick={() => setMobileOpen((v) => !v)}
-              className="inline-flex items-center justify-center rounded-full p-2 text-mustard md:hidden"
+              className="inline-flex items-center justify-center rounded-full p-2 text-foreground md:hidden"
               aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
               aria-expanded={mobileOpen}
             >
@@ -116,14 +115,14 @@ function Index() {
 
         {/* Mobile nav */}
         {mobileOpen && (
-          <div className="border-t border-mustard/15 px-4 pb-4 pt-2 md:hidden">
-            <div className="flex flex-col gap-2 font-display text-sm text-ink-foreground/80">
+          <div className="border-t border-border px-4 pb-4 pt-2 md:hidden">
+            <div className="flex flex-col gap-2 font-display text-sm text-foreground/80">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-lg px-3 py-2 transition-colors hover:bg-mustard/10 hover:text-mustard"
+                  className="rounded-lg px-3 py-2 transition-colors hover:bg-muted hover:text-foreground"
                 >
                   {item.label}
                 </a>
@@ -134,10 +133,10 @@ function Index() {
       </nav>
 
       {/* ===== Hero ===== */}
-      <header id="suggestion" className="relative isolate overflow-hidden bg-mustard scroll-mt-20">
+      <header id="suggestion" className="relative isolate overflow-hidden bg-background scroll-mt-20">
         {/* F&F en filigrane sur tout le fond */}
         <div
-          className="pointer-events-none absolute inset-0 -z-10 bg-contain bg-center bg-no-repeat opacity-[0.06]"
+          className="pointer-events-none absolute inset-0 -z-10 bg-contain bg-center bg-no-repeat opacity-[0.05]"
           style={{ backgroundImage: `url(${ffAsset.url})` }}
           aria-hidden="true"
         />
@@ -148,7 +147,7 @@ function Index() {
               <img
                 src={thaiAsset.url}
                 alt="Le Thaï : bun brioché au poulet croustillant, nouilles teriyaki et sauce sriracha"
-                className="h-full w-auto object-contain drop-shadow-2xl"
+                className="h-full w-auto object-contain drop-shadow-xl"
                 width={1400}
                 height={1000}
                 fetchPriority="high"
@@ -157,15 +156,15 @@ function Index() {
 
           {/* Texte suggestion */}
           <div className="text-center lg:text-left">
-            <span className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-mustard">
+            <span className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-card px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-foreground/70">
               Suggestion du moment
             </span>
 
-              <h1 className="mt-5 font-display text-4xl leading-[0.95] text-ink sm:text-5xl lg:text-6xl">
+              <h1 className="mt-5 font-display text-4xl leading-[0.95] text-foreground sm:text-5xl lg:text-6xl">
                 Le Thaï
               </h1>
 
-              <ul className="mx-auto mt-4 max-w-sm space-y-2 text-base leading-relaxed text-ink/80 lg:mx-0">
+              <ul className="mx-auto mt-4 max-w-sm space-y-2 text-base leading-relaxed text-foreground/70 lg:mx-0">
                 <li>Un bun artisanal brioché</li>
                 <li>150 g de poulet croustillant</li>
                 <li>Mayonnaise sriracha très légèrement épicée</li>
@@ -174,12 +173,12 @@ function Index() {
               </ul>
 
             <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
-              <span className="rounded-full bg-ink px-6 py-2.5 font-display text-xl text-mustard">
+              <span className="rounded-full bg-foreground px-6 py-2.5 font-display text-xl text-background">
                 9,50 €
               </span>
               <a
                 href="tel:069212655"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-ink px-6 py-2.5 font-display text-sm text-ink transition-colors hover:bg-ink hover:text-mustard"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-foreground px-6 py-2.5 font-display text-sm text-foreground transition-colors hover:bg-foreground hover:text-background"
               >
                 <Phone className="h-4 w-4" />
                 Commander
@@ -190,34 +189,34 @@ function Index() {
       </header>
 
       {/* ===== Menu ===== */}
-      <section id="menu" className="bg-ink px-4 py-16 sm:px-6 lg:py-20">
+      <section id="menu" className="scroll-mt-20 border-t border-border bg-muted/40 px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto mb-10 max-w-6xl text-center">
-          <h2 className="font-display text-4xl text-mustard sm:text-5xl">
-            Notre <span className="italic text-ink-foreground">menu</span>
+          <h2 className="font-display text-4xl text-foreground sm:text-5xl">
+            Notre <span className="italic text-foreground/60">menu</span>
           </h2>
         </div>
         <MenuContent />
       </section>
 
       {/* ===== Commander en ligne ===== */}
-      <section className="bg-ink px-4 pb-16 sm:px-6 lg:pb-20">
+      <section className="border-t border-border bg-muted/40 px-4 pb-16 sm:px-6 lg:pb-20">
         <div className="mx-auto max-w-3xl">
           <a
             href="https://app.fritzy.be/restaurant/91c0bf4f-a5ed-4fd6-ad34-aa48f28e2e84?source=website-restaurants"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col items-center gap-6 rounded-3xl border border-mustard/20 bg-mustard/10 p-8 text-center transition-all hover:border-mustard/50 hover:bg-mustard/15 sm:flex-row sm:text-left"
+            className="group flex flex-col items-center gap-6 rounded-3xl border border-border bg-card p-8 text-center transition-all hover:border-foreground/30 sm:flex-row sm:text-left"
           >
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-mustard text-ink">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-foreground text-background">
               <ShoppingBag className="h-8 w-8" />
             </div>
             <div className="flex-1">
-              <h3 className="font-display text-2xl text-mustard">Commander en ligne</h3>
-              <p className="mt-1 text-ink-foreground/70">
+              <h3 className="font-display text-2xl text-foreground">Commander en ligne</h3>
+              <p className="mt-1 text-muted-foreground">
                 Vous préférez commander depuis votre canapé ? Retrouvez-nous sur Fritzy pour une commande simple et rapide.
               </p>
             </div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-mustard px-5 py-2.5 font-bold text-ink transition-transform group-hover:scale-105">
+            <span className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 font-bold text-background transition-transform group-hover:scale-105">
               Commander <ExternalLink className="h-4 w-4" />
             </span>
           </a>
@@ -276,12 +275,12 @@ function Index() {
       </section>
 
       {/* ===== Infos pratiques ===== */}
-      <section id="infos" className="scroll-mt-20 bg-ink px-4 py-16 sm:px-6 lg:py-20">
+      <section id="infos" className="scroll-mt-20 bg-background px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
-            <p className="text-xs font-bold uppercase tracking-widest text-ink-foreground/60">Tout ce qu'il faut savoir</p>
-            <h2 className="mt-2 font-display text-4xl text-mustard sm:text-5xl">
-              Infos <span className="italic text-ink-foreground">pratiques</span>
+            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Tout ce qu'il faut savoir</p>
+            <h2 className="mt-2 font-display text-4xl text-foreground sm:text-5xl">
+              Infos <span className="italic text-foreground/60">pratiques</span>
             </h2>
           </div>
 
@@ -291,20 +290,20 @@ function Index() {
               href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex h-full flex-col gap-4 rounded-3xl bg-ink-foreground/[0.03] p-6 ring-1 ring-mustard/15 transition-colors hover:ring-mustard"
+              className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 ring-1 ring-border transition-colors hover:ring-foreground/40"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background">
                 <MapPin className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-display text-lg text-ink-foreground">Adresse</h3>
-                <p className="mt-1 text-sm text-ink-foreground/60">
+                <h3 className="font-display text-lg text-foreground">Adresse</h3>
+                <p className="mt-1 text-sm text-muted-foreground">
                   Chaussée de Douai 850
                   <br />
                   7504 Tournai
                 </p>
               </div>
-              <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-mustard group-hover:underline">
+              <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-foreground group-hover:underline">
                 Itinéraire <ArrowRight className="h-4 w-4" />
               </span>
             </a>
@@ -312,17 +311,17 @@ function Index() {
             {/* Téléphone */}
             <a
               href="tel:069212655"
-              className="group flex h-full flex-col gap-4 rounded-3xl bg-ink-foreground/[0.03] p-6 ring-1 ring-mustard/15 transition-colors hover:ring-mustard"
+              className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 ring-1 ring-border transition-colors hover:ring-foreground/40"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-mustard text-ink">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background">
                 <Phone className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-display text-lg text-ink-foreground">Téléphone</h3>
-                <p className="mt-1 text-2xl font-extrabold text-ink-foreground">069 21 26 55</p>
-                <p className="mt-1 text-sm text-ink-foreground/60">Appeler pour commander ou réserver</p>
+                <h3 className="font-display text-lg text-foreground">Téléphone</h3>
+                <p className="mt-1 text-2xl font-extrabold text-foreground">069 21 26 55</p>
+                <p className="mt-1 text-sm text-muted-foreground">Appeler pour commander ou réserver</p>
               </div>
-              <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-mustard group-hover:underline">
+              <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-foreground group-hover:underline">
                 Appeler <ArrowRight className="h-4 w-4" />
               </span>
             </a>
@@ -330,18 +329,18 @@ function Index() {
 
           {/* Horaires + Carte */}
           <div className="mt-6 grid gap-6 lg:grid-cols-2">
-            <div className="overflow-hidden rounded-3xl bg-ink-foreground/[0.03] ring-1 ring-mustard/15">
-              <div className="flex items-center gap-3 bg-mustard px-6 py-4">
-                <Clock className="h-5 w-5 text-ink" />
-                <h3 className="font-display text-ink">Horaires d'ouverture</h3>
+            <div className="overflow-hidden rounded-3xl bg-card ring-1 ring-border">
+              <div className="flex items-center gap-3 border-b border-border bg-muted px-6 py-4">
+                <Clock className="h-5 w-5 text-foreground" />
+                <h3 className="font-display text-foreground">Horaires d'ouverture</h3>
               </div>
-              <div className="divide-y divide-mustard/15 px-6 py-2">
+              <div className="divide-y divide-border px-6 py-2">
                 {schedule.map((item) => (
                   <div key={item.day} className="flex items-center justify-between py-3">
-                    <span className={item.closed ? "italic text-ink-foreground/60" : "font-medium text-ink-foreground"}>
+                    <span className={item.closed ? "italic text-muted-foreground" : "font-medium text-foreground"}>
                       {item.day}
                     </span>
-                    <span className={item.closed ? "italic text-ink-foreground/60" : "text-right text-ink-foreground/60"}>
+                    <span className={item.closed ? "italic text-muted-foreground" : "text-right text-muted-foreground"}>
                       {item.hours}
                     </span>
                   </div>
@@ -349,7 +348,7 @@ function Index() {
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-3xl ring-1 ring-mustard/15">
+            <div className="overflow-hidden rounded-3xl ring-1 ring-border">
               <iframe
                 title="Frites & Frangins sur Google Maps — Chaussée de Douai 850, 7504 Tournai"
                 src="https://www.google.com/maps?q=Frites%20%26%20Frangins%2C%20Chauss%C3%A9e%20de%20Douai%20850%2C%207504%20Tournai&output=embed"
@@ -365,8 +364,8 @@ function Index() {
       </section>
 
       {/* ===== Footer ===== */}
-      <footer className="bg-ink px-4 pb-16 pt-16 text-center text-ink-foreground/60 sm:px-6">
-        <div className="mx-auto max-w-6xl border-t border-mustard/20 pt-12">
+      <footer className="border-t border-border bg-background px-4 pb-16 pt-16 text-center text-muted-foreground sm:px-6">
+        <div className="mx-auto max-w-6xl">
           <img
             src={logoAsset.url}
             alt="Logo Frites & Frangins"
@@ -375,7 +374,7 @@ function Index() {
             height={128}
             loading="lazy"
           />
-          <p className="mt-4 font-display text-xl text-mustard">Frites & Frangins</p>
+          <p className="mt-4 font-display text-xl text-foreground">Frites & Frangins</p>
           <p className="mt-2 text-sm">Chaussée de Douai 850, 7504 Tournai</p>
           <p className="mt-1 text-sm">Tél. 069 21 26 55</p>
           <p className="mt-6 text-xs uppercase tracking-widest opacity-50">

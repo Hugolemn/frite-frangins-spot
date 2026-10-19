@@ -64,7 +64,7 @@ export const categories: Category[] = [
   {
     key: "burgers-maison",
     label: "Burgers Maison",
-    note: "Servis seuls / sur assiette — steak 100 % bœuf, sélection du boucher",
+    note: "Servis seuls / sur assiettes — steak 100 % bœuf, sélection du boucher",
     items: [
       { name: "Le Classique", price: "8,20 € / 12,50 €", desc: "Bun artisanal, viande 140gr, salade, tomate, oignons frits, cheddar, sauce Giant" },
       { name: "USA", price: "9,20 € / 14,00 €", desc: "Bun artisanal, viande 140gr, salade, tomate, oignons rouges, bacon, cheddar, cornichon, sauce barbecue" },
@@ -198,8 +198,8 @@ export function MenuContent() {
             aria-pressed={active === c.key}
             className={`rounded-full px-4 py-2.5 text-sm font-semibold transition-all ${
               active === c.key
-                ? "bg-mustard text-ink shadow-md"
-                : "border border-mustard/30 bg-ink-foreground/[0.04] text-ink-foreground/80 hover:border-mustard/60 hover:text-mustard"
+                ? "bg-foreground text-background shadow-sm"
+                : "border border-border bg-card text-foreground/70 hover:border-foreground/40 hover:text-foreground"
             }`}
           >
             {c.label}
@@ -210,18 +210,18 @@ export function MenuContent() {
       {/* ===== Contenu catégorie ===== */}
       <section className="mt-12">
         {current.note && (
-          <p className="mb-6 text-center text-xs font-semibold uppercase tracking-wide text-ink-foreground/60">
+          <p className="mb-6 text-center text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             {current.note}
           </p>
         )}
 
         {current.key === "sauces" ? (
-          <div className="mx-auto max-w-3xl rounded-3xl border border-mustard/15 bg-ink-foreground/[0.03] p-8">
+          <div className="mx-auto max-w-3xl rounded-3xl border border-border bg-card p-8">
             <div className="flex flex-wrap justify-center gap-3">
               {current.items.map((item) => (
                 <span
                   key={item.name}
-                  className="rounded-full bg-ink-foreground/10 px-4 py-2 text-sm font-medium text-ink-foreground"
+                  className="rounded-full bg-muted px-4 py-2 text-sm font-medium text-foreground"
                 >
                   {item.name}
                 </span>
@@ -233,20 +233,20 @@ export function MenuContent() {
             {current.items.map((item) => (
               <div
                 key={item.name}
-                className="group w-full max-w-xs rounded-2xl border border-mustard/15 bg-ink-foreground/[0.03] p-5 transition-all hover:-translate-y-1 hover:border-mustard/50 hover:bg-ink-foreground/[0.06] sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]"
+                className="group w-full max-w-xs rounded-2xl border border-border bg-card p-5 transition-all hover:-translate-y-1 hover:border-foreground/30 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]"
               >
                 <div className="mb-1 flex items-start justify-between gap-3">
-                  <h3 className="font-display text-base text-ink-foreground transition-colors group-hover:text-mustard">
+                  <h3 className="font-display text-base text-foreground">
                     {item.name}
                   </h3>
                   {item.price && (
-                    <span className="whitespace-nowrap text-base font-extrabold text-mustard">
+                    <span className="whitespace-nowrap text-base font-extrabold text-foreground">
                       {item.price}
                     </span>
                   )}
                 </div>
                 {item.desc && (
-                  <p className="text-sm leading-snug text-ink-foreground/55">{item.desc}</p>
+                  <p className="text-sm leading-snug text-muted-foreground">{item.desc}</p>
                 )}
               </div>
             ))}
