@@ -64,7 +64,7 @@ function Menu() {
       <header className="border-b border-border px-4 pb-6 pt-12 text-center sm:px-6">
         <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Sur place · À emporter · Livraison</p>
         <h1 className="mt-2 font-display text-5xl text-foreground sm:text-6xl">
-          La <span className="italic text-foreground/60">carte</span>
+          La carte
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground">
           Choisissez une catégorie pour découvrir nos produits et leurs prix.

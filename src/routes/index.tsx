@@ -192,7 +192,7 @@ function Index() {
       <section id="menu" className="scroll-mt-20 border-t border-border bg-muted/40 px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto mb-10 max-w-6xl text-center">
           <h2 className="font-display text-4xl text-foreground sm:text-5xl">
-            Notre <span className="italic text-foreground/60">menu</span>
+            Notre menu
           </h2>
         </div>
         <MenuContent />
@@ -236,7 +236,7 @@ function Index() {
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-ink/80">Témoignages</p>
             <h2 className="mt-2 font-display text-4xl text-ink sm:text-5xl">
-              Ce que disent nos <span className="italic text-ink/80">clients</span>
+              Ce que disent nos clients
             </h2>
 
             <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-border bg-card px-6 py-3">
@@ -280,7 +280,7 @@ function Index() {
           <div className="text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Tout ce qu'il faut savoir</p>
             <h2 className="mt-2 font-display text-4xl text-foreground sm:text-5xl">
-              Infos <span className="italic text-foreground/60">pratiques</span>
+              Infos pratiques
             </h2>
           </div>
 
