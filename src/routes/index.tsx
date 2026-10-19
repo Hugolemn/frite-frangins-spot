@@ -37,7 +37,7 @@ const reviews: { name: string; text: string; rating: number }[] = [
   { name: "Lenny V.", text: "Une friterie d'exception ! Le burger au bœuf pur est un vrai régal ; on sent la qualité dès le premier coup d'œil. Un service client excellent et un frigo à boissons qui donne envie d'y passer tout le week-end !", rating: 5 },
   { name: "Murielle B.", text: "Nous y sommes allés deux fois : une fois pour emporter et une fois pour une livraison, et nous sommes ravis : la cuisine est excellente ! Nous le recommandons vivement.", rating: 5 },
   { name: "Jacky B.", text: "Un endroit génial, une superbe découverte !! La cuisine était excellente et le service rapide et sympathique.", rating: 5 },
-  { name: "Nicolas V.", text: "D'excellents burgers au bœuf faits maison. Je vous les recommandes vivement !", rating: 5 },
+  { name: "Nicolas V.", text: "D'excellents burgers au bœuf faits maison. Je vous les recommande vivement !", rating: 5 },
 ];
 
 const MAPS_URL =
