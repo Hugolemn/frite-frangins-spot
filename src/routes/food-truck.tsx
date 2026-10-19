@@ -51,20 +51,20 @@ function FoodTruck() {
     <div className="min-h-screen bg-background text-foreground">
       {/* ===== Navbar ===== */}
       <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-          <Link to="/" className="flex items-center gap-3">
+        <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:flex sm:justify-between sm:px-6">
+          <Link to="/" className="flex min-w-0 items-center gap-3">
             <img
               src={logoAsset.url}
               alt="Logo Frites & Frangins"
-              className="h-10 w-10 rounded-lg object-cover"
+              className="h-10 w-10 shrink-0 rounded-lg object-cover"
               width={80}
               height={80}
             />
-            <span className="font-display text-lg text-foreground">Frites & Frangins</span>
+            <span className="truncate font-display text-lg text-foreground">Frites & Frangins</span>
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-6 font-display text-sm text-foreground/70 md:flex">
+          <div className="hidden shrink-0 items-center gap-6 font-display text-sm text-foreground/70 md:flex">
             <Link to="/" className="transition-colors hover:text-foreground">
               Accueil
             </Link>
@@ -74,7 +74,7 @@ function FoodTruck() {
             <span className="text-foreground font-semibold underline underline-offset-8">Food-Truck</span>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-2">
             <a
               href="tel:069212655"
               className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-xs font-bold text-background transition-transform active:scale-95"
@@ -164,7 +164,7 @@ function FoodTruck() {
 
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {occasions.map((o) => (
-                <div key={o.title} className="flex h-full flex-col rounded-3xl bg-card p-6 ring-1 ring-border transition-colors hover:ring-foreground/40">
+                <div key={o.title} className="flex h-full flex-col rounded-3xl bg-card p-6 text-center ring-1 ring-border transition-colors hover:ring-foreground/40">
                   <h3 className="font-display text-lg text-foreground">{o.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{o.desc}</p>
                 </div>
@@ -187,13 +187,13 @@ function FoodTruck() {
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2">
-              <div className="flex h-full flex-col rounded-3xl bg-card p-7 ring-1 ring-border transition-colors hover:ring-foreground/40">
+              <div className="flex h-full flex-col rounded-3xl bg-card p-7 text-center ring-1 ring-border transition-colors hover:ring-foreground/40">
                 <h3 className="font-display text-xl text-foreground">Avec prestation</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   On amène le camion, on cuisine et on sert sur place : frites, burgers, snacks. Vous n'avez qu'à profiter de vos invités.
                 </p>
               </div>
-              <div className="flex h-full flex-col rounded-3xl bg-card p-7 ring-1 ring-border transition-colors hover:ring-foreground/40">
+              <div className="flex h-full flex-col rounded-3xl bg-card p-7 text-center ring-1 ring-border transition-colors hover:ring-foreground/40">
                 <h3 className="font-display text-xl text-foreground">Le camion seul, en location</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   Envie de tout gérer vous-même ? Le food-truck se loue aussi sans prestation : vous le récupérez et vous l'exploitez comme vous le souhaitez.
@@ -216,13 +216,11 @@ function FoodTruck() {
               </p>
             </div>
 
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {prestations.map((p, i) => (
+            <div className="flex flex-wrap justify-center gap-5">
+              {prestations.map((p) => (
                 <div
                   key={p.title}
-                  className={`flex h-full flex-col rounded-3xl bg-card p-6 ring-1 ring-border transition-colors hover:ring-foreground/40${
-                    i === prestations.length - 1 ? " sm:col-span-2 lg:col-span-2" : ""
-                  }`}
+                  className="flex w-full flex-col rounded-3xl bg-card p-6 text-center ring-1 ring-border transition-colors hover:ring-foreground/40 sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.834rem)]"
                 >
                   <h3 className="font-display text-lg text-foreground">{p.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
@@ -248,10 +246,10 @@ function FoodTruck() {
               Appelez-nous, écrivez-nous ou passez à la friterie : on regarde ensemble la date, le nombre de personnes et la formule qui vous convient.
             </p>
 
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid gap-5 sm:grid-cols-4 lg:grid-cols-3 [&>a]:min-w-0 sm:[&>a]:col-span-2 lg:[&>a]:col-span-1 sm:[&>a:last-child]:col-start-2 lg:[&>a:last-child]:col-start-auto">
               <a
                 href="tel:069212655"
-                className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 text-left ring-1 ring-border transition-colors hover:ring-foreground/40"
+                className="group flex h-full flex-col items-center gap-4 rounded-3xl bg-card p-6 text-center ring-1 ring-border transition-colors hover:ring-foreground/40"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background">
                   <Phone className="h-6 w-6" />
@@ -268,14 +266,14 @@ function FoodTruck() {
 
               <a
                 href={`mailto:${EMAIL}`}
-                className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 text-left ring-1 ring-border transition-colors hover:ring-foreground/40"
+                className="group flex h-full flex-col items-center gap-4 rounded-3xl bg-card p-6 text-center ring-1 ring-border transition-colors hover:ring-foreground/40"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background">
                   <Mail className="h-6 w-6" />
                 </div>
                 <div>
                   <h3 className="font-display text-lg text-foreground">Par e-mail</h3>
-                  <p className="mt-1 break-all text-sm font-bold text-foreground">{EMAIL}</p>
+                  <p className="mt-1 text-sm font-bold text-foreground [overflow-wrap:anywhere]">{EMAIL}</p>
                   <p className="mt-1 text-sm text-muted-foreground">Décrivez-nous votre date et le nombre de personnes</p>
                 </div>
                 <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-foreground group-hover:underline">
@@ -287,7 +285,7 @@ function FoodTruck() {
                 href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 text-left ring-1 ring-border transition-colors hover:ring-foreground/40"
+                className="group flex h-full flex-col items-center gap-4 rounded-3xl bg-card p-6 text-center ring-1 ring-border transition-colors hover:ring-foreground/40"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background">
                   <MapPin className="h-6 w-6" />

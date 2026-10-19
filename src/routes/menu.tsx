@@ -28,20 +28,20 @@ function Menu() {
     <div className="min-h-screen bg-background text-foreground">
       {/* ===== Navbar ===== */}
       <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-          <Link to="/" className="flex items-center gap-3">
+        <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:flex sm:justify-between sm:px-6">
+          <Link to="/" className="flex min-w-0 items-center gap-3">
             <img
               src={logoAsset.url}
               alt="Logo Frites & Frangins"
-              className="h-10 w-10 rounded-lg object-cover"
+              className="h-10 w-10 shrink-0 rounded-lg object-cover"
               width={80}
               height={80}
             />
-            <span className="font-display text-lg text-foreground">
+            <span className="truncate font-display text-lg text-foreground">
               Frites & Frangins
             </span>
           </Link>
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-2">
             <Link
               to="/"
               className="inline-flex items-center gap-1.5 rounded-full border border-foreground/25 px-4 py-2 text-xs font-bold text-foreground transition-colors hover:border-foreground hover:bg-foreground hover:text-background"
