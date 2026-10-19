@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Phone, MapPin, Clock, Star, Quote, ArrowRight, Menu, X, ShoppingBag, ExternalLink } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
-import ffAsset from "@/assets/frites-frangins-ff.png.asset.json";
+import ffMark from "@/assets/frites-frangins-ff-mark.png";
 import thaiAsset from "@/assets/suggestion-moment-thai.png.asset.json";
 import { MenuContent } from "@/components/menu-content";
 
@@ -136,8 +136,8 @@ function Index() {
       <header id="suggestion" className="relative isolate overflow-hidden bg-background scroll-mt-20">
         {/* F&F en filigrane sur tout le fond */}
         <div
-          className="pointer-events-none absolute inset-0 -z-10 bg-contain bg-center bg-no-repeat opacity-[0.05]"
-          style={{ backgroundImage: `url(${ffAsset.url})` }}
+          className="pointer-events-none absolute inset-0 -z-10 bg-no-repeat opacity-[0.10]"
+          style={{ backgroundImage: `url(${ffMark})`, backgroundSize: "min(38%, 420px)", backgroundPosition: "right 100px center" }}
           aria-hidden="true"
         />
 
@@ -192,7 +192,7 @@ function Index() {
       <section id="menu" className="scroll-mt-20 border-t border-border bg-muted/40 px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto mb-10 max-w-6xl text-center">
           <h2 className="font-display text-4xl text-foreground sm:text-5xl">
-            Notre <span className="italic text-foreground/60">menu</span>
+            Notre menu
           </h2>
         </div>
         <MenuContent />
@@ -227,8 +227,8 @@ function Index() {
       <section id="avis" className="relative isolate scroll-mt-20 border-t border-border bg-muted/40 px-4 py-16 sm:px-6 lg:py-20">
         {/* F&F en filigrane sur tout le fond */}
         <div
-          className="pointer-events-none absolute inset-0 -z-10 bg-contain bg-center bg-no-repeat opacity-[0.06]"
-          style={{ backgroundImage: `url(${ffAsset.url})` }}
+          className="pointer-events-none absolute inset-0 -z-10 bg-no-repeat opacity-[0.16]"
+          style={{ backgroundImage: `url(${ffMark})`, backgroundSize: "min(58%, 520px)", backgroundPosition: "50% 52%" }}
           aria-hidden="true"
         />
 
@@ -236,10 +236,10 @@ function Index() {
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-ink/80">Témoignages</p>
             <h2 className="mt-2 font-display text-4xl text-ink sm:text-5xl">
-              Ce que disent nos <span className="italic text-ink/80">clients</span>
+              Ce que disent nos clients
             </h2>
 
-            <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-border bg-card px-6 py-3">
+            <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-border bg-card/55 px-6 py-3">
               <div className="flex gap-0.5">
                 {[...Array(4)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 fill-ink text-ink" />
@@ -255,7 +255,7 @@ function Index() {
             {reviews.map((r) => (
               <div
                 key={r.name}
-                className="relative rounded-3xl border border-border bg-card p-8 transition-all hover:border-foreground/25"
+                className="relative rounded-3xl border border-border bg-card/55 p-8 transition-all hover:border-foreground/25"
               >
                 <Quote className="absolute right-6 top-6 h-8 w-8 text-ink/20" />
                 <div className="mb-4 flex gap-0.5">
@@ -280,7 +280,7 @@ function Index() {
           <div className="text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Tout ce qu'il faut savoir</p>
             <h2 className="mt-2 font-display text-4xl text-foreground sm:text-5xl">
-              Infos <span className="italic text-foreground/60">pratiques</span>
+              Infos pratiques
             </h2>
           </div>
 
