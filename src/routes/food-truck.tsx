@@ -217,8 +217,13 @@ function FoodTruck() {
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {prestations.map((p) => (
-                <div key={p.title} className="flex h-full flex-col rounded-3xl bg-card p-6 ring-1 ring-border transition-colors hover:ring-foreground/40">
+              {prestations.map((p, i) => (
+                <div
+                  key={p.title}
+                  className={`flex h-full flex-col rounded-3xl bg-card p-6 ring-1 ring-border transition-colors hover:ring-foreground/40${
+                    i === prestations.length - 1 ? " sm:col-span-2 lg:col-span-2" : ""
+                  }`}
+                >
                   <h3 className="font-display text-lg text-foreground">{p.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
                 </div>
@@ -270,7 +275,7 @@ function FoodTruck() {
                 </div>
                 <div>
                   <h3 className="font-display text-lg text-foreground">Par e-mail</h3>
-                  <p className="mt-1 break-all font-bold text-foreground">{EMAIL}</p>
+                  <p className="mt-1 break-all text-sm font-bold text-foreground">{EMAIL}</p>
                   <p className="mt-1 text-sm text-muted-foreground">Décrivez-nous votre date et le nombre de personnes</p>
                 </div>
                 <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-foreground group-hover:underline">
