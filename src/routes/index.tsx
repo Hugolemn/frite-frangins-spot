@@ -183,9 +183,13 @@ function Index() {
                 <li>Roquette</li>
               </ul>
 
+              <p className="mx-auto mt-5 max-w-sm text-base italic leading-relaxed text-foreground/70 lg:mx-0">
+                Un burger généreux, crémeux et bien réconfortant, avec des saveurs qui collent parfaitement à la saison. 🍁
+              </p>
+
             <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <span className="rounded-full bg-foreground px-6 py-2.5 font-display text-xl text-background">
-                9,50 €
+                9,90 €
               </span>
               <a
                 href="tel:069212655"
