@@ -4,7 +4,7 @@ import { Phone, MapPin, Clock, Star, Quote, ArrowRight, Menu, X, ShoppingBag, Ex
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import ffMark from "@/assets/frites-frangins-ff-mark.png";
-import thaiAsset from "@/assets/suggestion-moment-thai.png.asset.json";
+import forestierAsset from "@/assets/suggestion-moment-forestier.png.asset.json";
 import { MenuContent } from "@/components/menu-content";
 
 export const Route = createFileRoute("/")({
@@ -156,11 +156,11 @@ function Index() {
           {/* Visuel suggestion */}
           <div className="relative flex aspect-square max-h-[420px] items-center justify-center justify-self-center lg:max-h-[520px] lg:justify-self-end">
               <img
-                src={thaiAsset.url}
-                alt="Le Thaï : bun brioché au poulet croustillant, nouilles teriyaki et sauce sriracha"
-                className="h-full w-auto object-contain drop-shadow-xl"
-                width={1400}
-                height={1000}
+                src={forestierAsset.url}
+                alt="Le Forestier : bun toasté au porc affiné, galette de pommes de terre croustillante, sauce Archiduc aux champignons et roquette"
+                className="h-full w-full rounded-3xl object-cover drop-shadow-xl"
+                width={826}
+                height={1100}
                 fetchPriority="high"
               />
           </div>
@@ -172,15 +172,15 @@ function Index() {
             </span>
 
               <h1 className="mt-5 font-display text-4xl leading-[0.95] text-foreground sm:text-5xl lg:text-6xl">
-                Le Thaï
+                Le Forestier
               </h1>
 
               <ul className="mx-auto mt-4 max-w-sm space-y-2 text-base leading-relaxed text-foreground/70 lg:mx-0">
-                <li>Un bun artisanal brioché</li>
-                <li>150 g de poulet croustillant</li>
-                <li>Mayonnaise sriracha très légèrement épicée</li>
-                <li>Nouilles sauce teriyaki et soja sucré, petits légumes</li>
-                <li>Chips chinois à la crevette pour le côté croustillant</li>
+                <li>Bun toasté</li>
+                <li>Porc affiné, poivré &amp; aillé, découpé en lamelles</li>
+                <li>Galette de pommes de terre croustillante</li>
+                <li>Sauce Archiduc crémeuse aux champignons</li>
+                <li>Roquette</li>
               </ul>
 
             <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
