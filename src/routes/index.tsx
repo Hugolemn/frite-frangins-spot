@@ -136,8 +136,8 @@ function Index() {
       <header id="suggestion" className="relative isolate overflow-hidden bg-background scroll-mt-20">
         {/* F&F en filigrane sur tout le fond */}
         <div
-          className="pointer-events-none absolute inset-0 -z-10 bg-center bg-no-repeat opacity-[0.08]"
-          style={{ backgroundImage: `url(${ffMark})`, backgroundSize: "min(58%, 460px)" }}
+          className="pointer-events-none absolute inset-0 -z-10 bg-no-repeat opacity-[0.09]"
+          style={{ backgroundImage: `url(${ffMark})`, backgroundSize: "min(42%, 360px)", backgroundPosition: "24% 50%" }}
           aria-hidden="true"
         />
 
