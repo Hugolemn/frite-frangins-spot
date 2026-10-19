@@ -4,7 +4,7 @@ import { Phone, MapPin, Clock, Star, Quote, ArrowRight, Menu, X, ShoppingBag, Ex
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import ffMark from "@/assets/frites-frangins-ff-mark.png";
-import foodTruckHero from "@/assets/food-truck-hero.jpg";
+import foodTruckBanniere from "@/assets/food-truck-banniere.png.asset.json";
 import forestierAsset from "@/assets/suggestion-moment-forestier.png.asset.json";
 import { MenuContent } from "@/components/menu-content";
 import { FRITZY_URL } from "@/lib/links";
@@ -256,8 +256,8 @@ function Index() {
             className="group grid items-center overflow-hidden rounded-3xl bg-card ring-1 ring-border transition-shadow hover:shadow-xl hover:ring-foreground/30 lg:grid-cols-2"
           >
             <img
-              src={foodTruckHero}
-              alt="Le food-truck Frites & Frangins installé pour un événement"
+              src={foodTruckBanniere.url}
+              alt="La remorque food-truck Frites & Frangins"
               className="h-56 w-full object-cover sm:h-72 lg:h-full"
               loading="lazy"
             />
