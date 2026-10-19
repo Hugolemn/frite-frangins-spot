@@ -248,6 +248,38 @@ function Index() {
         </div>
       </section>
 
+      {/* ===== Food-Truck ===== */}
+      <section className="bg-background px-4 py-16 sm:px-6 lg:py-20">
+        <div className="mx-auto max-w-6xl">
+          <Link
+            to="/food-truck"
+            className="group grid items-center overflow-hidden rounded-3xl bg-card ring-1 ring-border transition-shadow hover:shadow-xl hover:ring-foreground/30 lg:grid-cols-2"
+          >
+            <img
+              src={foodTruckHero}
+              alt="Le food-truck Frites & Frangins installé pour un événement"
+              className="h-56 w-full object-cover sm:h-72 lg:h-full"
+              loading="lazy"
+            />
+            <div className="flex flex-col items-center gap-4 p-8 text-center sm:p-10">
+              <span className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-background px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-foreground/70">
+                <Truck className="h-3.5 w-3.5" />
+                Food-Truck
+              </span>
+              <h2 className="font-display text-3xl text-foreground sm:text-4xl">
+                On s'invite à vos événements
+              </h2>
+              <p className="max-w-md text-muted-foreground">
+                Mariages, anniversaires, fêtes de village ou événements d'entreprise : le camion se déplace avec la vraie frite belge — avec prestation ou en location seule.
+              </p>
+              <span className="mt-2 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-2.5 font-display text-sm text-background transition-transform group-hover:scale-105">
+                Découvrir le food-truck <ArrowRight className="h-4 w-4" />
+              </span>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* ===== Avis clients ===== */}
       <section id="avis" className="relative isolate scroll-mt-20 border-t border-border bg-muted/40 px-4 py-16 sm:px-6 lg:py-20">
         {/* F&F en filigrane sur tout le fond */}
