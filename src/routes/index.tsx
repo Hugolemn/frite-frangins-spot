@@ -215,17 +215,17 @@ function Index() {
 
       {/* ===== Commander en ligne ===== */}
       <section className="border-t border-border bg-muted/40 px-4 pb-16 sm:px-6 lg:pb-20">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-6xl">
           <a
             href="https://app.fritzy.be/restaurant/91c0bf4f-a5ed-4fd6-ad34-aa48f28e2e84?source=website-restaurants"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col items-center gap-5 rounded-3xl border border-border bg-card p-8 text-center transition-all hover:border-foreground/30 sm:p-10"
+            className="group flex flex-col items-center gap-6 rounded-3xl border border-border bg-card p-8 text-center transition-all hover:border-foreground/30 sm:flex-row sm:text-left"
           >
             <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-foreground text-background">
               <ShoppingBag className="h-8 w-8" />
             </div>
-            <div className="max-w-xl">
+            <div className="min-w-0 flex-1">
               <h3 className="font-display text-2xl text-foreground">Commander en ligne</h3>
               <p className="mt-1 text-muted-foreground">
                 Vous préférez commander depuis votre canapé ? Retrouvez-nous sur Fritzy pour une commande simple et rapide.
@@ -262,7 +262,7 @@ function Index() {
                 <Star className="h-5 w-5 fill-ink/40 text-ink" />
               </div>
               <span className="font-display text-2xl text-ink">4,3</span>
-              <span className="text-sm text-ink/60">/ 5 · 130 avis Google</span>
+              <span className="text-sm text-ink/60">/ 5 · 134 avis Google</span>
             </div>
           </div>
 

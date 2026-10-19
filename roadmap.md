@@ -8,3 +8,5 @@
 - [x] Vérifier et harmoniser les réactions à la souris des boutons et liens sur toutes les pages.
 - [x] Recentrer les cases et vérifier les alignements des trois pages sur petit et grand écran.
 - [x] Carte « Commander en ligne » (Fritzy) : tout recentré (icône, titre, texte, bouton) sur ordinateur, tablette et téléphone.
+- [x] Carte « Commander en ligne » (Fritzy) : recentrée et alignée sur les lignes de catégories du menu, sans changer sa taille.
+- [x] Témoignages : indiquer 134 avis Google.
