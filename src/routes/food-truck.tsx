@@ -164,7 +164,7 @@ function FoodTruck() {
 
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {occasions.map((o) => (
-                <div key={o.title} className="flex h-full flex-col rounded-3xl bg-card p-6 ring-1 ring-border transition-colors hover:ring-foreground/40">
+                <div key={o.title} className="flex h-full flex-col rounded-3xl bg-card p-6 text-center ring-1 ring-border transition-colors hover:ring-foreground/40">
                   <h3 className="font-display text-lg text-foreground">{o.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{o.desc}</p>
                 </div>
@@ -187,13 +187,13 @@ function FoodTruck() {
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2">
-              <div className="flex h-full flex-col rounded-3xl bg-card p-7 ring-1 ring-border transition-colors hover:ring-foreground/40">
+              <div className="flex h-full flex-col rounded-3xl bg-card p-7 text-center ring-1 ring-border transition-colors hover:ring-foreground/40">
                 <h3 className="font-display text-xl text-foreground">Avec prestation</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   On amène le camion, on cuisine et on sert sur place : frites, burgers, snacks. Vous n'avez qu'à profiter de vos invités.
                 </p>
               </div>
-              <div className="flex h-full flex-col rounded-3xl bg-card p-7 ring-1 ring-border transition-colors hover:ring-foreground/40">
+              <div className="flex h-full flex-col rounded-3xl bg-card p-7 text-center ring-1 ring-border transition-colors hover:ring-foreground/40">
                 <h3 className="font-display text-xl text-foreground">Le camion seul, en location</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   Envie de tout gérer vous-même ? Le food-truck se loue aussi sans prestation : vous le récupérez et vous l'exploitez comme vous le souhaitez.
@@ -216,13 +216,11 @@ function FoodTruck() {
               </p>
             </div>
 
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {prestations.map((p, i) => (
+            <div className="flex flex-wrap justify-center gap-5">
+              {prestations.map((p) => (
                 <div
                   key={p.title}
-                  className={`flex h-full flex-col rounded-3xl bg-card p-6 ring-1 ring-border transition-colors hover:ring-foreground/40${
-                    i === prestations.length - 1 ? " sm:col-span-2 lg:col-span-2" : ""
-                  }`}
+                  className="flex w-full flex-col rounded-3xl bg-card p-6 text-center ring-1 ring-border transition-colors hover:ring-foreground/40 sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.834rem)]"
                 >
                   <h3 className="font-display text-lg text-foreground">{p.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
@@ -251,7 +249,7 @@ function FoodTruck() {
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               <a
                 href="tel:069212655"
-                className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 text-left ring-1 ring-border transition-colors hover:ring-foreground/40"
+                className="group flex h-full flex-col items-center gap-4 rounded-3xl bg-card p-6 text-center ring-1 ring-border transition-colors hover:ring-foreground/40"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background">
                   <Phone className="h-6 w-6" />
@@ -268,7 +266,7 @@ function FoodTruck() {
 
               <a
                 href={`mailto:${EMAIL}`}
-                className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 text-left ring-1 ring-border transition-colors hover:ring-foreground/40"
+                className="group flex h-full flex-col items-center gap-4 rounded-3xl bg-card p-6 text-center ring-1 ring-border transition-colors hover:ring-foreground/40"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background">
                   <Mail className="h-6 w-6" />
@@ -287,7 +285,7 @@ function FoodTruck() {
                 href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 text-left ring-1 ring-border transition-colors hover:ring-foreground/40"
+                className="group flex h-full flex-col items-center gap-4 rounded-3xl bg-card p-6 text-center ring-1 ring-border transition-colors hover:ring-foreground/40"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background">
                   <MapPin className="h-6 w-6" />

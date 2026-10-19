@@ -305,7 +305,7 @@ function Index() {
               href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 ring-1 ring-border transition-colors hover:ring-foreground/40"
+              className="group flex h-full flex-col items-center gap-4 rounded-3xl bg-card p-6 text-center ring-1 ring-border transition-colors hover:ring-foreground/40"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background">
                 <MapPin className="h-6 w-6" />
@@ -326,7 +326,7 @@ function Index() {
             {/* Téléphone */}
             <a
               href="tel:069212655"
-              className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 ring-1 ring-border transition-colors hover:ring-foreground/40"
+              className="group flex h-full flex-col items-center gap-4 rounded-3xl bg-card p-6 text-center ring-1 ring-border transition-colors hover:ring-foreground/40"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background">
                 <Phone className="h-6 w-6" />
@@ -345,7 +345,7 @@ function Index() {
           {/* Horaires + Carte */}
           <div className="mt-6 grid gap-6 lg:grid-cols-2">
             <div className="overflow-hidden rounded-3xl bg-card ring-1 ring-border">
-              <div className="flex items-center gap-3 border-b border-border bg-muted px-6 py-4">
+              <div className="flex items-center justify-center gap-3 border-b border-border bg-muted px-6 py-4">
                 <Clock className="h-5 w-5 text-foreground" />
                 <h3 className="font-display text-foreground">Horaires d'ouverture</h3>
               </div>
