@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep baseline pointer, pressed and keyboard-focus feedback for all links and controls in the global CSS base layer so interactions remain consistent across pages.
