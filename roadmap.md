@@ -5,3 +5,4 @@
 - [x] Suggestion du moment : remplacer « Le Thaï » par « Le Forestier » (photo fournie + nouvelle composition).
 - [x] Ingrédients de la suggestion : tiret « - » devant chaque ligne.
 - [x] Food-Truck : préciser la location du camion sans prestation, le sucré comme le salé, et ajouter l'e-mail fritesetfrangins@gmail.com.
+- [x] Vérifier et harmoniser les réactions à la souris des boutons et liens sur toutes les pages.
