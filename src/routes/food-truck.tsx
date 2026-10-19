@@ -239,7 +239,7 @@ function FoodTruck() {
             style={{ backgroundImage: `url(${ffMark})`, backgroundSize: "min(50%, 460px)", backgroundPosition: "50% 50%" }}
             aria-hidden="true"
           />
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-4xl text-center">
             <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Demande de devis</p>
             <h2 className="mt-2 font-display text-4xl text-foreground sm:text-5xl">
               Parlons de votre événement
