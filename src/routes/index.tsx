@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Phone, MapPin, Clock, Star, Quote, ArrowRight, Menu, X, ShoppingBag, ExternalLink } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
-import ffAsset from "@/assets/frites-frangins-ff.png.asset.json";
+import ffMark from "@/assets/frites-frangins-ff-mark.png";
 import thaiAsset from "@/assets/suggestion-moment-thai.png.asset.json";
 import { MenuContent } from "@/components/menu-content";
 
@@ -136,8 +136,8 @@ function Index() {
       <header id="suggestion" className="relative isolate overflow-hidden bg-background scroll-mt-20">
         {/* F&F en filigrane sur tout le fond */}
         <div
-          className="pointer-events-none absolute inset-0 -z-10 bg-contain bg-center bg-no-repeat opacity-[0.05]"
-          style={{ backgroundImage: `url(${ffAsset.url})` }}
+          className="pointer-events-none absolute inset-0 -z-10 bg-center bg-no-repeat opacity-[0.08]"
+          style={{ backgroundImage: `url(${ffMark})`, backgroundSize: "min(58%, 460px)" }}
           aria-hidden="true"
         />
 
@@ -227,8 +227,8 @@ function Index() {
       <section id="avis" className="relative isolate scroll-mt-20 border-t border-border bg-muted/40 px-4 py-16 sm:px-6 lg:py-20">
         {/* F&F en filigrane sur tout le fond */}
         <div
-          className="pointer-events-none absolute inset-0 -z-10 bg-contain bg-center bg-no-repeat opacity-[0.06]"
-          style={{ backgroundImage: `url(${ffAsset.url})` }}
+          className="pointer-events-none absolute inset-0 -z-10 bg-center bg-no-repeat opacity-[0.08]"
+          style={{ backgroundImage: `url(${ffMark})`, backgroundSize: "min(52%, 400px)" }}
           aria-hidden="true"
         />
 
