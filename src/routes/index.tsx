@@ -57,22 +57,22 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       {/* ===== Navbar ===== */}
       <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-          <a href="#" className="flex items-center gap-3">
+        <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:flex sm:justify-between sm:px-6">
+          <a href="#" className="flex min-w-0 items-center gap-3">
             <img
               src={logoAsset.url}
               alt="Logo Frites & Frangins"
-              className="h-10 w-10 rounded-lg object-cover"
+              className="h-10 w-10 shrink-0 rounded-lg object-cover"
               width={80}
               height={80}
             />
-            <span className="font-display text-lg text-foreground">
+            <span className="truncate font-display text-lg text-foreground">
               Frites & Frangins
             </span>
           </a>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-6 font-display text-sm text-foreground/70 md:flex">
+          <div className="hidden shrink-0 items-center gap-4 font-display text-sm text-foreground/70 xl:flex">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -88,7 +88,7 @@ function Index() {
             </Link>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-2">
             <a
               href={MAPS_URL}
               target="_blank"
@@ -108,7 +108,7 @@ function Index() {
             <button
               type="button"
               onClick={() => setMobileOpen((v) => !v)}
-              className="inline-flex items-center justify-center rounded-full p-2 text-foreground md:hidden"
+              className="inline-flex items-center justify-center rounded-full p-2 text-foreground xl:hidden"
               aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
               aria-expanded={mobileOpen}
             >
@@ -119,7 +119,7 @@ function Index() {
 
         {/* Mobile nav */}
         {mobileOpen && (
-          <div className="border-t border-border px-4 pb-4 pt-2 md:hidden">
+          <div className="border-t border-border px-4 pb-4 pt-2 xl:hidden">
             <div className="flex flex-col gap-2 font-display text-sm text-foreground/80">
               {navItems.map((item) => (
                 <a
@@ -154,7 +154,7 @@ function Index() {
 
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-14 sm:px-6 sm:py-18 lg:grid-cols-2 lg:gap-12 lg:py-22">
           {/* Visuel suggestion */}
-          <div className="relative flex aspect-square max-h-[420px] items-center justify-center justify-self-center lg:max-h-[520px] lg:justify-self-end">
+          <div className="relative flex aspect-square w-full max-w-[420px] items-center justify-center justify-self-center lg:max-w-[520px]">
               <img
                 src={forestierAsset.url}
                 alt="Le Forestier : bun toasté au porc affiné, galette de pommes de terre croustillante, sauce Archiduc aux champignons et roquette"
@@ -225,13 +225,13 @@ function Index() {
             <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-foreground text-background">
               <ShoppingBag className="h-8 w-8" />
             </div>
-            <div className="flex-1">
+            <div className="min-w-0 flex-1">
               <h3 className="font-display text-2xl text-foreground">Commander en ligne</h3>
               <p className="mt-1 text-muted-foreground">
                 Vous préférez commander depuis votre canapé ? Retrouvez-nous sur Fritzy pour une commande simple et rapide.
               </p>
             </div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 font-bold text-background transition-transform group-hover:scale-105">
+            <span className="inline-flex shrink-0 items-center gap-2 rounded-full bg-foreground px-5 py-2.5 font-bold text-background transition-transform group-hover:scale-105">
               Commander <ExternalLink className="h-4 w-4" />
             </span>
           </a>
@@ -349,13 +349,13 @@ function Index() {
                 <Clock className="h-5 w-5 text-foreground" />
                 <h3 className="font-display text-foreground">Horaires d'ouverture</h3>
               </div>
-              <div className="divide-y divide-border px-6 py-2">
+              <div className="divide-y divide-border px-4 py-2 sm:px-6">
                 {schedule.map((item) => (
-                  <div key={item.day} className="flex items-center justify-between py-3">
+                  <div key={item.day} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 py-3 text-sm sm:text-base">
                     <span className={item.closed ? "italic text-muted-foreground" : "font-medium text-foreground"}>
                       {item.day}
                     </span>
-                    <span className={item.closed ? "italic text-muted-foreground" : "text-right text-muted-foreground"}>
+                    <span className={item.closed ? "text-right italic text-muted-foreground" : "max-w-[13rem] text-right text-muted-foreground"}>
                       {item.hours}
                     </span>
                   </div>

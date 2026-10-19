@@ -51,20 +51,20 @@ function FoodTruck() {
     <div className="min-h-screen bg-background text-foreground">
       {/* ===== Navbar ===== */}
       <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-          <Link to="/" className="flex items-center gap-3">
+        <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:flex sm:justify-between sm:px-6">
+          <Link to="/" className="flex min-w-0 items-center gap-3">
             <img
               src={logoAsset.url}
               alt="Logo Frites & Frangins"
-              className="h-10 w-10 rounded-lg object-cover"
+              className="h-10 w-10 shrink-0 rounded-lg object-cover"
               width={80}
               height={80}
             />
-            <span className="font-display text-lg text-foreground">Frites & Frangins</span>
+            <span className="truncate font-display text-lg text-foreground">Frites & Frangins</span>
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-6 font-display text-sm text-foreground/70 md:flex">
+          <div className="hidden shrink-0 items-center gap-6 font-display text-sm text-foreground/70 md:flex">
             <Link to="/" className="transition-colors hover:text-foreground">
               Accueil
             </Link>
@@ -74,7 +74,7 @@ function FoodTruck() {
             <span className="text-foreground font-semibold underline underline-offset-8">Food-Truck</span>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-2">
             <a
               href="tel:069212655"
               className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-xs font-bold text-background transition-transform active:scale-95"
@@ -246,7 +246,7 @@ function FoodTruck() {
               Appelez-nous, écrivez-nous ou passez à la friterie : on regarde ensemble la date, le nombre de personnes et la formule qui vous convient.
             </p>
 
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid gap-5 sm:grid-cols-4 lg:grid-cols-3 [&>a]:min-w-0 sm:[&>a]:col-span-2 lg:[&>a]:col-span-1 sm:[&>a:last-child]:col-start-2 lg:[&>a:last-child]:col-start-auto">
               <a
                 href="tel:069212655"
                 className="group flex h-full flex-col items-center gap-4 rounded-3xl bg-card p-6 text-center ring-1 ring-border transition-colors hover:ring-foreground/40"
@@ -273,7 +273,7 @@ function FoodTruck() {
                 </div>
                 <div>
                   <h3 className="font-display text-lg text-foreground">Par e-mail</h3>
-                  <p className="mt-1 break-all text-sm font-bold text-foreground">{EMAIL}</p>
+                  <p className="mt-1 text-sm font-bold text-foreground [overflow-wrap:anywhere]">{EMAIL}</p>
                   <p className="mt-1 text-sm text-muted-foreground">Décrivez-nous votre date et le nombre de personnes</p>
                 </div>
                 <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-foreground group-hover:underline">

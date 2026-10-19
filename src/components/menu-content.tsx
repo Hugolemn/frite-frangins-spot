@@ -184,7 +184,8 @@ export const categories: Category[] = [
 
 export function MenuContent() {
   const [active, setActive] = useState("frites");
-  const current: Category = categories.find((c) => c.key === active) ?? categories[0]!;
+  const current = categories.find((c) => c.key === active) ?? categories[0];
+  if (!current) return null;
 
   return (
     <div className="mx-auto max-w-6xl">
@@ -235,12 +236,12 @@ export function MenuContent() {
                 key={item.name}
                 className="group w-full max-w-xs rounded-2xl border border-border bg-card p-5 transition-all hover:-translate-y-1 hover:border-foreground/30 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]"
               >
-                <div className="mb-1 flex items-start justify-between gap-3">
-                  <h3 className="font-display text-base text-foreground">
+                <div className="mb-1 grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
+                  <h3 className="min-w-0 font-display text-base text-foreground">
                     {item.name}
                   </h3>
                   {item.price && (
-                    <span className="whitespace-nowrap text-base font-extrabold text-foreground">
+                    <span className="shrink-0 whitespace-nowrap text-base font-extrabold text-foreground">
                       {item.price}
                     </span>
                   )}
