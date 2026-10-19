@@ -176,11 +176,11 @@ function Index() {
               </h1>
 
               <ul className="mx-auto mt-4 max-w-sm space-y-2 text-base leading-relaxed text-foreground/70 lg:mx-0">
-                <li>Bun toasté</li>
-                <li>Porc affiné, poivré &amp; aillé, découpé en lamelles</li>
-                <li>Galette de pommes de terre croustillante</li>
-                <li>Sauce Archiduc crémeuse aux champignons</li>
-                <li>Roquette</li>
+                <li>- Bun toasté</li>
+                <li>- Porc affiné, poivré &amp; aillé, découpé en lamelles</li>
+                <li>- Galette de pommes de terre croustillante</li>
+                <li>- Sauce Archiduc crémeuse aux champignons</li>
+                <li>- Roquette</li>
               </ul>
 
               <p className="mx-auto mt-5 max-w-sm text-base italic leading-relaxed text-foreground/70 lg:mx-0">
