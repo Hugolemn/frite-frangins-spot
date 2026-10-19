@@ -220,12 +220,12 @@ function Index() {
             href="https://app.fritzy.be/restaurant/91c0bf4f-a5ed-4fd6-ad34-aa48f28e2e84?source=website-restaurants"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col items-center gap-6 rounded-3xl border border-border bg-card p-8 text-center transition-all hover:border-foreground/30 sm:flex-row sm:text-left"
+            className="group flex flex-col items-center gap-5 rounded-3xl border border-border bg-card p-8 text-center transition-all hover:border-foreground/30 sm:p-10"
           >
             <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-foreground text-background">
               <ShoppingBag className="h-8 w-8" />
             </div>
-            <div className="min-w-0 flex-1">
+            <div className="max-w-xl">
               <h3 className="font-display text-2xl text-foreground">Commander en ligne</h3>
               <p className="mt-1 text-muted-foreground">
                 Vous préférez commander depuis votre canapé ? Retrouvez-nous sur Fritzy pour une commande simple et rapide.
