@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { Phone, MapPin, ArrowRight, Truck, Menu, X, CalendarHeart } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, Truck, Menu, X, CalendarHeart } from "lucide-react";
 import { useState } from "react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
@@ -12,7 +12,7 @@ export const Route = createFileRoute("/food-truck")({
   head: () => ({
     meta: [
       { title: "Food-Truck — Frites & Frangins à Tournai" },
-      { name: "description", content: "Le food-truck Frites & Frangins se déplace pour vos événements à Tournai et en Wallonie picarde : mariages, anniversaires, entreprises, fêtes locales. Frites fraîches et burgers au bœuf pur sur place." },
+      { name: "description", content: "Le food-truck Frites & Frangins se déplace pour vos événements à Tournai et en Wallonie picarde, en prestation complète ou en location du camion seul. Frites fraîches, burgers et douceurs, du salé comme du sucré." },
       { property: "og:title", content: "Food-Truck — Frites & Frangins à Tournai" },
       { property: "og:description", content: "Notre food-truck s'invite à vos événements : la vraie frite belge, servie chez vous." },
       { property: "og:type", content: "website" },
@@ -35,8 +35,11 @@ const prestations = [
   { title: "Frites fraîches maison", desc: "Nos frites coupées et cuites sur place, comme à la friterie : croustillantes et dorées." },
   { title: "Burgers au bœuf pur", desc: "Nos burgers faits maison, préparés devant vos invités." },
   { title: "Snacks & frangins", desc: "La carte des classiques de la friterie, adaptée au service en extérieur." },
+  { title: "Du sucré comme du salé", desc: "On travaille aussi bien le salé que le sucré : à vous de choisir une pause snack, une pause gourmande, ou les deux." },
   { title: "Formules sur mesure", desc: "Menu adapté à votre événement et à votre budget : on le construit ensemble." },
 ];
+
+const EMAIL = "fritesetfrangins@gmail.com";
 
 const MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=Frites+%26+Frangins+Chauss%C3%A9e+de+Douai+850+Tournai";
@@ -125,7 +128,7 @@ function FoodTruck() {
               Notre food-truck s'invite à vos événements
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-lg text-foreground/70">
-              Mariages, anniversaires, fêtes de village ou événements d'entreprise : on amène la vraie frite belge et nos burgers faits maison, directement chez vous.
+              Mariages, anniversaires, fêtes de village ou événements d'entreprise : on amène la vraie frite belge et nos burgers faits maison, directement chez vous. Le camion se loue aussi sans prestation, si vous préférez tout gérer vous-même.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
@@ -170,8 +173,38 @@ function FoodTruck() {
           </div>
         </section>
 
-        {/* ===== Prestations ===== */}
+        {/* ===== Location sans prestation ===== */}
         <section className="bg-background px-4 py-16 sm:px-6 lg:py-20">
+          <div className="mx-auto max-w-5xl">
+            <div className="mx-auto mb-12 max-w-2xl text-center">
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Deux façons de faire</p>
+              <h2 className="mt-2 font-display text-4xl text-foreground sm:text-5xl">
+                Avec ou sans prestation
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Le camion peut venir cuisiner pour vous, ou se louer seul : à vous de choisir ce qui colle le mieux à votre événement.
+              </p>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div className="flex h-full flex-col rounded-3xl bg-card p-7 ring-1 ring-border transition-colors hover:ring-foreground/40">
+                <h3 className="font-display text-xl text-foreground">Avec prestation</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  On amène le camion, on cuisine et on sert sur place : frites, burgers, snacks. Vous n'avez qu'à profiter de vos invités.
+                </p>
+              </div>
+              <div className="flex h-full flex-col rounded-3xl bg-card p-7 ring-1 ring-border transition-colors hover:ring-foreground/40">
+                <h3 className="font-display text-xl text-foreground">Le camion seul, en location</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Envie de tout gérer vous-même ? Le food-truck se loue aussi sans prestation : vous le récupérez et vous l'exploitez comme vous le souhaitez.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== Prestations ===== */}
+        <section className="border-t border-border bg-muted/40 px-4 py-16 sm:px-6 lg:py-20">
           <div className="mx-auto max-w-6xl">
             <div className="mx-auto mb-12 max-w-2xl text-center">
               <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">À bord du camion</p>
@@ -179,11 +212,11 @@ function FoodTruck() {
                 Ce qu'on sert
               </h2>
               <p className="mt-4 text-muted-foreground">
-                La même qualité qu'à la friterie, servie en plein air.
+                La même qualité qu'à la friterie, servie en plein air — et on régale aussi bien en salé qu'en sucré.
               </p>
             </div>
 
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {prestations.map((p) => (
                 <div key={p.title} className="flex h-full flex-col rounded-3xl bg-card p-6 ring-1 ring-border transition-colors hover:ring-foreground/40">
                   <h3 className="font-display text-lg text-foreground">{p.title}</h3>
@@ -195,7 +228,7 @@ function FoodTruck() {
         </section>
 
         {/* ===== Devis / contact ===== */}
-        <section id="devis" className="relative isolate scroll-mt-20 border-t border-border bg-muted/40 px-4 py-16 sm:px-6 lg:py-20">
+        <section id="devis" className="relative isolate scroll-mt-20 border-t border-border bg-background px-4 py-16 sm:px-6 lg:py-20">
           <div
             className="pointer-events-none absolute inset-0 -z-10 bg-no-repeat opacity-[0.10]"
             style={{ backgroundImage: `url(${ffMark})`, backgroundSize: "min(50%, 460px)", backgroundPosition: "50% 50%" }}
@@ -207,10 +240,10 @@ function FoodTruck() {
               Parlons de votre événement
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-              Appelez-nous ou passez à la friterie : on regarde ensemble la date, le nombre de personnes et la formule qui vous convient.
+              Appelez-nous, écrivez-nous ou passez à la friterie : on regarde ensemble la date, le nombre de personnes et la formule qui vous convient.
             </p>
 
-            <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               <a
                 href="tel:069212655"
                 className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 text-left ring-1 ring-border transition-colors hover:ring-foreground/40"
@@ -225,6 +258,23 @@ function FoodTruck() {
                 </div>
                 <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-foreground group-hover:underline">
                   Appeler <ArrowRight className="h-4 w-4" />
+                </span>
+              </a>
+
+              <a
+                href={`mailto:${EMAIL}`}
+                className="group flex h-full flex-col gap-4 rounded-3xl bg-card p-6 text-left ring-1 ring-border transition-colors hover:ring-foreground/40"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background">
+                  <Mail className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="font-display text-lg text-foreground">Par e-mail</h3>
+                  <p className="mt-1 break-all font-bold text-foreground">{EMAIL}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Décrivez-nous votre date et le nombre de personnes</p>
+                </div>
+                <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-foreground group-hover:underline">
+                  Écrire <ArrowRight className="h-4 w-4" />
                 </span>
               </a>
 
@@ -268,6 +318,7 @@ function FoodTruck() {
           <p className="mt-4 font-display text-xl text-foreground">Frites & Frangins</p>
           <p className="mt-2 text-sm">Chaussée de Douai 850, 7504 Tournai</p>
           <p className="mt-1 text-sm">Tél. 069 21 26 55</p>
+          <p className="mt-1 text-sm">{EMAIL}</p>
           <p className="mt-6 text-xs uppercase tracking-widest opacity-50">
             © {new Date().getFullYear()} Frites & Frangins — Tous droits réservés
           </p>
