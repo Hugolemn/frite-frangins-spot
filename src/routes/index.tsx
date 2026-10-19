@@ -6,6 +6,7 @@ import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import ffMark from "@/assets/frites-frangins-ff-mark.png";
 import forestierAsset from "@/assets/suggestion-moment-forestier.png.asset.json";
 import { MenuContent } from "@/components/menu-content";
+import { FRITZY_URL } from "@/lib/links";
 
 export const Route = createFileRoute("/")({
   component: Index,

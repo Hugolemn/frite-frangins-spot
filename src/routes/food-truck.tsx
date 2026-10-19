@@ -6,6 +6,7 @@ import { useState } from "react";
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
 import foodTruckHero from "@/assets/food-truck-hero.jpg";
 import ffMark from "@/assets/frites-frangins-ff-mark.png";
+import { FRITZY_URL } from "@/lib/links";
 
 export const Route = createFileRoute("/food-truck")({
   component: FoodTruck,

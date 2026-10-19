@@ -3,6 +3,7 @@ import { Phone, MapPin, ArrowLeft, ShoppingBag } from "lucide-react";
 
 import { MenuContent } from "@/components/menu-content";
 import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
+import { FRITZY_URL } from "@/lib/links";
 
 export const Route = createFileRoute("/menu")({
   component: Menu,
