@@ -81,26 +81,31 @@ function MentionsLegales() {
             <h2 className={H2}>1. Éditeur du site</h2>
             <div className={P}>
               <p>
-                <strong className="text-foreground">Frites &amp; Frangins</strong>
+                <strong className="text-foreground">Frites et Frangins SRL</strong>
                 <br />
                 Chaussée de Douai 850 — 7504 Tournai, Belgique
               </p>
               <p className="mt-3">
-                Forme juridique : <ToComplete label="à compléter — indépendant, SRL… ?" />
+                Forme juridique : société à responsabilité limitée (SRL)
+                <br />
+                Gérants : Stéphane Deprekel &amp; Thomas Planchon
+                <br />
+                Numéro de TVA : BE 1034415621
                 <br />
                 Numéro d'entreprise (BCE) : <ToComplete label="à compléter — BE 0xxx.xxx.xxx ?" />
-                <br />
-                Numéro de TVA : <ToComplete label="à compléter ?" />
               </p>
             </div>
           </section>
+
 
           <section className={SECTION}>
             <h2 className={H2}>2. Responsable de la publication</h2>
             <div className={P}>
               <p>
-                Responsable : <ToComplete label="à compléter — votre nom ?" />
+                Responsables : Stéphane Deprekel et Thomas Planchon, en leur qualité de gérants de
+                Frites et Frangins SRL
                 <br />
+
                 Contact direct :{" "}
                 <a href="tel:069212655" className="font-medium text-foreground underline underline-offset-2">
                   069 21 26 55
