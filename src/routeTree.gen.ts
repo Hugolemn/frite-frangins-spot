@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as FoodTruckRouteImport } from './routes/food-truck'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as MenuRouteImport } from './routes/menu'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,18 +35,25 @@ const MenuRoute = MenuRouteImport.update({
   path: '/menu',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/food-truck': typeof FoodTruckRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/menu': typeof MenuRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/food-truck': typeof FoodTruckRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/menu': typeof MenuRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,21 @@ export interface FileRoutesById {
   '/food-truck': typeof FoodTruckRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/menu': typeof MenuRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/food-truck' | '/mentions-legales' | '/menu'
+  fullPaths:
+    '/' | '/food-truck' | '/mentions-legales' | '/menu' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/food-truck' | '/mentions-legales' | '/menu'
-  id: '__root__' | '/' | '/food-truck' | '/mentions-legales' | '/menu'
+  to: '/' | '/food-truck' | '/mentions-legales' | '/menu' | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/food-truck'
+    | '/mentions-legales'
+    | '/menu'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +83,7 @@ export interface RootRouteChildren {
   FoodTruckRoute: typeof FoodTruckRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   MenuRoute: typeof MenuRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +116,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MenuRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +131,7 @@ const rootRouteChildren: RootRouteChildren = {
   FoodTruckRoute: FoodTruckRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   MenuRoute: MenuRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

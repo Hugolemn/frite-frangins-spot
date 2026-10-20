@@ -1,17 +1,18 @@
-import { describe, expect, test } from "bun:test";
+import { describe, test } from "node:test";
+import assert from "node:assert/strict";
 import { SITE_URL, siteUrl } from "./site";
 import { sitemapXML } from "./sitemap";
 
 describe("Official search domain", () => {
   test("uses the user's chosen domain for every page", () => {
-    expect(SITE_URL).toBe("https://fritesetfrangins.com");
-    expect(siteUrl("/food-truck")).toBe("https://fritesetfrangins.com/food-truck");
-    expect(siteUrl("/")).toBe("https://fritesetfrangins.com/");
+    assert.equal(SITE_URL, "https://fritesetfrangins.com");
+    assert.equal(siteUrl("/food-truck"), "https://fritesetfrangins.com/food-truck");
+    assert.equal(siteUrl("/"), "https://fritesetfrangins.com/");
   });
   test("sitemap entries use the official domain without invented modification dates", () => {
     const xml = sitemapXML(SITE_URL, [{ path: "/" }, { path: "/food-truck" }]);
-    expect(xml).toContain("<loc>https://fritesetfrangins.com/</loc>");
-    expect(xml).toContain("<loc>https://fritesetfrangins.com/food-truck</loc>");
-    expect(xml).not.toContain("<lastmod>");
+    assert.ok(xml.includes("<loc>https://fritesetfrangins.com/</loc>"));
+    assert.ok(xml.includes("<loc>https://fritesetfrangins.com/food-truck</loc>"));
+    assert.ok(!xml.includes("<lastmod>"));
   });
 });
