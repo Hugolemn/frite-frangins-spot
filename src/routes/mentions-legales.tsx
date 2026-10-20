@@ -93,7 +93,7 @@ function MentionsLegales() {
                 Numéro de TVA : BE 1034415621
                 <br />
                 Numéro d'entreprise (BCE) : <ToComplete label="à compléter" />{" "}
-                <span className="text-muted-foreground/70">(BE 0xxx.xxx.xxx)</span>
+                <span className="whitespace-nowrap text-muted-foreground/70">(BE 0xxx.xxx.xxx)</span>
 
               </p>
             </div>
