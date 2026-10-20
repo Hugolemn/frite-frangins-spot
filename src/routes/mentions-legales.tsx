@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Mail, Phone, MapPin } from "lucide-react";
 
-import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
+import logoAsset from "@/assets/frites-frangins-logo.jpg";
 
 export const Route = createFileRoute("/mentions-legales")({
   component: MentionsLegales,
@@ -39,7 +39,7 @@ function MentionsLegales() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
           <Link to="/" className="flex min-w-0 items-center gap-3">
             <img
-              src={logoAsset.url}
+              src={logoAsset}
               alt="Logo Frites & Frangins"
               className="h-10 w-10 shrink-0 rounded-lg object-cover"
               width={80}
@@ -211,7 +211,7 @@ function MentionsLegales() {
       <footer className="border-t border-border bg-background px-4 pb-16 pt-16 text-center text-muted-foreground sm:px-6">
         <div className="mx-auto max-w-6xl">
           <img
-            src={logoAsset.url}
+            src={logoAsset}
             alt="Logo Frites & Frangins"
             className="mx-auto h-16 w-16 rounded-2xl object-cover"
             width={128}
