@@ -30,13 +30,6 @@ const SECTION = "mt-10 first:mt-0";
 const H2 = "font-display text-2xl text-foreground";
 const P = "mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base";
 
-function ToComplete({ label }: { label: string }) {
-  return (
-    <span className="whitespace-nowrap rounded-md bg-muted px-1.5 py-0.5 text-xs font-bold uppercase tracking-wide text-foreground/60">
-      {label}
-    </span>
-  );
-}
 
 function MentionsLegales() {
   return (
@@ -92,8 +85,8 @@ function MentionsLegales() {
                 <br />
                 Numéro de TVA : BE 1034415621
                 <br />
-                Numéro d'entreprise (BCE) : <ToComplete label="à compléter" />{" "}
-                <span className="whitespace-nowrap text-muted-foreground/70">(BE 0xxx.xxx.xxx)</span>
+                Numéro d'entreprise (BCE) :{" "}
+                <span className="whitespace-nowrap font-medium text-foreground">BE 1034.415.621</span>
 
               </p>
             </div>
