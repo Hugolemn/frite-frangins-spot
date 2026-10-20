@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, MapPin, ArrowLeft, ShoppingBag, Truck } from "lucide-react";
 
 import { MenuContent } from "@/components/menu-content";
-import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
+import logoAsset from "@/assets/frites-frangins-logo.jpg";
 import { FRITZY_URL } from "@/lib/links";
 
 export const Route = createFileRoute("/menu")({
@@ -32,7 +32,7 @@ function Menu() {
         <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:flex sm:justify-between sm:px-6">
           <Link to="/" className="flex min-w-0 items-center gap-3">
             <img
-              src={logoAsset.url}
+              src={logoAsset}
               alt="Logo Frites & Frangins"
               className="h-10 w-10 shrink-0 rounded-lg object-cover"
               width={80}
@@ -88,7 +88,7 @@ function Menu() {
       {/* ===== Footer ===== */}
       <footer className="border-t border-border px-6 pb-28 pt-12 text-center text-muted-foreground">
         <img
-          src={logoAsset.url}
+          src={logoAsset}
           alt="Logo Frites & Frangins"
           className="mx-auto h-16 w-16 rounded-2xl object-cover"
           width={128}

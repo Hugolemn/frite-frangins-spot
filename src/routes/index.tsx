@@ -2,10 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, MapPin, Clock, Star, Quote, ArrowRight, Menu, X, ShoppingBag, ExternalLink, Truck } from "lucide-react";
 
-import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
+import logoAsset from "@/assets/frites-frangins-logo.jpg";
 import ffMark from "@/assets/frites-frangins-ff-mark.png";
-import foodTruckBanniere from "@/assets/food-truck-banniere.png.asset.json";
-import forestierAsset from "@/assets/suggestion-moment-forestier.png.asset.json";
+import foodTruckBanniere from "@/assets/food-truck-banniere.png";
+import forestierAsset from "@/assets/suggestion-moment-forestier.png";
 import { MenuContent } from "@/components/menu-content";
 import { FRITZY_URL } from "@/lib/links";
 
@@ -63,7 +63,7 @@ function Index() {
         <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:flex sm:justify-between sm:px-6">
           <a href="#" className="flex min-w-0 items-center gap-3">
             <img
-              src={logoAsset.url}
+              src={logoAsset}
               alt="Logo Frites & Frangins"
               className="h-10 w-10 shrink-0 rounded-lg object-cover"
               width={80}
@@ -165,7 +165,7 @@ function Index() {
           {/* Visuel suggestion */}
           <div className="relative flex aspect-square w-full max-w-[420px] items-center justify-center justify-self-center lg:max-w-[520px]">
               <img
-                src={forestierAsset.url}
+                src={forestierAsset}
                 alt="Le Forestier : bun toasté au porc affiné, galette de pommes de terre croustillante, sauce Archiduc aux champignons et roquette"
                 className="h-full w-full rounded-3xl object-cover drop-shadow-xl"
                 width={826}
@@ -257,7 +257,7 @@ function Index() {
             className="group grid items-center overflow-hidden rounded-3xl bg-card ring-1 ring-border transition-shadow hover:shadow-xl hover:ring-foreground/30 lg:grid-cols-2"
           >
             <img
-              src={foodTruckBanniere.url}
+              src={foodTruckBanniere}
               alt="La remorque food-truck Frites & Frangins"
               className="h-56 w-full object-cover sm:h-72 lg:h-full"
               loading="lazy"
@@ -442,7 +442,7 @@ function Index() {
       <footer className="border-t border-border bg-background px-4 pb-16 pt-16 text-center text-muted-foreground sm:px-6">
         <div className="mx-auto max-w-6xl">
           <img
-            src={logoAsset.url}
+            src={logoAsset}
             alt="Logo Frites & Frangins"
             className="mx-auto h-16 w-16 rounded-2xl object-cover"
             width={128}

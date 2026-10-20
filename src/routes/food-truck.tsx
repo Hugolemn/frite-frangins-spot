@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, ArrowRight, Truck, Menu, X, CalendarHeart, ShoppingBag } from "lucide-react";
 import { useState } from "react";
 
-import logoAsset from "@/assets/frites-frangins-logo.jpg.asset.json";
+import logoAsset from "@/assets/frites-frangins-logo.jpg";
 import foodTruckHero from "@/assets/food-truck-hero.jpg";
 import ffMark from "@/assets/frites-frangins-ff-mark.png";
 import { FRITZY_URL } from "@/lib/links";
@@ -55,7 +55,7 @@ function FoodTruck() {
         <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:flex sm:justify-between sm:px-6">
           <Link to="/" className="flex min-w-0 items-center gap-3">
             <img
-              src={logoAsset.url}
+              src={logoAsset}
               alt="Logo Frites & Frangins"
               className="h-10 w-10 shrink-0 rounded-lg object-cover"
               width={80}
@@ -314,7 +314,7 @@ function FoodTruck() {
       <footer className="border-t border-border bg-background px-4 pb-16 pt-16 text-center text-muted-foreground sm:px-6">
         <div className="mx-auto max-w-6xl">
           <img
-            src={logoAsset.url}
+            src={logoAsset}
             alt="Logo Frites & Frangins"
             className="mx-auto h-16 w-16 rounded-2xl object-cover"
             width={128}
