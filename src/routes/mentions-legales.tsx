@@ -174,7 +174,8 @@ function MentionsLegales() {
             <p className={P}>
               Ce site vitrine ne collecte pas de données personnelles par lui-même : il n'y a ni
               formulaire d'inscription, ni compte utilisateur, ni suivi publicitaire. La carte
-              Google Maps intégrée peut déposer des cookies propres à Google ; l'utilisation de
+              Google Maps n'est chargée que si vous cliquez sur « Afficher la carte » ; à ce moment
+              seulement, Google peut déposer ses propres cookies. L'utilisation de
               Fritzy pour les commandes est soumise à la politique de confidentialité de cette
               plateforme.
             </p>
