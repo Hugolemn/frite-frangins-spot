@@ -16,3 +16,5 @@
 - [x] Mettre le Food-Truck plus en avant : bouton bien visible dans le menu (accueil + carte) et bannière Food-Truck sur la page d'accueil.
 
 - [x] Bannière Food-Truck de l'accueil : photo remplacée par la vraie remorque (asset CDN food-truck-banniere.png)
+
+- [x] Page « Mentions légales » créée (/mentions-legales) + lien dans le footer des 3 pages — forme juridique, n° BCE/TVA et nom du responsable à compléter par le client
