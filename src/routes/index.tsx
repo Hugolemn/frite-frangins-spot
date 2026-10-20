@@ -13,9 +13,9 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Frites et Frangins — Friterie à Tournai" },
-      { name: "description", content: "Frites et Frangins, friterie à Tournai. Cornets croustillants, burgers et snacks. À emporter ou en livraison." },
-      { property: "og:title", content: "Frites et Frangins — Friterie à Tournai" },
+      { title: "Frites & Frangins — Friterie à Tournai" },
+      { name: "description", content: "Frites & Frangins, friterie à Tournai. Cornets croustillants, burgers et snacks. À emporter ou en livraison." },
+      { property: "og:title", content: "Frites & Frangins — Friterie à Tournai" },
       { property: "og:description", content: "La vraie frite belge à Tournai. À emporter ou en livraison." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -64,13 +64,13 @@ function Index() {
           <a href="#" className="flex min-w-0 items-center gap-3">
             <img
               src={logoAsset.url}
-              alt="Logo Frites et Frangins"
+              alt="Logo Frites & Frangins"
               className="h-10 w-10 shrink-0 rounded-lg object-cover"
               width={80}
               height={80}
             />
             <span className="truncate font-display text-lg text-foreground">
-              Frites et Frangins
+              Frites & Frangins
             </span>
           </a>
 
@@ -258,7 +258,7 @@ function Index() {
           >
             <img
               src={foodTruckBanniere.url}
-              alt="La remorque food-truck Frites et Frangins"
+              alt="La remorque food-truck Frites & Frangins"
               className="h-56 w-full object-cover sm:h-72 lg:h-full"
               loading="lazy"
             />
@@ -409,7 +409,7 @@ function Index() {
             <div className="overflow-hidden rounded-3xl ring-1 ring-border">
               {mapVisible ? (
                 <iframe
-                  title="Frites et Frangins sur Google Maps — Chaussée de Douai 850, 7504 Tournai"
+                  title="Frites & Frangins sur Google Maps — Chaussée de Douai 850, 7504 Tournai"
                   src="https://www.google.com/maps?q=Frites%20%26%20Frangins%2C%20Chauss%C3%A9e%20de%20Douai%20850%2C%207504%20Tournai&output=embed"
                   className="h-80 w-full border-0 lg:h-full"
                   loading="lazy"
@@ -443,17 +443,17 @@ function Index() {
         <div className="mx-auto max-w-6xl">
           <img
             src={logoAsset.url}
-            alt="Logo Frites et Frangins"
+            alt="Logo Frites & Frangins"
             className="mx-auto h-16 w-16 rounded-2xl object-cover"
             width={128}
             height={128}
             loading="lazy"
           />
-          <p className="mt-4 font-display text-xl text-foreground">Frites et Frangins</p>
+          <p className="mt-4 font-display text-xl text-foreground">Frites & Frangins</p>
           <p className="mt-2 text-sm">Chaussée de Douai 850, 7504 Tournai</p>
           <p className="mt-1 text-sm">Tél. 069 21 26 55</p>
           <p className="mt-6 text-xs uppercase tracking-widest opacity-50">
-            © {new Date().getFullYear()} Frites et Frangins — Tous droits réservés
+            © {new Date().getFullYear()} Frites & Frangins — Tous droits réservés
           </p>
           <Link
             to="/mentions-legales"
