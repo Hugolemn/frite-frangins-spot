@@ -7,16 +7,16 @@ export const Route = createFileRoute("/mentions-legales")({
   component: MentionsLegales,
   head: () => ({
     meta: [
-      { title: "Mentions légales — Frites et Frangins, Tournai" },
+      { title: "Mentions légales — Frites & Frangins, Tournai" },
       {
         name: "description",
         content:
-          "Mentions légales du site Frites et Frangins : éditeur, contact, hébergement et données personnelles.",
+          "Mentions légales du site Frites & Frangins : éditeur, contact, hébergement et données personnelles.",
       },
-      { property: "og:title", content: "Mentions légales — Frites et Frangins" },
+      { property: "og:title", content: "Mentions légales — Frites & Frangins" },
       {
         property: "og:description",
-        content: "Éditeur, contact, hébergement et données personnelles du site Frites et Frangins.",
+        content: "Éditeur, contact, hébergement et données personnelles du site Frites & Frangins.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/mentions-legales" },
@@ -40,13 +40,13 @@ function MentionsLegales() {
           <Link to="/" className="flex min-w-0 items-center gap-3">
             <img
               src={logoAsset.url}
-              alt="Logo Frites et Frangins"
+              alt="Logo Frites & Frangins"
               className="h-10 w-10 shrink-0 rounded-lg object-cover"
               width={80}
               height={80}
             />
             <span className="truncate font-display text-lg text-foreground">
-              Frites et Frangins
+              Frites &amp; Frangins
             </span>
           </Link>
           <Link
@@ -65,7 +65,7 @@ function MentionsLegales() {
           <h1 className="font-display text-4xl text-foreground sm:text-5xl">Mentions légales</h1>
           <p className="mt-4 text-sm text-muted-foreground sm:text-base">
             Informations relatives au site fritesetfrangins (frites-frangins-spot.lovable.app) et à
-            l'activité Frites et Frangins.
+            l'activité Frites &amp; Frangins.
           </p>
         </header>
 
@@ -154,7 +154,7 @@ function MentionsLegales() {
             <h2 className={H2}>5. Propriété intellectuelle</h2>
             <p className={P}>
               L'ensemble des contenus de ce site (textes, photographies, logo, nom commercial
-              « Frites et Frangins ») est la propriété de l'éditeur, sauf mention contraire. Toute
+              « Frites &amp; Frangins ») est la propriété de l'éditeur, sauf mention contraire. Toute
               reproduction, représentation ou utilisation, totale ou partielle, sans autorisation
               écrite préalable est interdite.
             </p>
@@ -212,17 +212,17 @@ function MentionsLegales() {
         <div className="mx-auto max-w-6xl">
           <img
             src={logoAsset.url}
-            alt="Logo Frites et Frangins"
+            alt="Logo Frites & Frangins"
             className="mx-auto h-16 w-16 rounded-2xl object-cover"
             width={128}
             height={128}
             loading="lazy"
           />
-          <p className="mt-4 font-display text-xl text-foreground">Frites et Frangins</p>
+          <p className="mt-4 font-display text-xl text-foreground">Frites &amp; Frangins</p>
           <p className="mt-2 text-sm">Chaussée de Douai 850, 7504 Tournai</p>
           <p className="mt-1 text-sm">Tél. 069 21 26 55</p>
           <p className="mt-6 text-xs uppercase tracking-widest opacity-50">
-            © {new Date().getFullYear()} Frites et Frangins — Tous droits réservés
+            © {new Date().getFullYear()} Frites &amp; Frangins — Tous droits réservés
           </p>
         </div>
       </footer>
