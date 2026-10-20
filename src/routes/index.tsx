@@ -47,6 +47,7 @@ const MAPS_URL =
 
 function Index() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mapVisible, setMapVisible] = useState(false);
 
   const navItems = [
     { label: "Suggestion du moment", href: "#suggestion" },
@@ -406,14 +407,31 @@ function Index() {
             </div>
 
             <div className="overflow-hidden rounded-3xl ring-1 ring-border">
-              <iframe
-                title="Frites & Frangins sur Google Maps — Chaussée de Douai 850, 7504 Tournai"
-                src="https://www.google.com/maps?q=Frites%20%26%20Frangins%2C%20Chauss%C3%A9e%20de%20Douai%20850%2C%207504%20Tournai&output=embed"
-                className="h-80 w-full border-0 lg:h-full"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
+              {mapVisible ? (
+                <iframe
+                  title="Frites & Frangins sur Google Maps — Chaussée de Douai 850, 7504 Tournai"
+                  src="https://www.google.com/maps?q=Frites%20%26%20Frangins%2C%20Chauss%C3%A9e%20de%20Douai%20850%2C%207504%20Tournai&output=embed"
+                  className="h-80 w-full border-0 lg:h-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              ) : (
+                <div className="flex h-80 w-full flex-col items-center justify-center gap-4 bg-card px-6 text-center lg:h-full">
+                  <MapPin className="h-10 w-10 text-foreground/70" />
+                  <p className="max-w-xs text-sm text-muted-foreground">
+                    La carte Google Maps ne se charge que si vous choisissez de l'afficher.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setMapVisible(true)}
+                    className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-bold text-background transition-opacity hover:opacity-90"
+                  >
+                    <MapPin className="h-4 w-4" />
+                    Afficher la carte
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 
