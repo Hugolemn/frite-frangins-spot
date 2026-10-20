@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Préparer les adresses officielles des pages et le sitemap pour https://fritesetfrangins.com.
-- [ ] Configurer Google Search Console et envoyer le sitemap (nécessite le compte Google et la mise à jour Netlify).
+- [x] Préparer les adresses officielles des quatre pages et le sitemap pour https://fritesetfrangins.com (vérifiés).
+- [ ] Finaliser Google Search Console et envoyer le sitemap : compte connecté et confirmation ajoutée ; en attente du déploiement Netlify, car la confirmation est absente du site public.
 
 - [x] Cadrer le filigrane F&F des sections « Suggestion » et « Témoignages » (lettrage entier et visible, non masqué par la photo ni par les cartes).
 - [x] Titres de sections : tout en noir, sans dernier mot plus clair (page d'accueil et page « La carte »).

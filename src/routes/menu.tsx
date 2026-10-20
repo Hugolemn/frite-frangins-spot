@@ -4,8 +4,10 @@ import { Phone, MapPin, ArrowLeft, ShoppingBag, Truck } from "lucide-react";
 import { MenuContent } from "@/components/menu-content";
 import logoAsset from "@/assets/frites-frangins-logo.jpg";
 import { FRITZY_URL } from "@/lib/links";
+import { siteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/menu")({
+  staticData: { sitemap: true },
   component: Menu,
   head: () => ({
     meta: [
@@ -14,10 +16,10 @@ export const Route = createFileRoute("/menu")({
       { property: "og:title", content: "La carte — Frites & Frangins" },
       { property: "og:description", content: "Frites fraîches, burgers maison, snacks et sauces : toute la carte avec les prix." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/menu" },
+      { property: "og:url", content: siteUrl("/menu") },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/menu" }],
+    links: [{ rel: "canonical", href: siteUrl("/menu") }],
   }),
 });
 

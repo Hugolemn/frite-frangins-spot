@@ -7,19 +7,22 @@ import logoAsset from "@/assets/frites-frangins-logo.jpg";
 import foodTruckHero from "@/assets/food-truck-hero.jpg";
 import ffMark from "@/assets/frites-frangins-ff-mark.png";
 import { FRITZY_URL } from "@/lib/links";
+import { siteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/food-truck")({
+  staticData: { sitemap: true },
   component: FoodTruck,
   head: () => ({
     meta: [
-      { title: "Food-Truck — Frites & Frangins à Tournai" },
+      { title: "Location food-truck à Tournai — Frites & Frangins" },
       { name: "description", content: "Le food-truck Frites & Frangins se déplace pour vos événements à Tournai et en Wallonie picarde, en prestation complète ou en location du camion seul. Frites fraîches, burgers et douceurs, du salé comme du sucré." },
-      { property: "og:title", content: "Food-Truck — Frites & Frangins à Tournai" },
-      { property: "og:description", content: "Notre food-truck s'invite à vos événements : la vraie frite belge, servie chez vous." },
+      { property: "og:title", content: "Location food-truck à Tournai — Frites & Frangins" },
+      { property: "og:description", content: "Food-truck pour vos événements à Tournai et en Wallonie picarde : sucré ou salé, avec prestation ou camion seul." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: siteUrl("/food-truck") },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/food-truck" }],
+    links: [{ rel: "canonical", href: siteUrl("/food-truck") }],
   }),
 });
 

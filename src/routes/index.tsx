@@ -8,20 +8,22 @@ import foodTruckBanniere from "@/assets/food-truck-banniere.png";
 import forestierAsset from "@/assets/suggestion-moment-forestier.png";
 import { MenuContent } from "@/components/menu-content";
 import { FRITZY_URL } from "@/lib/links";
+import { siteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   component: Index,
   head: () => ({
     meta: [
-      { title: "Frites & Frangins — Friterie à Tournai" },
-      { name: "description", content: "Frites & Frangins, friterie à Tournai. Cornets croustillants, burgers et snacks. À emporter ou en livraison." },
-      { property: "og:title", content: "Frites & Frangins — Friterie à Tournai" },
-      { property: "og:description", content: "La vraie frite belge à Tournai. À emporter ou en livraison." },
+      { title: "Frites & Frangins — Friterie et location food-truck à Tournai" },
+      { name: "description", content: "Frites & Frangins à Tournai : frites, burgers maison et food-truck pour vos événements. Prestation sucrée ou salée, ou location du camion sans prestation." },
+      { property: "og:title", content: "Frites & Frangins — Friterie et food-truck à Tournai" },
+      { property: "og:description", content: "Friterie à Tournai et food-truck pour vos événements, avec prestation ou en location du camion seul." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: siteUrl("/") },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: siteUrl("/") }],
   }),
 });
 

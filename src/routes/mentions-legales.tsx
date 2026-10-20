@@ -2,8 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Mail, Phone, MapPin } from "lucide-react";
 
 import logoAsset from "@/assets/frites-frangins-logo.jpg";
+import { siteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/mentions-legales")({
+  staticData: { sitemap: true },
   component: MentionsLegales,
   head: () => ({
     meta: [
@@ -19,10 +21,10 @@ export const Route = createFileRoute("/mentions-legales")({
         content: "Éditeur, contact, hébergement et données personnelles du site Frites & Frangins.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/mentions-legales" },
+      { property: "og:url", content: siteUrl("/mentions-legales") },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/mentions-legales" }],
+    links: [{ rel: "canonical", href: siteUrl("/mentions-legales") }],
   }),
 });
 
@@ -64,7 +66,7 @@ function MentionsLegales() {
         <header className="text-center">
           <h1 className="font-display text-4xl text-foreground sm:text-5xl">Mentions légales</h1>
           <p className="mt-4 text-sm text-muted-foreground sm:text-base">
-            Informations relatives au site fritesetfrangins (frites-frangins-spot.lovable.app) et à
+            Informations relatives au site fritesetfrangins.com et à
             l'activité Frites &amp; Frangins.
           </p>
         </header>
