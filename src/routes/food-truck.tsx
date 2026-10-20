@@ -12,9 +12,9 @@ export const Route = createFileRoute("/food-truck")({
   component: FoodTruck,
   head: () => ({
     meta: [
-      { title: "Food-Truck — Frites & Frangins à Tournai" },
-      { name: "description", content: "Le food-truck Frites & Frangins se déplace pour vos événements à Tournai et en Wallonie picarde, en prestation complète ou en location du camion seul. Frites fraîches, burgers et douceurs, du salé comme du sucré." },
-      { property: "og:title", content: "Food-Truck — Frites & Frangins à Tournai" },
+      { title: "Food-Truck — Frites et Frangins à Tournai" },
+      { name: "description", content: "Le food-truck Frites et Frangins se déplace pour vos événements à Tournai et en Wallonie picarde, en prestation complète ou en location du camion seul. Frites fraîches, burgers et douceurs, du salé comme du sucré." },
+      { property: "og:title", content: "Food-Truck — Frites et Frangins à Tournai" },
       { property: "og:description", content: "Notre food-truck s'invite à vos événements : la vraie frite belge, servie chez vous." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -56,12 +56,12 @@ function FoodTruck() {
           <Link to="/" className="flex min-w-0 items-center gap-3">
             <img
               src={logoAsset.url}
-              alt="Logo Frites & Frangins"
+              alt="Logo Frites et Frangins"
               className="h-10 w-10 shrink-0 rounded-lg object-cover"
               width={80}
               height={80}
             />
-            <span className="truncate font-display text-lg text-foreground">Frites & Frangins</span>
+            <span className="truncate font-display text-lg text-foreground">Frites et Frangins</span>
           </Link>
 
           {/* Desktop nav */}
@@ -117,7 +117,7 @@ function FoodTruck() {
         {/* ===== Hero ===== */}
         <section className="relative isolate flex min-h-[70vh] items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
-            <img src={foodTruckHero} alt="Le food-truck Frites & Frangins installé pour un événement" className="h-full w-full object-cover" />
+            <img src={foodTruckHero} alt="Le food-truck Frites et Frangins installé pour un événement" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-background/75" />
             <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
           </div>
@@ -125,7 +125,7 @@ function FoodTruck() {
           <div className="relative z-10 mx-auto max-w-3xl px-4 py-24 text-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-card px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-foreground/70">
               <Truck className="h-3.5 w-3.5" />
-              Food-Truck Frites & Frangins
+              Food-Truck Frites et Frangins
             </span>
             <h1 className="mt-6 font-display text-4xl leading-tight text-foreground sm:text-5xl lg:text-6xl">
               Notre food-truck s'invite à vos événements
@@ -315,18 +315,18 @@ function FoodTruck() {
         <div className="mx-auto max-w-6xl">
           <img
             src={logoAsset.url}
-            alt="Logo Frites & Frangins"
+            alt="Logo Frites et Frangins"
             className="mx-auto h-16 w-16 rounded-2xl object-cover"
             width={128}
             height={128}
             loading="lazy"
           />
-          <p className="mt-4 font-display text-xl text-foreground">Frites & Frangins</p>
+          <p className="mt-4 font-display text-xl text-foreground">Frites et Frangins</p>
           <p className="mt-2 text-sm">Chaussée de Douai 850, 7504 Tournai</p>
           <p className="mt-1 text-sm">Tél. 069 21 26 55</p>
           <p className="mt-1 text-sm">{EMAIL}</p>
           <p className="mt-6 text-xs uppercase tracking-widest opacity-50">
-            © {new Date().getFullYear()} Frites & Frangins — Tous droits réservés
+            © {new Date().getFullYear()} Frites et Frangins — Tous droits réservés
           </p>
           <Link
             to="/mentions-legales"

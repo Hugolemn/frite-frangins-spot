@@ -9,9 +9,9 @@ export const Route = createFileRoute("/menu")({
   component: Menu,
   head: () => ({
     meta: [
-      { title: "La carte — Frites & Frangins, friterie à Tournai" },
-      { name: "description", content: "Toute la carte de Frites & Frangins : frites, burgers maison, snacks, mitraillettes, plats, brochettes, boissons et sauces. Prix et choix complets." },
-      { property: "og:title", content: "La carte — Frites & Frangins" },
+      { title: "La carte — Frites et Frangins, friterie à Tournai" },
+      { name: "description", content: "Toute la carte de Frites et Frangins : frites, burgers maison, snacks, mitraillettes, plats, brochettes, boissons et sauces. Prix et choix complets." },
+      { property: "og:title", content: "La carte — Frites et Frangins" },
       { property: "og:description", content: "Frites fraîches, burgers maison, snacks et sauces : toute la carte avec les prix." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/menu" },
@@ -33,13 +33,13 @@ function Menu() {
           <Link to="/" className="flex min-w-0 items-center gap-3">
             <img
               src={logoAsset.url}
-              alt="Logo Frites & Frangins"
+              alt="Logo Frites et Frangins"
               className="h-10 w-10 shrink-0 rounded-lg object-cover"
               width={80}
               height={80}
             />
             <span className="truncate font-display text-lg text-foreground">
-              Frites & Frangins
+              Frites et Frangins
             </span>
           </Link>
           <div className="flex shrink-0 items-center gap-2">
@@ -89,17 +89,17 @@ function Menu() {
       <footer className="border-t border-border px-6 pb-28 pt-12 text-center text-muted-foreground">
         <img
           src={logoAsset.url}
-          alt="Logo Frites & Frangins"
+          alt="Logo Frites et Frangins"
           className="mx-auto h-16 w-16 rounded-2xl object-cover"
           width={128}
           height={128}
           loading="lazy"
         />
-        <p className="mt-4 font-display text-xl text-foreground">Frites & Frangins</p>
+        <p className="mt-4 font-display text-xl text-foreground">Frites et Frangins</p>
         <p className="mt-2 text-sm">Chaussée de Douai 850, 7504 Tournai</p>
         <p className="mt-1 text-sm">Tél. 069 21 26 55</p>
         <p className="mt-6 text-xs uppercase tracking-widest opacity-50">
-          © {new Date().getFullYear()} Frites & Frangins — Tous droits réservés
+          © {new Date().getFullYear()} Frites et Frangins — Tous droits réservés
         </p>
         <Link
           to="/mentions-legales"
