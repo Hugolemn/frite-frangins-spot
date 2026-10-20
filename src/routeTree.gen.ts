@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as FoodTruckRouteImport } from './routes/food-truck'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as MenuRouteImport } from './routes/menu'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const FoodTruckRoute = FoodTruckRouteImport.update({
   path: '/food-truck',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MenuRoute = MenuRouteImport.update({
   id: '/menu',
   path: '/menu',
@@ -32,30 +38,34 @@ const MenuRoute = MenuRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/food-truck': typeof FoodTruckRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/menu': typeof MenuRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/food-truck': typeof FoodTruckRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/menu': typeof MenuRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/food-truck': typeof FoodTruckRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/menu': typeof MenuRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/food-truck' | '/menu'
+  fullPaths: '/' | '/food-truck' | '/mentions-legales' | '/menu'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/food-truck' | '/menu'
-  id: '__root__' | '/' | '/food-truck' | '/menu'
+  to: '/' | '/food-truck' | '/mentions-legales' | '/menu'
+  id: '__root__' | '/' | '/food-truck' | '/mentions-legales' | '/menu'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FoodTruckRoute: typeof FoodTruckRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
   MenuRoute: typeof MenuRoute
 }
 
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FoodTruckRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/menu': {
       id: '/menu'
       path: '/menu'
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FoodTruckRoute: FoodTruckRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
   MenuRoute: MenuRoute,
 }
 export const routeTree = rootRouteImport

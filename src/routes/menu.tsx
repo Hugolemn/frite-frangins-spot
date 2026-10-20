@@ -101,6 +101,12 @@ function Menu() {
         <p className="mt-6 text-xs uppercase tracking-widest opacity-50">
           © {new Date().getFullYear()} Frites & Frangins — Tous droits réservés
         </p>
+        <Link
+          to="/mentions-legales"
+          className="mt-3 inline-block text-xs opacity-50 transition-opacity hover:opacity-100 hover:underline"
+        >
+          Mentions légales
+        </Link>
       </footer>
 
       {/* ===== Barre d'action sticky ===== */}

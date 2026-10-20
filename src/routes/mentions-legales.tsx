@@ -144,8 +144,9 @@ function MentionsLegales() {
           <section className={SECTION}>
             <h2 className={H2}>4. Hébergement</h2>
             <p className={P}>
-              Ce site est hébergé sur l'infrastructure Lovable Cloud (Supabase / Amazon Web Services),
-              within the European Union for data storage where applicable.
+              Ce site est hébergé sur l'infrastructure Lovable Cloud (Supabase / Amazon Web
+              Services), avec hébergement et stockage des données au sein de l'Union européenne
+              lorsque cela est applicable.
             </p>
           </section>
 
