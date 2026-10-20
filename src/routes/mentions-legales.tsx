@@ -32,7 +32,7 @@ const P = "mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base";
 
 function ToComplete({ label }: { label: string }) {
   return (
-    <span className="rounded-md bg-muted px-1.5 py-0.5 text-xs font-bold uppercase tracking-wide text-foreground/60">
+    <span className="whitespace-nowrap rounded-md bg-muted px-1.5 py-0.5 text-xs font-bold uppercase tracking-wide text-foreground/60">
       {label}
     </span>
   );
@@ -92,7 +92,9 @@ function MentionsLegales() {
                 <br />
                 Numéro de TVA : BE 1034415621
                 <br />
-                Numéro d'entreprise (BCE) : <ToComplete label="à compléter — BE 0xxx.xxx.xxx ?" />
+                Numéro d'entreprise (BCE) : <ToComplete label="à compléter" />{" "}
+                <span className="text-muted-foreground/70">(BE 0xxx.xxx.xxx)</span>
+
               </p>
             </div>
           </section>
