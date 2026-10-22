@@ -39,6 +39,7 @@ const prestations = [
   { title: "Frites fraîches maison", desc: "Nos frites cuites sur place, comme à la friterie : croustillantes et dorées." },
   { title: "Burgers au bœuf pur", desc: "Nos burgers faits maison, préparés devant vos invités." },
   { title: "Snacks & frangins", desc: "La carte des classiques de la friterie, adaptée au service en extérieur." },
+  { title: "Des choix divers et variés", desc: "Hot dogs, cornets de pâtes, pokebowls, wraps et bien d'autres choses encore." },
   { title: "Du sucré comme du salé", desc: "On travaille aussi bien le salé que le sucré : à vous de choisir une pause snack, une pause gourmande, ou les deux." },
   { title: "Formules sur mesure", desc: "Menu adapté à votre événement et à votre budget : on le construit ensemble." },
 ];
