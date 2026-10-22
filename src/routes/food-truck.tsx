@@ -36,7 +36,7 @@ const occasions = [
 ];
 
 const prestations = [
-  { title: "Frites fraîches maison", desc: "Nos frites coupées et cuites sur place, comme à la friterie : croustillantes et dorées." },
+  { title: "Frites fraîches maison", desc: "Nos frites cuites sur place, comme à la friterie : croustillantes et dorées." },
   { title: "Burgers au bœuf pur", desc: "Nos burgers faits maison, préparés devant vos invités." },
   { title: "Snacks & frangins", desc: "La carte des classiques de la friterie, adaptée au service en extérieur." },
   { title: "Du sucré comme du salé", desc: "On travaille aussi bien le salé que le sucré : à vous de choisir une pause snack, une pause gourmande, ou les deux." },
